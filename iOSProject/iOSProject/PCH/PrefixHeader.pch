@@ -1,0 +1,16 @@
+//
+//  PrefixHeader.pch
+//
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#ifdef __OBJC__
+
+#import "LHJMacros.h"
+#import "LHJControllerHeader.h"
+
+#endif
+
+#endif /* PrefixHeader_pch */
