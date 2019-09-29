@@ -23,4 +23,21 @@
  设置高亮状态栏
  */
 - (void)setLightStatusBar;
+
+
+
+/*
+ 隐藏hud
+ */
+- (void)hideLoadingHUD;
+/*
+ 加载中+文字提示（文字可为空）
+ */
+- (void)showLoadingHUDWithMessage:(nullable NSString *)message;
+/*
+ 纯文字提示
+ */
+- (void)showTextHUDWithMessage:(nonnull NSString *)message;
+
+
 @end

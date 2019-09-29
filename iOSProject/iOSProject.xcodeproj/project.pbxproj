@@ -32,6 +32,10 @@
 		3B8C573E23400F7B0059BB21 /* SBRulerViewConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8C573723400F7B0059BB21 /* SBRulerViewConfiguration.m */; };
 		3B8C573F23400F7B0059BB21 /* SBScrollRulerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8C573823400F7B0059BB21 /* SBScrollRulerView.m */; };
 		3B8C574023400F7B0059BB21 /* SBTriangleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8C573923400F7B0059BB21 /* SBTriangleView.m */; };
+		3B8C57492340144E0059BB21 /* XYKRegisterWeightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8C57412340144D0059BB21 /* XYKRegisterWeightViewController.m */; };
+		3B8C574A2340144E0059BB21 /* XYKRegisterBirthdayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8C57432340144D0059BB21 /* XYKRegisterBirthdayViewController.m */; };
+		3B8C574B2340144E0059BB21 /* XYKRegisterSexViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8C57442340144D0059BB21 /* XYKRegisterSexViewController.m */; };
+		3B8C574C2340144E0059BB21 /* XYKRegisterHeightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8C57462340144E0059BB21 /* XYKRegisterHeightViewController.m */; };
 		C8CA8ED9717102EBF7D77F57 /* libPods-iOSProject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 766037B97227D95F2804335B /* libPods-iOSProject.a */; };
 /* End PBXBuildFile section */
 
@@ -87,6 +91,14 @@
 		3B8C573A23400F7B0059BB21 /* SBRulerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBRulerView.h; sourceTree = "<group>"; };
 		3B8C573B23400F7B0059BB21 /* SBRulerViewConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBRulerViewConfiguration.h; sourceTree = "<group>"; };
 		3B8C573C23400F7B0059BB21 /* SBScrollRulerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBScrollRulerView.h; sourceTree = "<group>"; };
+		3B8C57412340144D0059BB21 /* XYKRegisterWeightViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYKRegisterWeightViewController.m; sourceTree = "<group>"; };
+		3B8C57422340144D0059BB21 /* XYKRegisterSexViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYKRegisterSexViewController.h; sourceTree = "<group>"; };
+		3B8C57432340144D0059BB21 /* XYKRegisterBirthdayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYKRegisterBirthdayViewController.m; sourceTree = "<group>"; };
+		3B8C57442340144D0059BB21 /* XYKRegisterSexViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYKRegisterSexViewController.m; sourceTree = "<group>"; };
+		3B8C57452340144E0059BB21 /* XYKRegisterHeightViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYKRegisterHeightViewController.h; sourceTree = "<group>"; };
+		3B8C57462340144E0059BB21 /* XYKRegisterHeightViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYKRegisterHeightViewController.m; sourceTree = "<group>"; };
+		3B8C57472340144E0059BB21 /* XYKRegisterBirthdayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYKRegisterBirthdayViewController.h; sourceTree = "<group>"; };
+		3B8C57482340144E0059BB21 /* XYKRegisterWeightViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYKRegisterWeightViewController.h; sourceTree = "<group>"; };
 		766037B97227D95F2804335B /* libPods-iOSProject.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iOSProject.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E28F70CA5188740E82F3774 /* Pods-iOSProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOSProject/Pods-iOSProject.debug.xcconfig"; sourceTree = "<group>"; };
 		C5B9A8F239A3CFCF9287A375 /* Pods-iOSProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOSProject/Pods-iOSProject.release.xcconfig"; sourceTree = "<group>"; };
@@ -385,6 +397,14 @@
 				3B8C5718233FE2020059BB21 /* LoginViewController.storyboard */,
 				3B8C5720233FF5050059BB21 /* RegisterViewController.h */,
 				3B8C5721233FF5050059BB21 /* RegisterViewController.m */,
+				3B8C57422340144D0059BB21 /* XYKRegisterSexViewController.h */,
+				3B8C57442340144D0059BB21 /* XYKRegisterSexViewController.m */,
+				3B8C57472340144E0059BB21 /* XYKRegisterBirthdayViewController.h */,
+				3B8C57432340144D0059BB21 /* XYKRegisterBirthdayViewController.m */,
+				3B8C57452340144E0059BB21 /* XYKRegisterHeightViewController.h */,
+				3B8C57462340144E0059BB21 /* XYKRegisterHeightViewController.m */,
+				3B8C57482340144E0059BB21 /* XYKRegisterWeightViewController.h */,
+				3B8C57412340144D0059BB21 /* XYKRegisterWeightViewController.m */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -533,7 +553,9 @@
 				2F65A3D4233C9D750029DC09 /* LHJTabControlFourViewController.m in Sources */,
 				2F65A3D8233C9D9E0029DC09 /* LHJTabControlThreeViewController.m in Sources */,
 				2F65A3C6233C9B770029DC09 /* UIView+Extension.m in Sources */,
+				3B8C574A2340144E0059BB21 /* XYKRegisterBirthdayViewController.m in Sources */,
 				2F65A3B0233C99670029DC09 /* VCTTabBar.m in Sources */,
+				3B8C57492340144E0059BB21 /* XYKRegisterWeightViewController.m in Sources */,
 				2F65A3FB233C9ED00029DC09 /* LHJNavigationController.m in Sources */,
 				2F65A3AE233C99670029DC09 /* VCTTabBarController.m in Sources */,
 				2F65A3CE233C9D460029DC09 /* LHJTabControlOneViewController.m in Sources */,
@@ -546,6 +568,8 @@
 				3B8C5722233FF5050059BB21 /* RegisterViewController.m in Sources */,
 				3B8C5719233FE2020059BB21 /* LoginViewController.m in Sources */,
 				3B8C574023400F7B0059BB21 /* SBTriangleView.m in Sources */,
+				3B8C574B2340144E0059BB21 /* XYKRegisterSexViewController.m in Sources */,
+				3B8C574C2340144E0059BB21 /* XYKRegisterHeightViewController.m in Sources */,
 				2F65A3C2233C9B770029DC09 /* UIImage+Extension.m in Sources */,
 				2F65A399233C98610029DC09 /* AppDelegate.m in Sources */,
 				2F65A3AF233C99670029DC09 /* VCTTabbarButton.m in Sources */,

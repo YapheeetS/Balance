@@ -5,6 +5,8 @@
 //
 
 #import "LHJBaseViewController.h"
+#import <SVProgressHUD.h>
+
 @interface LHJBaseViewController ()<UINavigationControllerDelegate>
 
 @property (nonatomic, weak) UIButton *leftButton;
@@ -78,7 +80,7 @@
 }
 
 
-
+// 隐藏导航栏
 - (void)navigationController:(UINavigationController*)navigationController willShowViewController:(UIViewController*)viewController animated:(BOOL)animated {
     
     if(viewController == self){
@@ -100,4 +102,43 @@
         }
     }
 }
+
+
+// SVProgressHUD
+- (void)hideLoadingHUD
+{
+    [SVProgressHUD dismiss];
+}
+
+- (void)showLoadingHUDWithMessage:(NSString *)message
+{
+    // 如果当前视图还有其他提示框，就dismiss
+    [self hideLoadingHUD];
+    
+    [SVProgressHUD setDefaultStyle:SVProgressHUDStyleDark];
+    [SVProgressHUD setCornerRadius:5];
+    [SVProgressHUD setDefaultAnimationType:SVProgressHUDAnimationTypeNative];
+    
+    // 加载中的提示框一般不要不自动dismiss，比如在网络请求，要在网络请求成功后调用 hideLoadingHUD 方法即可
+    if (message) {
+        [SVProgressHUD showWithStatus:message];
+    }else{
+        [SVProgressHUD show];
+    }
+}
+
+- (void)showTextHUDWithMessage:(NSString *)message
+{
+    [self hideLoadingHUD];
+    
+    [SVProgressHUD setDefaultStyle:SVProgressHUDStyleDark];
+    [SVProgressHUD setCornerRadius:5];
+    [SVProgressHUD setDefaultAnimationType:SVProgressHUDAnimationTypeNative];
+    
+    [SVProgressHUD showImage:[UIImage imageNamed:@""] status:message];
+    
+    [SVProgressHUD dismissWithDelay:2];
+    
+}
+
 @end

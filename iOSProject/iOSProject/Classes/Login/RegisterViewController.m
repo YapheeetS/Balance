@@ -7,6 +7,7 @@
 //
 
 #import "RegisterViewController.h"
+#import "XYKRegisterSexViewController.h"
 
 @interface RegisterViewController ()
 
@@ -137,6 +138,14 @@
         make.height.mas_equalTo(45);
     }];
     
+    [registerButton addTarget:self action:@selector(registerButtonClick:) forControlEvents:UIControlEventTouchUpInside];
+    
+}
+
+
+- (void)registerButtonClick:(UIButton *)sender{
+    XYKRegisterSexViewController *genderVC = [[XYKRegisterSexViewController alloc] init];
+    [self.navigationController pushViewController:genderVC animated:true];
 }
 
 
