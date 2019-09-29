@@ -19,10 +19,10 @@
 		2F65A3C3233C9B770029DC09 /* NSString+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F65A3BB233C9B770029DC09 /* NSString+Extension.m */; };
 		2F65A3C5233C9B770029DC09 /* UIBarButtonItem+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F65A3BE233C9B770029DC09 /* UIBarButtonItem+Extension.m */; };
 		2F65A3C6233C9B770029DC09 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F65A3BF233C9B770029DC09 /* UIView+Extension.m */; };
-		2F65A3CE233C9D460029DC09 /* LHJTabControlOneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F65A3CD233C9D460029DC09 /* LHJTabControlOneViewController.m */; };
-		2F65A3D1233C9D570029DC09 /* LHJTabControlTowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F65A3D0233C9D570029DC09 /* LHJTabControlTowViewController.m */; };
-		2F65A3D4233C9D750029DC09 /* LHJTabControlFourViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F65A3D3233C9D750029DC09 /* LHJTabControlFourViewController.m */; };
-		2F65A3D8233C9D9E0029DC09 /* LHJTabControlThreeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F65A3D7233C9D9E0029DC09 /* LHJTabControlThreeViewController.m */; };
+		2F65A3CE233C9D460029DC09 /* LHJBalanceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F65A3CD233C9D460029DC09 /* LHJBalanceViewController.m */; };
+		2F65A3D1233C9D570029DC09 /* LHJDietViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F65A3D0233C9D570029DC09 /* LHJDietViewController.m */; };
+		2F65A3D4233C9D750029DC09 /* LHJProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F65A3D3233C9D750029DC09 /* LHJProfileViewController.m */; };
+		2F65A3D8233C9D9E0029DC09 /* LHJActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F65A3D7233C9D9E0029DC09 /* LHJActivityViewController.m */; };
 		2F65A3FB233C9ED00029DC09 /* LHJNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F65A3E8233C9ECF0029DC09 /* LHJNavigationController.m */; };
 		2F65A3FD233C9ED00029DC09 /* LHJBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F65A3EE233C9ECF0029DC09 /* LHJBaseViewController.m */; };
 		3B8C5719233FE2020059BB21 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8C5717233FE2020059BB21 /* LoginViewController.m */; };
@@ -66,14 +66,14 @@
 		2F65A3BD233C9B770029DC09 /* UIImage+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Extension.h"; sourceTree = "<group>"; };
 		2F65A3BE233C9B770029DC09 /* UIBarButtonItem+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+Extension.m"; sourceTree = "<group>"; };
 		2F65A3BF233C9B770029DC09 /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
-		2F65A3CC233C9D460029DC09 /* LHJTabControlOneViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LHJTabControlOneViewController.h; sourceTree = "<group>"; };
-		2F65A3CD233C9D460029DC09 /* LHJTabControlOneViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LHJTabControlOneViewController.m; sourceTree = "<group>"; };
-		2F65A3CF233C9D570029DC09 /* LHJTabControlTowViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LHJTabControlTowViewController.h; sourceTree = "<group>"; };
-		2F65A3D0233C9D570029DC09 /* LHJTabControlTowViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LHJTabControlTowViewController.m; sourceTree = "<group>"; };
-		2F65A3D2233C9D750029DC09 /* LHJTabControlFourViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LHJTabControlFourViewController.h; sourceTree = "<group>"; };
-		2F65A3D3233C9D750029DC09 /* LHJTabControlFourViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LHJTabControlFourViewController.m; sourceTree = "<group>"; };
-		2F65A3D6233C9D9E0029DC09 /* LHJTabControlThreeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LHJTabControlThreeViewController.h; sourceTree = "<group>"; };
-		2F65A3D7233C9D9E0029DC09 /* LHJTabControlThreeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LHJTabControlThreeViewController.m; sourceTree = "<group>"; };
+		2F65A3CC233C9D460029DC09 /* LHJBalanceViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LHJBalanceViewController.h; sourceTree = "<group>"; };
+		2F65A3CD233C9D460029DC09 /* LHJBalanceViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LHJBalanceViewController.m; sourceTree = "<group>"; };
+		2F65A3CF233C9D570029DC09 /* LHJDietViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LHJDietViewController.h; sourceTree = "<group>"; };
+		2F65A3D0233C9D570029DC09 /* LHJDietViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LHJDietViewController.m; sourceTree = "<group>"; };
+		2F65A3D2233C9D750029DC09 /* LHJProfileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LHJProfileViewController.h; sourceTree = "<group>"; };
+		2F65A3D3233C9D750029DC09 /* LHJProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LHJProfileViewController.m; sourceTree = "<group>"; };
+		2F65A3D6233C9D9E0029DC09 /* LHJActivityViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LHJActivityViewController.h; sourceTree = "<group>"; };
+		2F65A3D7233C9D9E0029DC09 /* LHJActivityViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LHJActivityViewController.m; sourceTree = "<group>"; };
 		2F65A3E8233C9ECF0029DC09 /* LHJNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHJNavigationController.m; sourceTree = "<group>"; };
 		2F65A3EA233C9ECF0029DC09 /* LHJBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHJBaseViewController.h; sourceTree = "<group>"; };
 		2F65A3ED233C9ECF0029DC09 /* LHJNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHJNavigationController.h; sourceTree = "<group>"; };
@@ -160,7 +160,7 @@
 			children = (
 				3B8C5712233FC4570059BB21 /* Login */,
 				2F65A3A5233C99670029DC09 /* Tabbar */,
-				2F65A3D9233C9DB60029DC09 /* TabControl */,
+				2F65A3D9233C9DB60029DC09 /* Main */,
 				2F65A38E233C98610029DC09 /* Config */,
 				2F65A3B2233C9B770029DC09 /* Category */,
 				2F65A391233C98610029DC09 /* AppDelegate */,
@@ -226,55 +226,55 @@
 			path = Category;
 			sourceTree = "<group>";
 		};
-		2F65A3C9233C9CF90029DC09 /* TabControl1 */ = {
+		2F65A3C9233C9CF90029DC09 /* Balance */ = {
 			isa = PBXGroup;
 			children = (
 				2F65A3DB233C9DDC0029DC09 /* Controller */,
 				2F65A3DC233C9DDC0029DC09 /* Model */,
 				2F65A3DA233C9DDC0029DC09 /* View */,
 			);
-			path = TabControl1;
+			path = Balance;
 			sourceTree = "<group>";
 		};
-		2F65A3CA233C9D210029DC09 /* TabControl2 */ = {
+		2F65A3CA233C9D210029DC09 /* Diet */ = {
 			isa = PBXGroup;
 			children = (
 				2F65A3E3233C9DFD0029DC09 /* Controller */,
 				2F65A3E5233C9DFD0029DC09 /* Model */,
 				2F65A3E4233C9DFD0029DC09 /* View */,
 			);
-			path = TabControl2;
+			path = Diet;
 			sourceTree = "<group>";
 		};
-		2F65A3CB233C9D2A0029DC09 /* TabControl3 */ = {
+		2F65A3CB233C9D2A0029DC09 /* Activity */ = {
 			isa = PBXGroup;
 			children = (
 				2F65A3E0233C9DF60029DC09 /* Controller */,
 				2F65A3E1233C9DF70029DC09 /* Model */,
 				2F65A3E2233C9DF70029DC09 /* View */,
 			);
-			path = TabControl3;
+			path = Activity;
 			sourceTree = "<group>";
 		};
-		2F65A3D5233C9D7A0029DC09 /* TabControl4 */ = {
+		2F65A3D5233C9D7A0029DC09 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
 				2F65A3DD233C9DEF0029DC09 /* Controller */,
 				2F65A3DE233C9DEF0029DC09 /* Model */,
 				2F65A3DF233C9DEF0029DC09 /* View */,
 			);
-			path = TabControl4;
+			path = Profile;
 			sourceTree = "<group>";
 		};
-		2F65A3D9233C9DB60029DC09 /* TabControl */ = {
+		2F65A3D9233C9DB60029DC09 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				2F65A3C9233C9CF90029DC09 /* TabControl1 */,
-				2F65A3CA233C9D210029DC09 /* TabControl2 */,
-				2F65A3CB233C9D2A0029DC09 /* TabControl3 */,
-				2F65A3D5233C9D7A0029DC09 /* TabControl4 */,
+				2F65A3C9233C9CF90029DC09 /* Balance */,
+				2F65A3CA233C9D210029DC09 /* Diet */,
+				2F65A3CB233C9D2A0029DC09 /* Activity */,
+				2F65A3D5233C9D7A0029DC09 /* Profile */,
 			);
-			path = TabControl;
+			path = Main;
 			sourceTree = "<group>";
 		};
 		2F65A3DA233C9DDC0029DC09 /* View */ = {
@@ -287,8 +287,8 @@
 		2F65A3DB233C9DDC0029DC09 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				2F65A3CC233C9D460029DC09 /* LHJTabControlOneViewController.h */,
-				2F65A3CD233C9D460029DC09 /* LHJTabControlOneViewController.m */,
+				2F65A3CC233C9D460029DC09 /* LHJBalanceViewController.h */,
+				2F65A3CD233C9D460029DC09 /* LHJBalanceViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -303,8 +303,8 @@
 		2F65A3DD233C9DEF0029DC09 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				2F65A3D2233C9D750029DC09 /* LHJTabControlFourViewController.h */,
-				2F65A3D3233C9D750029DC09 /* LHJTabControlFourViewController.m */,
+				2F65A3D2233C9D750029DC09 /* LHJProfileViewController.h */,
+				2F65A3D3233C9D750029DC09 /* LHJProfileViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -326,8 +326,8 @@
 		2F65A3E0233C9DF60029DC09 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				2F65A3D6233C9D9E0029DC09 /* LHJTabControlThreeViewController.h */,
-				2F65A3D7233C9D9E0029DC09 /* LHJTabControlThreeViewController.m */,
+				2F65A3D6233C9D9E0029DC09 /* LHJActivityViewController.h */,
+				2F65A3D7233C9D9E0029DC09 /* LHJActivityViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -349,8 +349,8 @@
 		2F65A3E3233C9DFD0029DC09 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				2F65A3CF233C9D570029DC09 /* LHJTabControlTowViewController.h */,
-				2F65A3D0233C9D570029DC09 /* LHJTabControlTowViewController.m */,
+				2F65A3CF233C9D570029DC09 /* LHJDietViewController.h */,
+				2F65A3D0233C9D570029DC09 /* LHJDietViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -550,21 +550,21 @@
 			files = (
 				3B8C573F23400F7B0059BB21 /* SBScrollRulerView.m in Sources */,
 				2F65A3C5233C9B770029DC09 /* UIBarButtonItem+Extension.m in Sources */,
-				2F65A3D4233C9D750029DC09 /* LHJTabControlFourViewController.m in Sources */,
-				2F65A3D8233C9D9E0029DC09 /* LHJTabControlThreeViewController.m in Sources */,
+				2F65A3D4233C9D750029DC09 /* LHJProfileViewController.m in Sources */,
+				2F65A3D8233C9D9E0029DC09 /* LHJActivityViewController.m in Sources */,
 				2F65A3C6233C9B770029DC09 /* UIView+Extension.m in Sources */,
 				3B8C574A2340144E0059BB21 /* XYKRegisterBirthdayViewController.m in Sources */,
 				2F65A3B0233C99670029DC09 /* VCTTabBar.m in Sources */,
 				3B8C57492340144E0059BB21 /* XYKRegisterWeightViewController.m in Sources */,
 				2F65A3FB233C9ED00029DC09 /* LHJNavigationController.m in Sources */,
 				2F65A3AE233C99670029DC09 /* VCTTabBarController.m in Sources */,
-				2F65A3CE233C9D460029DC09 /* LHJTabControlOneViewController.m in Sources */,
+				2F65A3CE233C9D460029DC09 /* LHJBalanceViewController.m in Sources */,
 				2F65A3C1233C9B770029DC09 /* UIColor+stringToColor.m in Sources */,
 				2F65A396233C98610029DC09 /* main.m in Sources */,
 				2F65A3FD233C9ED00029DC09 /* LHJBaseViewController.m in Sources */,
 				2F65A3C3233C9B770029DC09 /* NSString+Extension.m in Sources */,
 				3B8C573D23400F7B0059BB21 /* SBRulerView.m in Sources */,
-				2F65A3D1233C9D570029DC09 /* LHJTabControlTowViewController.m in Sources */,
+				2F65A3D1233C9D570029DC09 /* LHJDietViewController.m in Sources */,
 				3B8C5722233FF5050059BB21 /* RegisterViewController.m in Sources */,
 				3B8C5719233FE2020059BB21 /* LoginViewController.m in Sources */,
 				3B8C574023400F7B0059BB21 /* SBTriangleView.m in Sources */,

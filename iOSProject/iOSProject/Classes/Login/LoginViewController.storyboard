@@ -35,7 +35,7 @@
                                     <constraint firstAttribute="height" constant="30" id="o5H-xZ-GQD"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                <textInputTraits key="textInputTraits"/>
                             </textField>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_phone" translatesAutoresizingMaskIntoConstraints="NO" id="Sap-lp-GTm">
                                 <rect key="frame" x="40" y="377.5" width="15" height="18"/>

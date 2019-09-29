@@ -8,6 +8,7 @@
 
 #import "LoginViewController.h"
 #import "RegisterViewController.h"
+#import "VCTTabBarController.h"
 
 #define DurationTime 5
 @interface LoginViewController ()<UITextFieldDelegate, CAAnimationDelegate, UINavigationControllerDelegate>
@@ -169,7 +170,8 @@
 // !!!: 登录
 - (IBAction)toLoginButtonAction:(id)sender {
     
-    
+    VCTTabBarController *mainVC = [[VCTTabBarController alloc] init];
+    [UIApplication sharedApplication].keyWindow.rootViewController = mainVC;
 
 }
 

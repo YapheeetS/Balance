@@ -6,6 +6,7 @@
 
 #import "XYKRegisterWeightViewController.h"
 #import "SBScrollRulerView.h"
+#import "VCTTabBarController.h"
 
 
 @interface XYKRegisterWeightViewController ()<SBScrollRulerViewDelegate>
@@ -101,27 +102,7 @@
         make.centerX.mas_equalTo(self.view);
     }];
     
-    
-    UIButton *backButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [self.view addSubview:backButton];
-    [backButton setImage:[UIImage imageNamed:@"register_previous"] forState:UIControlStateNormal];
-    [backButton addTarget:self action:@selector(backButtonClick:) forControlEvents:UIControlEventTouchUpInside];
-    [backButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.mas_equalTo(self.view.mas_bottom).offset(-85*KHeight);
-        make.centerX.mas_equalTo(self.view).offset(-55*Kwidth);
-        make.size.mas_equalTo(CGSizeMake(45*Kwidth, 45*Kwidth));
-    }];
-    
-    
-    UIButton *nextButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [self.view addSubview:nextButton];
-    [nextButton setImage:[UIImage imageNamed:@"register_next"] forState:UIControlStateNormal];
-    [nextButton addTarget:self action:@selector(nextButtonClick:) forControlEvents:UIControlEventTouchUpInside];
-    [nextButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.mas_equalTo(self.view.mas_bottom).offset(-85*KHeight);
-        make.centerX.mas_equalTo(self.view).offset(55*Kwidth);
-        make.size.mas_equalTo(CGSizeMake(45*Kwidth, 45*Kwidth));
-    }];
+
     
     
     UIButton *finishButton = [[UIButton alloc]init];
@@ -136,21 +117,18 @@
         make.bottom.mas_equalTo(self.view).offset(-85*KHeight);
         make.height.mas_equalTo(45);
     }];
+    [finishButton addTarget:self action:@selector(finish:) forControlEvents:UIControlEventTouchUpInside];
     
     
 }
 
-
-- (void)backButtonClick:(UIButton *)sender
+- (void)finish:(UIButton *)sender
 {
-    [self.navigationController popViewControllerAnimated:YES];
+    VCTTabBarController *mainVC = [[VCTTabBarController alloc] init];
+    [UIApplication sharedApplication].keyWindow.rootViewController = mainVC;
 }
 
 
-- (void)nextButtonClick:(UIButton *)sender
-{
-    
-}
 
 
 #pragma mark - SBScrollRulerViewDelegate

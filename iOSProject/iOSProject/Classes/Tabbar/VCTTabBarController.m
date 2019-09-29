@@ -7,10 +7,10 @@
 #import "VCTTabBarController.h"
 #import "VCTTabBar.h"
 #import "VCTTabbarButton.h"
-#import "LHJTabControlOneViewController.h"
-#import "LHJTabControlTowViewController.h"
-#import "LHJTabControlThreeViewController.h"
-#import "LHJTabControlFourViewController.h" "
+#import "LHJBalanceViewController.h"
+#import "LHJDietViewController.h"
+#import "LHJActivityViewController.h"
+#import "LHJProfileViewController.h"
 
 @interface VCTTabBarController ()<VCTTabBarDelegate>
 @property (nonatomic, weak) VCTTabBar *customTabBar;
@@ -70,17 +70,17 @@
 // !!!: 给tabbar绑定对应的控制器
 - (void)initSubVC {
     //1
-    LHJTabControlOneViewController *home = [[LHJTabControlOneViewController alloc]init];
-    [self setupChildVC:home Title:@"选项1 " imageName:@"tab_home_nor" selectedImageName:@"tab_home_sel"];
+    LHJBalanceViewController *home = [[LHJBalanceViewController alloc]init];
+    [self setupChildVC:home Title:@"Balance" imageName:@"tab_home_nor" selectedImageName:@"tab_home_sel"];
     //2
-    LHJTabControlTowViewController *valley = [LHJTabControlTowViewController new];
-    [self setupChildVC:valley Title:@"选项2 " imageName:@"tab_system_nor" selectedImageName:@"tab_system_sel"];
+    LHJDietViewController *valley = [[LHJDietViewController alloc]init];
+    [self setupChildVC:valley Title:@"Diet" imageName:@"tab_system_nor" selectedImageName:@"tab_system_sel"];
     //3
-    LHJTabControlThreeViewController *Artificial = [[LHJTabControlThreeViewController alloc]init];
-    [self setupChildVC:Artificial Title:@"选项3 " imageName:@"tab_subject_nor"  selectedImageName:@"tab_subject_sel"];
+    LHJActivityViewController *Artificial = [[LHJActivityViewController alloc]init];
+    [self setupChildVC:Artificial Title:@"Activity" imageName:@"tab_subject_nor"  selectedImageName:@"tab_subject_sel"];
     //4
-    LHJTabControlFourViewController *mineVc = [[LHJTabControlFourViewController alloc]init];
-    [self setupChildVC:mineVc Title:@"选项4 " imageName:@"tab_mine_nor" selectedImageName:@"tab_mine_sel"];
+    LHJProfileViewController *mineVc = [[LHJProfileViewController alloc]init];
+    [self setupChildVC:mineVc Title:@"Profile" imageName:@"tab_mine_nor" selectedImageName:@"tab_mine_sel"];
 }
 
 // !!!: 初始化所有子控制器
