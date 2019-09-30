@@ -32,7 +32,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="efS-kq-lgj">
                                 <rect key="frame" x="104" y="18" width="330" height="21"/>
                                 <attributedString key="attributedText">
-                                    <fragment content="早餐">
+                                    <fragment content="Breakfast">
                                         <attributes>
                                             <color key="NSColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <font key="NSFont" size="15" name="PingFangSC-Medium"/>
@@ -45,7 +45,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tc4-Zu-bd3">
                                 <rect key="frame" x="104" y="54" width="330" height="20"/>
                                 <attributedString key="attributedText">
-                                    <fragment content="已经吃了好多色粉蓝色呢发呢 索伦蒂诺分就分">
+                                    <fragment content="Milk, Bread">
                                         <attributes>
                                             <color key="NSColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <font key="NSFont" size="14" name="PingFangSC-Light"/>
@@ -65,7 +65,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yLI-xM-tnC">
                                 <rect key="frame" x="104" y="129.5" width="330" height="20"/>
                                 <attributedString key="attributedText">
-                                    <fragment content="建议摄入111111">
+                                    <fragment content="1111">
                                         <attributes>
                                             <color key="NSColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <font key="NSFont" size="14" name="PingFangSC-Light"/>
@@ -78,7 +78,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EzG-GM-ion">
                                 <rect key="frame" x="104" y="99.5" width="330" height="20"/>
                                 <attributedString key="attributedText">
-                                    <fragment content="建议摄入20000千卡">
+                                    <fragment content="222">
                                         <attributes>
                                             <color key="NSColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <font key="NSFont" size="14" name="PingFangSC-Light"/>

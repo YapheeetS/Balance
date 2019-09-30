@@ -42,7 +42,7 @@
 
 - (NSArray *)titleArray{
     if (_titleArray == nil) {
-        _titleArray = @[@"breakfast",@"Lunch",@"Dinner",@"Snacks"];
+        _titleArray = @[@"Breakfast",@"Lunch",@"Dinner",@"Snacks"];
     }
     return _titleArray;
 }
@@ -171,7 +171,7 @@
             
         };
         if ([cell.titleLabel.text isEqualToString:@"Breakfast"]) {
-            cell.pictureImageView.image=[UIImage imageNamed:@"breakfast_con"];
+            cell.pictureImageView.image=[UIImage imageNamed:@"breakfast_icon"];
         }else if ([cell.titleLabel.text isEqualToString:@"Lunch"]){
             cell.pictureImageView.image=[UIImage imageNamed:@"lunch_icon"];
         }else if ([cell.titleLabel.text isEqualToString:@"Dinner"]){
@@ -198,7 +198,7 @@
         
     };
     if ([cell.titleLabel.text isEqualToString:@"Breakfast"]) {
-        cell.pictureImageView.image=[UIImage imageNamed:@"breakfast_con"];
+        cell.pictureImageView.image=[UIImage imageNamed:@"breakfast_icon"];
     }else if ([cell.titleLabel.text isEqualToString:@"Lunch"]){
         cell.pictureImageView.image=[UIImage imageNamed:@"lunch_icon"];
     }else if ([cell.titleLabel.text isEqualToString:@"Dinner"]){
