@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="XYKEateTableViewCellID" id="KGk-i7-Jjw" customClass="XYKEateTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="484" height="173"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="484" height="173"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zsz-LN-9Ze">
+                        <rect key="frame" x="10" y="0.0" width="454" height="163"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="diet_cell_background" translatesAutoresizingMaskIntoConstraints="NO" id="Fjo-fB-6GR">
+                                <rect key="frame" x="0.0" y="0.0" width="454" height="163"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="breakfast_icon" translatesAutoresizingMaskIntoConstraints="NO" id="ndK-bR-64Y">
+                                <rect key="frame" x="20" y="49.5" width="64" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="64" id="PXe-da-2vI"/>
+                                    <constraint firstAttribute="height" constant="64" id="Xak-9n-WF4"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="efS-kq-lgj">
+                                <rect key="frame" x="104" y="18" width="330" height="21"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="早餐">
+                                        <attributes>
+                                            <color key="NSColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <font key="NSFont" size="15" name="PingFangSC-Medium"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tc4-Zu-bd3">
+                                <rect key="frame" x="104" y="54" width="330" height="20"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="已经吃了好多色粉蓝色呢发呢 索伦蒂诺分就分">
+                                        <attributes>
+                                            <color key="NSColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="14" name="PingFangSC-Light"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MSh-co-nFp">
+                                <rect key="frame" x="104" y="84" width="330" height="0.5"/>
+                                <color key="backgroundColor" red="0.93871545999999995" green="0.93418060270000003" blue="0.94325031729999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="0.5" id="Z3E-mK-80I"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yLI-xM-tnC">
+                                <rect key="frame" x="104" y="129.5" width="330" height="20"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="建议摄入111111">
+                                        <attributes>
+                                            <color key="NSColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="14" name="PingFangSC-Light"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EzG-GM-ion">
+                                <rect key="frame" x="104" y="99.5" width="330" height="20"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="建议摄入20000千卡">
+                                        <attributes>
+                                            <color key="NSColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="14" name="PingFangSC-Light"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lPi-Fb-jGj">
+                                <rect key="frame" x="433" y="69" width="35" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="7fk-1C-ZL8"/>
+                                    <constraint firstAttribute="width" constant="35" id="SL6-Zo-Jkz"/>
+                                </constraints>
+                                <state key="normal" image="add_food"/>
+                                <connections>
+                                    <action selector="clickaddButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="WEe-YQ-T0I"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="EzG-GM-ion" firstAttribute="trailing" secondItem="tc4-Zu-bd3" secondAttribute="trailing" id="1BW-4h-vof"/>
+                            <constraint firstItem="MSh-co-nFp" firstAttribute="leading" secondItem="tc4-Zu-bd3" secondAttribute="leading" id="20B-gT-sVj"/>
+                            <constraint firstItem="Fjo-fB-6GR" firstAttribute="leading" secondItem="zsz-LN-9Ze" secondAttribute="leading" id="6jk-kc-BFC"/>
+                            <constraint firstItem="ndK-bR-64Y" firstAttribute="leading" secondItem="zsz-LN-9Ze" secondAttribute="leading" constant="20" id="7qY-AY-RBX"/>
+                            <constraint firstAttribute="trailing" secondItem="efS-kq-lgj" secondAttribute="trailing" constant="20" id="BLb-HM-JIH"/>
+                            <constraint firstAttribute="trailing" secondItem="lPi-Fb-jGj" secondAttribute="trailing" constant="-14" id="EzA-up-nvR"/>
+                            <constraint firstItem="tc4-Zu-bd3" firstAttribute="trailing" secondItem="efS-kq-lgj" secondAttribute="trailing" id="GT3-eO-vaq"/>
+                            <constraint firstItem="EzG-GM-ion" firstAttribute="top" secondItem="MSh-co-nFp" secondAttribute="bottom" constant="15" id="IPv-Hb-muz"/>
+                            <constraint firstItem="yLI-xM-tnC" firstAttribute="leading" secondItem="EzG-GM-ion" secondAttribute="leading" id="Lyc-v1-Pdl"/>
+                            <constraint firstItem="Fjo-fB-6GR" firstAttribute="top" secondItem="zsz-LN-9Ze" secondAttribute="top" id="Psw-on-w9A"/>
+                            <constraint firstAttribute="bottom" secondItem="Fjo-fB-6GR" secondAttribute="bottom" id="QoT-YL-xAC"/>
+                            <constraint firstItem="MSh-co-nFp" firstAttribute="top" secondItem="tc4-Zu-bd3" secondAttribute="bottom" constant="10" id="RMp-dQ-Udi"/>
+                            <constraint firstItem="yLI-xM-tnC" firstAttribute="top" secondItem="EzG-GM-ion" secondAttribute="bottom" constant="10" id="VAq-vu-TAj"/>
+                            <constraint firstItem="efS-kq-lgj" firstAttribute="top" secondItem="zsz-LN-9Ze" secondAttribute="top" constant="18" id="ano-mJ-x2A"/>
+                            <constraint firstItem="yLI-xM-tnC" firstAttribute="trailing" secondItem="EzG-GM-ion" secondAttribute="trailing" id="c0O-0l-Z1q"/>
+                            <constraint firstItem="efS-kq-lgj" firstAttribute="leading" secondItem="ndK-bR-64Y" secondAttribute="trailing" constant="20" id="gCw-Ea-tQs"/>
+                            <constraint firstItem="tc4-Zu-bd3" firstAttribute="leading" secondItem="efS-kq-lgj" secondAttribute="leading" id="gzO-vx-vo0"/>
+                            <constraint firstItem="EzG-GM-ion" firstAttribute="leading" secondItem="tc4-Zu-bd3" secondAttribute="leading" id="h5a-fA-QXe"/>
+                            <constraint firstItem="tc4-Zu-bd3" firstAttribute="top" secondItem="efS-kq-lgj" secondAttribute="bottom" constant="15" id="kUU-nS-20y"/>
+                            <constraint firstItem="MSh-co-nFp" firstAttribute="trailing" secondItem="tc4-Zu-bd3" secondAttribute="trailing" id="nDr-0i-8Qi"/>
+                            <constraint firstItem="ndK-bR-64Y" firstAttribute="centerY" secondItem="zsz-LN-9Ze" secondAttribute="centerY" id="p93-hg-RUQ"/>
+                            <constraint firstAttribute="trailing" secondItem="Fjo-fB-6GR" secondAttribute="trailing" id="yfE-AI-i1n"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="lPi-Fb-jGj" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="3RW-pv-gxK"/>
+                    <constraint firstAttribute="trailing" secondItem="zsz-LN-9Ze" secondAttribute="trailing" constant="20" id="CCy-q8-iwh"/>
+                    <constraint firstAttribute="bottom" secondItem="zsz-LN-9Ze" secondAttribute="bottom" constant="10" id="Mbn-PX-XSC"/>
+                    <constraint firstItem="zsz-LN-9Ze" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="S2p-Gb-o3C"/>
+                    <constraint firstItem="zsz-LN-9Ze" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Ut6-rE-1PO"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="eateLabel" destination="tc4-Zu-bd3" id="F18-AY-aVp"/>
+                <outlet property="jykLabel" destination="yLI-xM-tnC" id="edX-OB-hD0"/>
+                <outlet property="pictureImageView" destination="ndK-bR-64Y" id="s4t-h0-9Yy"/>
+                <outlet property="qkLabel" destination="EzG-GM-ion" id="5pK-Jp-Mob"/>
+                <outlet property="titleLabel" destination="efS-kq-lgj" id="2mq-Kk-0gf"/>
+            </connections>
+            <point key="canvasLocation" x="-310.39999999999998" y="-44.527736131934034"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="add_food" width="34.5" height="34.5"/>
+        <image name="breakfast_icon" width="63.5" height="63.5"/>
+        <image name="diet_cell_background" width="16.5" height="16"/>
+    </resources>
+</document>
