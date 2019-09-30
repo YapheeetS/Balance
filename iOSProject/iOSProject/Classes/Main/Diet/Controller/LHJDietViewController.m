@@ -17,7 +17,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.view.backgroundColor = [UIColor grayColor];
+    self.view.backgroundColor = [UIColor whiteColor];
+    
+    UILabel *label = [[UILabel alloc] init];
+    label.text = @"Coming soon!";
+    label.textColor = [UIColor lightGrayColor];
+    label.font = [UIFont fontWithName:@"PingFangSC-Light" size:24];
+    label.textAlignment = NSTextAlignmentCenter;
+    [self.view addSubview:label];
+    [label mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.mas_equalTo(self.view);
+        make.centerY.mas_equalTo(self.view);
+        make.size.mas_equalTo(CGSizeMake(200, 50));
+    }];
 }
 
 /*

@@ -8,6 +8,7 @@
 #define LHJMacros_h
 
 #define x_theme        [UIColor colorWithRed:126.0/255.0 green:170.0/255.0 blue:241.0/255.0 alpha:1]
+#define x_theme2        [UIColor colorWithRed:250.0/255.0 green:129.0/255.0 blue:26.0/255.0 alpha:1]
 
 #define RGBA(r,g,b,a) [UIColor colorWithRed:r/255.0f green:g/255.0f blue:b/255.0f alpha:a]
 #define RGB(r,g,b) RGBA(r,g,b,1.0)

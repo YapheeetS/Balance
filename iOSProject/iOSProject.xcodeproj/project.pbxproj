@@ -36,6 +36,9 @@
 		3B8C574A2340144E0059BB21 /* XYKRegisterBirthdayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8C57432340144D0059BB21 /* XYKRegisterBirthdayViewController.m */; };
 		3B8C574B2340144E0059BB21 /* XYKRegisterSexViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8C57442340144D0059BB21 /* XYKRegisterSexViewController.m */; };
 		3B8C574C2340144E0059BB21 /* XYKRegisterHeightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8C57462340144E0059BB21 /* XYKRegisterHeightViewController.m */; };
+		3B8C5754234163580059BB21 /* XYKDownBackImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8C5750234163580059BB21 /* XYKDownBackImageView.m */; };
+		3B8C5755234163580059BB21 /* CustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8C5751234163580059BB21 /* CustomView.m */; };
+		3B8C5758234163920059BB21 /* XYKGoSportButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8C5757234163920059BB21 /* XYKGoSportButton.m */; };
 		C8CA8ED9717102EBF7D77F57 /* libPods-iOSProject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 766037B97227D95F2804335B /* libPods-iOSProject.a */; };
 /* End PBXBuildFile section */
 
@@ -99,6 +102,12 @@
 		3B8C57462340144E0059BB21 /* XYKRegisterHeightViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYKRegisterHeightViewController.m; sourceTree = "<group>"; };
 		3B8C57472340144E0059BB21 /* XYKRegisterBirthdayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYKRegisterBirthdayViewController.h; sourceTree = "<group>"; };
 		3B8C57482340144E0059BB21 /* XYKRegisterWeightViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYKRegisterWeightViewController.h; sourceTree = "<group>"; };
+		3B8C5750234163580059BB21 /* XYKDownBackImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYKDownBackImageView.m; sourceTree = "<group>"; };
+		3B8C5751234163580059BB21 /* CustomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomView.m; sourceTree = "<group>"; };
+		3B8C5752234163580059BB21 /* XYKDownBackImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYKDownBackImageView.h; sourceTree = "<group>"; };
+		3B8C5753234163580059BB21 /* CustomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomView.h; sourceTree = "<group>"; };
+		3B8C5756234163920059BB21 /* XYKGoSportButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYKGoSportButton.h; sourceTree = "<group>"; };
+		3B8C5757234163920059BB21 /* XYKGoSportButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYKGoSportButton.m; sourceTree = "<group>"; };
 		766037B97227D95F2804335B /* libPods-iOSProject.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iOSProject.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E28F70CA5188740E82F3774 /* Pods-iOSProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOSProject/Pods-iOSProject.debug.xcconfig"; sourceTree = "<group>"; };
 		C5B9A8F239A3CFCF9287A375 /* Pods-iOSProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOSProject/Pods-iOSProject.release.xcconfig"; sourceTree = "<group>"; };
@@ -342,6 +351,12 @@
 		2F65A3E2233C9DF70029DC09 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				3B8C5756234163920059BB21 /* XYKGoSportButton.h */,
+				3B8C5757234163920059BB21 /* XYKGoSportButton.m */,
+				3B8C5753234163580059BB21 /* CustomView.h */,
+				3B8C5751234163580059BB21 /* CustomView.m */,
+				3B8C5752234163580059BB21 /* XYKDownBackImageView.h */,
+				3B8C5750234163580059BB21 /* XYKDownBackImageView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -560,6 +575,7 @@
 				2F65A3AE233C99670029DC09 /* VCTTabBarController.m in Sources */,
 				2F65A3CE233C9D460029DC09 /* LHJBalanceViewController.m in Sources */,
 				2F65A3C1233C9B770029DC09 /* UIColor+stringToColor.m in Sources */,
+				3B8C5758234163920059BB21 /* XYKGoSportButton.m in Sources */,
 				2F65A396233C98610029DC09 /* main.m in Sources */,
 				2F65A3FD233C9ED00029DC09 /* LHJBaseViewController.m in Sources */,
 				2F65A3C3233C9B770029DC09 /* NSString+Extension.m in Sources */,
@@ -571,8 +587,10 @@
 				3B8C574B2340144E0059BB21 /* XYKRegisterSexViewController.m in Sources */,
 				3B8C574C2340144E0059BB21 /* XYKRegisterHeightViewController.m in Sources */,
 				2F65A3C2233C9B770029DC09 /* UIImage+Extension.m in Sources */,
+				3B8C5754234163580059BB21 /* XYKDownBackImageView.m in Sources */,
 				2F65A399233C98610029DC09 /* AppDelegate.m in Sources */,
 				2F65A3AF233C99670029DC09 /* VCTTabbarButton.m in Sources */,
+				3B8C5755234163580059BB21 /* CustomView.m in Sources */,
 				3B8C573E23400F7B0059BB21 /* SBRulerViewConfiguration.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
