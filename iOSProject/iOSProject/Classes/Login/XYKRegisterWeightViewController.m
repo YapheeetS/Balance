@@ -102,8 +102,6 @@
         make.centerX.mas_equalTo(self.view);
     }];
     
-
-    
     
     UIButton *finishButton = [[UIButton alloc]init];
     [finishButton setBackgroundImage:[UIImage imageNamed:@"icon_login_btn"] forState:UIControlStateNormal];

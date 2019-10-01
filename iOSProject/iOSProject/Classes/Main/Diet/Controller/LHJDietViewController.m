@@ -190,7 +190,7 @@
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.titleLabel.text = self.titleArray[indexPath.row];
 //    cell.qkLabel.text = [NSString stringWithFormat:@"建议摄入%@千卡",[self.eatArray[indexPath.row]objectForKey:@"recommend"]];
-    cell.qkLabel.text = [NSString stringWithFormat:@"Recommend%@cal",@"533"];
+    cell.qkLabel.text = [NSString stringWithFormat:@"Recommend %@cal",@"533"];
     
     cell.nofontclickAdd = ^(NSString *title) {
         //点击添加按钮

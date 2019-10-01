@@ -26,14 +26,9 @@
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];
-    
-    
-    
+
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"LoginViewController" bundle:nil];
     LoginViewController *login = sb.instantiateInitialViewController;
-//    self.window.rootViewController = login;
-    
-    
     LHJNavigationController *nav = [[LHJNavigationController alloc]initWithRootViewController:login];
     self.window.rootViewController = nav;
     

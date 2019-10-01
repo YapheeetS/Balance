@@ -2,8 +2,6 @@
 //  XYKEateHeardViewCell.m
 //  xyk
 //
-//  Created by Ss H on 2018/8/29.
-//  Copyright © 2018年 Ss H. All rights reserved.
 //
 
 #import "XYKEateHeardViewCell.h"

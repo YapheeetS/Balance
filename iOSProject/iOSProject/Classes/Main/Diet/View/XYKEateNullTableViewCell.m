@@ -2,8 +2,6 @@
 //  XYKEateNullTableViewCell.m
 //  xyk
 //
-//  Created by Ss H on 2018/8/15.
-//  Copyright © 2018年 Ss H. All rights reserved.
 //
 
 #import "XYKEateNullTableViewCell.h"

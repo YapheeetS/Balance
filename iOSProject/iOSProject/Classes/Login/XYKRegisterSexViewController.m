@@ -26,7 +26,6 @@
 
 
 
-
 - (void)setMainView{
     
     UILabel *titleLabel = [[UILabel alloc]init];
