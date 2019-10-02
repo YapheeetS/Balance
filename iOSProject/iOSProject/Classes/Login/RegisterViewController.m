@@ -10,7 +10,9 @@
 #import "XYKRegisterSexViewController.h"
 
 @interface RegisterViewController ()
-
+@property (nonatomic, strong) UITextField *accountText;
+@property (nonatomic, strong) UITextField *passwordtText1;
+@property (nonatomic, strong) UITextField *passwordtText2;
 @end
 
 @implementation RegisterViewController
@@ -39,6 +41,7 @@
     }];
     
     UITextField *accountText = [[UITextField alloc] init];
+    self.accountText = accountText;
     accountText.font = [UIFont systemFontOfSize:14];
     accountText.placeholder = @"Input account";
     
@@ -72,6 +75,7 @@
     }];
     
     UITextField *passwordtText1 = [[UITextField alloc] init];
+    self.passwordtText1 = passwordtText1;
     passwordtText1.secureTextEntry = YES;
     passwordtText1.font = [UIFont systemFontOfSize:14];
     passwordtText1.placeholder = @"Input password";
@@ -104,6 +108,7 @@
     }];
     
     UITextField *passwordtText2 = [[UITextField alloc] init];
+    self.passwordtText2 = passwordtText2;
     passwordtText2.secureTextEntry = YES;
     passwordtText2.font = [UIFont systemFontOfSize:14];
     passwordtText2.placeholder = @"Confirm password";
@@ -144,8 +149,23 @@
 
 
 - (void)registerButtonClick:(UIButton *)sender{
-    XYKRegisterSexViewController *genderVC = [[XYKRegisterSexViewController alloc] init];
-    [self.navigationController pushViewController:genderVC animated:true];
+    
+    if ([self.accountText.text isEqualToString:@""]) {
+        [self showTextHUDWithMessage:@"Please input account"];
+        return;
+    }
+    if ([self.passwordtText1.text isEqualToString:@""]) {
+        [self showTextHUDWithMessage:@"Please input password"];
+        return;
+    }
+    
+    if ([self.passwordtText1.text isEqualToString:self.passwordtText2.text]) {
+        XYKRegisterSexViewController *genderVC = [[XYKRegisterSexViewController alloc] init];
+        [self.navigationController pushViewController:genderVC animated:true];
+    } else {
+        [self showTextHUDWithMessage:@"Please input the same password"];
+    }
+    
 }
 
 

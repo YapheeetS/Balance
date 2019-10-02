@@ -14,6 +14,9 @@
 @property (nonatomic, strong) UIButton *button3;
 @property (nonatomic, strong) UIButton *button4;
 @property (nonatomic, strong) UIButton *button5;
+@property (nonatomic, strong) UIButton *button6;
+@property (nonatomic, strong) UIButton *button7;
+@property (nonatomic, strong) UIButton *button8;
 @end
 
 @implementation LHJProfileViewController
@@ -117,6 +120,53 @@
         make.size.mas_equalTo(CGSizeMake(120*Kwidth, 120*Kwidth));
         make.top.mas_equalTo(button1.mas_bottom).offset(60*KHeight);
         make.centerX.mas_equalTo(button1).offset(-40*Kwidth);
+    }];
+    
+    
+    UIButton *button6 = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.button6 = button6;
+    [self.view addSubview:button6];
+    button6.userInteractionEnabled = false;
+    [button6 setBackgroundImage:[UIImage imageNamed:@"profile_button6_background"] forState:UIControlStateNormal];
+    [button6 setTitle:@"" forState:UIControlStateNormal];
+    button6.titleEdgeInsets = UIEdgeInsetsMake(-25*Kwidth, 0, 0, 0);
+    [button6 setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    button6.titleLabel.font = [UIFont fontWithName:@"PingFangSC-Light" size:11];
+    [button6 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.size.mas_equalTo(CGSizeMake(25*Kwidth, 25*Kwidth));
+        make.bottom.mas_equalTo(button1.mas_top).offset(-3*KHeight);
+        make.centerX.mas_equalTo(button1).offset(-155*Kwidth);
+    }];
+    
+    UIButton *button7 = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.button7 = button7;
+    [self.view addSubview:button7];
+    button7.userInteractionEnabled = false;
+    [button7 setBackgroundImage:[UIImage imageNamed:@"profile_button3_background"] forState:UIControlStateNormal];
+    [button7 setTitle:@"" forState:UIControlStateNormal];
+    button7.titleEdgeInsets = UIEdgeInsetsMake(-22*Kwidth, 0, 0, 0);
+    [button7 setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    button7.titleLabel.font = [UIFont fontWithName:@"PingFangSC-Light" size:15];
+    [button7 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.size.mas_equalTo(CGSizeMake(37*Kwidth, 37*Kwidth));
+        make.right.mas_equalTo(button1.mas_left).offset(110*Kwidth);
+        make.centerY.mas_equalTo(button1).offset(220*Kwidth);
+    }];
+    
+    
+    UIButton *button8 = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.button8 = button8;
+    [self.view addSubview:button8];
+    button8.userInteractionEnabled = false;
+    [button8 setBackgroundImage:[UIImage imageNamed:@"profile_button8_background"] forState:UIControlStateNormal];
+    [button8 setTitle:@"" forState:UIControlStateNormal];
+    button8.titleEdgeInsets = UIEdgeInsetsMake(-22*Kwidth, 0, 0, 0);
+    [button8 setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    button8.titleLabel.font = [UIFont fontWithName:@"PingFangSC-Light" size:15];
+    [button8 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.size.mas_equalTo(CGSizeMake(37*Kwidth, 37*Kwidth));
+        make.centerY.mas_equalTo(button2).offset(-40*Kwidth);
+        make.centerX.mas_equalTo(button1).offset(140*Kwidth);
     }];
     
 }
