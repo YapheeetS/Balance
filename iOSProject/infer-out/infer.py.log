@@ -1,0 +1,19 @@
+[INFO] output of locale.getdefaultlocale(): ('ko_KR', 'UTF-8')
+[INFO] encoding we chose in the end: UTF-8
+[INFO] Running command /usr/local/Cellar/infer/0.15.0/lib/infer/infer/bin/../lib/python/infer.py -j 8 --project-root /Users/jame/Desktop/CSE/SE_Team3/iOSProject --out /Users/jame/Desktop/CSE/SE_Team3/iOSProject/infer-out -- xcodebuild -workspace iOSProject.xcworkspace -scheme iOSProject -configuration Debug -sdk iphonesimulator
+[INFO] Path to infer script /usr/local/Cellar/infer/0.15.0/lib/infer/infer/bin/../lib/python/infer.py (/usr/local/Cellar/infer/0.15.0/lib/infer/infer/lib/python/infer.py)
+[INFO] Platform: Darwin-18.5.0-x86_64-i386-64bit
+[INFO] PATH=/Users/jame/anaconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
+[INFO] SHELL=/usr/local/bin/zsh
+[INFO] PWD=/Users/jame/Desktop/CSE/SE_Team3/iOSProject
+[INFO] Xcode version:
+Xcode 11.1
+Build version 11A1027
+
+[INFO] clang version:
+Apple clang version 11.0.0 (clang-1100.0.33.8)
+Target: x86_64-apple-darwin18.5.0
+Thread model: posix
+InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
+
+[INFO] Capture phase was successful

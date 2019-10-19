@@ -1,0 +1,82 @@
+[67952][environment] CWD = /Users/jame/Desktop/CSE/SE_Team3/iOSProject/iOSProject/Classes/Login
+[67952][environment] No .inferconfig file found
+[67952][environment] Project root = /Users/jame/Desktop/CSE/SE_Team3/iOSProject/iOSProject/Classes/Login
+[67952][environment] INFER_ARGS =   @/var/folders/0m/2vzjlv1x67n4t1jx5fwmjynr0000gn/T/args.tmp.bed228
+[67952][environment]   ++Contents of '/var/folders/0m/2vzjlv1x67n4t1jx5fwmjynr0000gn/T/args.tmp.bed228':
+[67952][environment]     run
+[67952][environment]   
+[67952][environment] command line arguments:   infer run -- clang -c LoginViewController.mAnalyzer: checkers
+[67952][environment] Active checkers: annotation reachability (Java), biabduction (C/C++/ObjC, Java), fragment retains view (Java), immutable cast (Java), liveness (C/C++/ObjC), printf args (Java), ownership (C/C++/ObjC), RacerD (C/C++/ObjC, Java), SIOF (C/C++/ObjC), uninitialized variables (C/C++/ObjC)
+[67952][environment] Infer log identifier is 
+Infer version v0.15.0
+[67952][environment] Copyright 2009 - present Facebook. All Rights Reserved.
+[67952][environment] 
+[67952][   progress] Capturing in make/cc mode...
+[67952][      debug] 
+[67952][      debug] *** Beginning capture of file /Users/jame/Desktop/CSE/SE_Team3/iOSProject/iOSProject/Classes/Login/LoginViewController.m ***
+[67952][      debug] Clang frontend action is translating and linting
+[67952][      debug] Loading the following linters files: /usr/local/Cellar/infer/0.15.0/lib/infer/infer/bin/../lib/linter_rules/linters.al
+[67952][      debug] 
+[67952][ intern err] LoginViewController.m:57:5: ERROR translating statement 'OpaqueValueExpr'
+[67952][ intern err] LoginViewController.m:51:5-57:5: ERROR translating statement 'IfStmt'
+[67952][ intern err] LoginViewController.m:48:16-70:1: ERROR translating statement 'CompoundStmt'
+[67952][ intern err] Aborting translation of method 'LoginViewController_setupUI' in file 'LoginViewController.m'
+[67952][ intern err] Known incorrect assumption in the frontend: Expected source expression for OpaqueValueExpr
+[67952][ intern err] LoginViewController.m:91:5: ERROR translating statement 'OpaqueValueExpr'
+[67952][ intern err] LoginViewController.m:89:5-91:5: ERROR translating statement 'IfStmt'
+[67952][ intern err] LoginViewController.m:83:18-132:1: ERROR translating statement 'CompoundStmt'
+[67952][ intern err] Aborting translation of method 'LoginViewController_countDown' in file 'LoginViewController.m'
+[67952][ intern err] Known incorrect assumption in the frontend: Expected source expression for OpaqueValueExpr
+[67952][ intern err] LoginViewController.m:154:5: ERROR translating statement 'OpaqueValueExpr'
+[67952][ intern err] LoginViewController.m:142:5-154:5: ERROR translating statement 'IfStmt'
+[67952][ intern err] LoginViewController.m:136:40-156:1: ERROR translating statement 'CompoundStmt'
+[67952][ intern err] Aborting translation of method 'LoginViewController_clickShowPwdBtn:' in file 'LoginViewController.m'
+[67952][ intern err] Known incorrect assumption in the frontend: Expected source expression for OpaqueValueExpr
+[67952][ intern err] LoginViewController.m:187:5: ERROR translating statement 'OpaqueValueExpr'
+[67952][ intern err] LoginViewController.m:183:5-187:5: ERROR translating statement 'IfStmt'
+[67952][ intern err] LoginViewController.m:180:57-188:1: ERROR translating statement 'CompoundStmt'
+[67952][ intern err] Aborting translation of method 'LoginViewController_textFieldDidBeginEditing:' in file 'LoginViewController.m'
+[67952][ intern err] Known incorrect assumption in the frontend: Expected source expression for OpaqueValueExpr
+[67952][ intern err] LoginViewController.m:197:5: ERROR translating statement 'OpaqueValueExpr'
+[67952][ intern err] LoginViewController.m:193:5-197:5: ERROR translating statement 'IfStmt'
+[67952][ intern err] LoginViewController.m:191:1-198:1: ERROR translating statement 'CompoundStmt'
+[67952][ intern err] Aborting translation of method 'LoginViewController_textFieldDidEndEditing:' in file 'LoginViewController.m'
+[67952][ intern err] Known incorrect assumption in the frontend: Expected source expression for OpaqueValueExpr
+[67952][ intern err] 
+[67952][      debug] Elapsed: 39.167ms.
+[67952][      debug] 
+[67952][ extern err] Error: the following clang command did not run successfully:
+[67952][ extern err]     /usr/local/Cellar/infer/0.15.0/lib/infer/facebook-clang-plugins/clang/install/bin/clang
+[67952][ extern err]     @/var/folders/0m/2vzjlv1x67n4t1jx5fwmjynr0000gn/T/clang_command_.tmp.02b7b1.txt
+[67952][ extern err]   ++Contents of '/var/folders/0m/2vzjlv1x67n4t1jx5fwmjynr0000gn/T/clang_command_.tmp.02b7b1.txt':
+[67952][ extern err]     "-cc1" "-load"
+[67952][ extern err]     "/usr/local/Cellar/infer/0.15.0/lib/infer/infer/bin/../../facebook-clang-plugins/libtooling/build/FacebookClangPlugin.dylib"
+[67952][ extern err]     "-add-plugin" "BiniouASTExporter" "-plugin-arg-BiniouASTExporter" "-"
+[67952][ extern err]     "-plugin-arg-BiniouASTExporter" "PREPEND_CURRENT_DIR=1"
+[67952][ extern err]     "-plugin-arg-BiniouASTExporter" "MAX_STRING_SIZE=65535" "-cc1" "-triple"
+[67952][ extern err]     "x86_64-apple-macosx10.14.0" "-Wdeprecated-objc-isa-usage"
+[67952][ extern err]     "-Werror=deprecated-objc-isa-usage" "-emit-obj" "-mrelax-all"
+[67952][ extern err]     "-disable-free" "-disable-llvm-verifier" "-discard-value-names"
+[67952][ extern err]     "-main-file-name" "LoginViewController.m" "-mrelocation-model" "pic"
+[67952][ extern err]     "-pic-level" "2" "-mthread-model" "posix" "-mdisable-fp-elim"
+[67952][ extern err]     "-masm-verbose" "-munwind-tables" "-target-cpu" "penryn"
+[67952][ extern err]     "-dwarf-column-info" "-debugger-tuning=lldb" "-target-linker-version"
+[67952][ extern err]     "351.8" "-coverage-notes-file"
+[67952][ extern err]     "/Users/jame/Desktop/CSE/SE_Team3/iOSProject/iOSProject/Classes/Login/LoginViewController.gcno"
+[67952][ extern err]     "-resource-dir"
+[67952][ extern err]     "/usr/local/Cellar/infer/0.15.0/lib/infer/facebook-clang-plugins/clang/install/lib/clang/7.0.0"
+[67952][ extern err]     "-include"
+[67952][ extern err]     "/usr/local/Cellar/infer/0.15.0/lib/infer/infer/bin/../lib/clang_wrappers/global_defines.h"
+[67952][ extern err]     "-Wno-ignored-optimization-argument" "-Wno-everything"
+[67952][ extern err]     "-fdebug-compilation-dir"
+[67952][ extern err]     "/Users/jame/Desktop/CSE/SE_Team3/iOSProject/iOSProject/Classes/Login"
+[67952][ extern err]     "-ferror-limit" "19" "-fmessage-length" "0" "-stack-protector" "1"
+[67952][ extern err]     "-fblocks" "-fencode-extended-block-signature"
+[67952][ extern err]     "-fobjc-runtime=macosx-10.14.0" "-fobjc-exceptions" "-fexceptions"
+[67952][ extern err]     "-fmax-type-align=16" "-fdiagnostics-show-option" "-o"
+[67952][ extern err]     "LoginViewController.o" "-x" "objective-c" "LoginViewController.m" "-O0"
+[67952][ extern err]     "-include"
+[67952][ extern err]     "/usr/local/Cellar/infer/0.15.0/lib/infer/infer/bin/../lib/clang_wrappers/global_defines.h"
+[67952][ extern err]     "-Wno-everything"
+[67952][ extern err]   
+[67952][ extern err] 

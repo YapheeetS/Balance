@@ -553,14 +553,12 @@
 				3B8C575E23418CA20059BB21 /* FSCalendarWeekdayView.h */,
 				3B8C575F23418CA20059BB21 /* FSCalendarCollectionViewLayout.h */,
 				3B8C576023418CA20059BB21 /* FSCalendarScopeHandle.h */,
-				3B8C576123418CA20059BB21 /* FSCalendarDelegationProxy.m */,
 				3B8C576223418CA20059BB21 /* FSCalendarExtensions.h */,
 				3B8C576323418CA20059BB21 /* FSCalendarDelegationFactory.m */,
 				3B8C576423418CA20059BB21 /* FSCalendarCalculator.h */,
 				3B8C576523418CA20059BB21 /* FSCalendarHeaderView.h */,
 				3B8C576623418CA20059BB21 /* FSCalendarConstants.h */,
 				3B8C576723418CA20059BB21 /* FSCalendarAppearance.h */,
-				3B8C576823418CA20059BB21 /* FSCalendarTransitionCoordinator.h */,
 				3B8C576923418CA20059BB21 /* FSCalendarCell.m */,
 				3B8C576A23418CA20059BB21 /* FSCalendarStickyHeader.m */,
 				3B8C576B23418CA20059BB21 /* FSCalendar.m */,
@@ -572,6 +570,7 @@
 				3B8C577123418CA20059BB21 /* FSCalendarDelegationFactory.h */,
 				3B8C577223418CA20059BB21 /* FSCalendarExtensions.m */,
 				3B8C577323418CA20059BB21 /* FSCalendarDelegationProxy.h */,
+				3B8C576123418CA20059BB21 /* FSCalendarDelegationProxy.m */,
 				3B8C577423418CA20059BB21 /* FSCalendar+Deprecated.m */,
 				3B8C577523418CA20059BB21 /* FSCalendarConstants.m */,
 				3B8C577623418CA20059BB21 /* FSCalendarCalculator.m */,
@@ -579,8 +578,9 @@
 				3B8C577823418CA20059BB21 /* FSCalendarStickyHeader.h */,
 				3B8C577923418CA20059BB21 /* FSCalendar.h */,
 				3B8C577A23418CA20059BB21 /* FSCalendarCell.h */,
-				3B8C577B23418CA20059BB21 /* FSCalendarTransitionCoordinator.m */,
 				3B8C577C23418CA20059BB21 /* FSCalendarAppearance.m */,
+				3B8C576823418CA20059BB21 /* FSCalendarTransitionCoordinator.h */,
+				3B8C577B23418CA20059BB21 /* FSCalendarTransitionCoordinator.m */,
 			);
 			path = FSCalendar;
 			sourceTree = "<group>";

@@ -1,0 +1,814 @@
+Found 100 issues
+
+Pods/SDWebImage/SDWebImage/Private/SDInternalMacros.m:12: warning: PARAMETER_NOT_NULL_CHECKED
+  pointer `*block` last accessed on line 12 could be null and is dereferenced at line 12, column 5.
+  10.   
+  11.   void sd_executeCleanupBlock (__strong sd_cleanupBlock_t *block) {
+  12. >     (*block)();
+  13.   }
+
+Pods/Masonry/Masonry/View+MASAdditions.m:17: warning: PARAMETER_NOT_NULL_CHECKED
+  Parameter `block` is not checked for null, there could be a null pointer dereference: pointer `block` could be null and is dereferenced at line 17, column 5.
+  15.       self.translatesAutoresizingMaskIntoConstraints = NO;
+  16.       MASConstraintMaker *constraintMaker = [[MASConstraintMaker alloc] initWithView:self];
+  17. >     block(constraintMaker);
+  18.       return [constraintMaker install];
+  19.   }
+
+Pods/Masonry/Masonry/View+MASAdditions.m:25: warning: PARAMETER_NOT_NULL_CHECKED
+  Parameter `block` is not checked for null, there could be a null pointer dereference: pointer `block` could be null and is dereferenced at line 25, column 5.
+  23.       MASConstraintMaker *constraintMaker = [[MASConstraintMaker alloc] initWithView:self];
+  24.       constraintMaker.updateExisting = YES;
+  25. >     block(constraintMaker);
+  26.       return [constraintMaker install];
+  27.   }
+
+Pods/Masonry/Masonry/View+MASAdditions.m:33: warning: PARAMETER_NOT_NULL_CHECKED
+  Parameter `block` is not checked for null, there could be a null pointer dereference: pointer `block` could be null and is dereferenced at line 33, column 5.
+  31.       MASConstraintMaker *constraintMaker = [[MASConstraintMaker alloc] initWithView:self];
+  32.       constraintMaker.removeExisting = YES;
+  33. >     block(constraintMaker);
+  34.       return [constraintMaker install];
+  35.   }
+
+iOSProject/Classes/Category/UIImage+Extension.m:34: error: DEAD_STORE
+  The value written to &newImage (type UIImage*) is never used.
+  32.   // !!!: 图片压缩
+  33.   + (UIImage *)imageCompressed:(UIImage *)sourceImage withdefineWidth:(CGFloat)defineWidth {
+  34. >     UIImage *newImage = [UIImage new];
+  35.       CGSize imageSize = sourceImage.size;
+  36.       CGFloat width = imageSize.width;
+
+Pods/AFNetworking/AFNetworking/AFURLSessionManager.m:48: warning: PARAMETER_NOT_NULL_CHECKED
+  Parameter `block` is not checked for null, there could be a null pointer dereference: pointer `block` could be null and is dereferenced at line 48, column 9.
+  46.           dispatch_sync(url_session_manager_creation_queue(), block);
+  47.       } else {
+  48. >         block();
+  49.       }
+  50.   }
+
+Pods/Masonry/Masonry/MASCompositeConstraint.m:45: error: NULL_DEREFERENCE
+  pointer `newConstraint` last assigned on line 43 could be null and is dereferenced by call to `addObject:` at line 45, column 5.
+  43.       MASConstraint *newConstraint = [strongDelegate constraint:self addConstraintWithLayoutAttribute:layoutAttribute];
+  44.       newConstraint.delegate = self;
+  45. >     [self.childConstraints addObject:newConstraint];
+  46.       return newConstraint;
+  47.   }
+
+iOSProject/Classes/Category/NSString+Extension.m:71: error: DEAD_STORE
+  The value written to &checkBit (type NSString*) is never used.
+  69.           + [IDCardNumber substringWithRange:NSMakeRange(9, 1)].intValue * 3;
+  70.       NSInteger remainder = summary % 11;
+  71. >     NSString *checkBit = @"";
+  72.       NSString *checkString = @"10X98765432";
+  73.       checkBit = [checkString substringWithRange:NSMakeRange(remainder, 1)];// 判断校验位
+
+Pods/UITableView+FDTemplateLayoutCell/Classes/UITableView+FDIndexPathHeightCache.m:49: warning: PARAMETER_NOT_NULL_CHECKED
+  Parameter `block` is not checked for null, there could be a null pointer dereference: pointer `block` could be null and is dereferenced at line 49, column 5.
+  47.   
+  48.   - (void)enumerateAllOrientationsUsingBlock:(void (^)(FDIndexPathHeightsBySection *heightsBySection))block {
+  49. >     block(self.heightsBySectionForPortrait);
+  50.       block(self.heightsBySectionForLandscape);
+  51.   }
+
+Pods/AFNetworking/AFNetworking/AFNetworkReachabilityManager.m:57: error: DEAD_STORE
+  The value written to &status (type int) is never used.
+  55.       BOOL isNetworkReachable = (isReachable && (!needsConnection || canConnectWithoutUserInteraction));
+  56.   
+  57. >     AFNetworkReachabilityStatus status = AFNetworkReachabilityStatusUnknown;
+  58.       if (isNetworkReachable == NO) {
+  59.           status = AFNetworkReachabilityStatusNotReachable;
+
+iOSProject/Classes/Main/Activity/Controller/LHJActivityViewController.m:71: error: DEAD_STORE
+  The value written to &end (type float) is never used.
+  69.       
+  70.       float done = consume / target;
+  71. >     float end = 270;
+  72.       if (done >= 1.0) {
+  73.           end = 630;
+
+Pods/AFNetworking/AFNetworking/AFSecurityPolicy.m:122: error: MEMORY_LEAK
+  memory dynamically allocated by call to `SecTrustCopyPublicKey()` at line 122, column 53 is not reachable after line 122, column 9.
+  120.           __Require_noErr_Quiet(SecTrustEvaluate(trust, &result), _out);
+  121.   
+  122. >         [trustChain addObject:(__bridge_transfer id)SecTrustCopyPublicKey(trust)];
+  123.   
+  124.       _out:
+
+iOSProject/Classes/Category/UIImage+Extension.m:168: error: DEAD_STORE
+  The value written to &error (type long) is never used.
+  166.       outBuffer2.rowBytes = CGImageGetBytesPerRow(img);
+  167.       //Convolves a region of interest within an ARGB8888 source image by an implicit M x N kernel that has the effect of a box filter.
+  168. >     error = vImageBoxConvolve_ARGB8888(&inBuffer, &outBuffer2, NULL, 0, 0, boxSize, boxSize, NULL, kvImageEdgeExtend);
+  169.       error = vImageBoxConvolve_ARGB8888(&outBuffer2, &inBuffer, NULL, 0, 0, boxSize, boxSize, NULL, kvImageEdgeExtend);
+  170.       error = vImageBoxConvolve_ARGB8888(&inBuffer, &outBuffer, NULL, 0, 0, boxSize, boxSize, NULL, kvImageEdgeExtend);
+
+iOSProject/Classes/Category/UIImage+Extension.m:169: error: DEAD_STORE
+  The value written to &error (type long) is never used.
+  167.       //Convolves a region of interest within an ARGB8888 source image by an implicit M x N kernel that has the effect of a box filter.
+  168.       error = vImageBoxConvolve_ARGB8888(&inBuffer, &outBuffer2, NULL, 0, 0, boxSize, boxSize, NULL, kvImageEdgeExtend);
+  169. >     error = vImageBoxConvolve_ARGB8888(&outBuffer2, &inBuffer, NULL, 0, 0, boxSize, boxSize, NULL, kvImageEdgeExtend);
+  170.       error = vImageBoxConvolve_ARGB8888(&inBuffer, &outBuffer, NULL, 0, 0, boxSize, boxSize, NULL, kvImageEdgeExtend);
+  171.       if (error) {
+
+iOSProject/Common/Controller/LHJNavigationController.m:125: error: DEAD_STORE
+  The value written to &ivarListArr (type NSMutableArray*) is never used.
+  123.       Ivar *ivars = class_copyIvarList([UIGestureRecognizer class], &count);
+  124.       // 遍历这个属性数组，拿到每一个属性
+  125. >     NSMutableArray *ivarListArr = [NSMutableArray array];
+  126.       // 初始化一个count那么长的可变数组
+  127.       NSMutableArray *mutableList = [NSMutableArray arrayWithCapacity:count];
+
+iOSProject/Common/Controller/LHJNavigationController.m:138: error: DEAD_STORE
+  The value written to &ivarListArr (type NSMutableArray*) is never used.
+  136.       free(ivars);
+  137.   
+  138. >     ivarListArr = [NSMutableArray arrayWithArray:mutableList];
+  139.   }
+  140.   
+
+iOSProject/Common/Controller/LHJNavigationController.m:130: error: NULL_DEREFERENCE
+  pointer `ivars` last assigned on line 123  at line 130, column 45.
+  128.       for (unsigned int i = 0; i < count; i++) {
+  129.           // 获取成员变量名
+  130. >         const char *ivarName = ivar_getName(ivars[i]);
+  131.           // 获取类的成员变量的类型
+  132.           //const char *ivarType = ivar_getTypeEncoding(ivars[i]);
+
+Pods/PGDatePicker/PGDatePicker/PGDatePicker+Logic.m:140: error: DEAD_STORE
+  The value written to &refresh (type _Bool) is never used.
+  138.       NSInteger length = 23;
+  139.       if (self.minimumComponents.month == dateComponents.month && self.minimumComponents.day == dateComponents.day) {
+  140. >         refresh = true;
+  141.           NSInteger index = length - self.minimumComponents.hour;
+  142.           NSMutableArray *hours = [NSMutableArray arrayWithCapacity:index];
+
+Pods/PGDatePicker/PGDatePicker/PGDatePicker+Logic.m:148: error: DEAD_STORE
+  The value written to &refresh (type _Bool) is never used.
+  146.           self.hourList = hours;
+  147.       }else if (self.maximumComponents.month == dateComponents.month && self.maximumComponents.day == dateComponents.day) {
+  148. >         refresh = true;
+  149.           NSInteger index = self.maximumComponents.hour;
+  150.           NSMutableArray *hours = [NSMutableArray arrayWithCapacity:index];
+
+Pods/Masonry/Masonry/MASConstraint.m:129: error: USE_AFTER_LIFETIME
+  Reference to stack variable _cmd is returned at line 129, column 1.
+  127.           return self;
+  128.       };
+  129. > }
+  130.   
+  131.   - (MASConstraint * (^)(id offset))mas_offset {
+
+Pods/MJExtension/MJExtension/NSObject+MJProperty.m:143: warning: PARAMETER_NOT_NULL_CHECKED
+  Parameter `enumeration` is not checked for null, there could be a null pointer dereference: pointer `enumeration` could be null and is dereferenced at line 143, column 9.
+  141.       BOOL stop = NO;
+  142.       for (MJProperty *property in cachedProperties) {
+  143. >         enumeration(property, &stop);
+  144.           if (stop) break;
+  145.       }
+
+Pods/UITableView+FDTemplateLayoutCell/Classes/UITableView+FDIndexPathHeightCache.m:136: warning: PARAMETER_NOT_NULL_CHECKED
+  Parameter `callout` is not checked for null, there could be a null pointer dereference: pointer `callout` could be null and is dereferenced at line 136, column 5.
+  134.   // displaying cells are not matched when reloading.
+  135.   static void __FD_TEMPLATE_LAYOUT_CELL_PRIMARY_CALL_IF_CRASH_NOT_OUR_BUG__(void (^callout)(void)) {
+  136. >     callout();
+  137.   }
+  138.   #define FDPrimaryCall(...) do {__FD_TEMPLATE_LAYOUT_CELL_PRIMARY_CALL_IF_CRASH_NOT_OUR_BUG__(^{__VA_ARGS__});} while(0)
+
+Pods/Masonry/Masonry/MASViewConstraint.m:144: error: USE_AFTER_LIFETIME
+  Reference to stack variable _cmd is returned at line 144, column 1.
+  142.           return self;
+  143.       };
+  144. > }
+  145.   
+  146.   
+
+Pods/Masonry/Masonry/MASViewConstraint.m:155: error: USE_AFTER_LIFETIME
+  Reference to stack variable _cmd is returned at line 155, column 1.
+  153.           return self;
+  154.       };
+  155. > }
+  156.   
+  157.   #pragma mark - MASLayoutPriority proxy
+
+iOSProject/Classes/Main/Diet/Controller/LHJDietViewController.m:156: error: DEAD_STORE
+  The value written to &weakSelf (type LHJDietViewController*) is never used.
+  154.   -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+  155.       
+  156. >     xWEAKSELF;
+  157.   //    NSLog(@"name - %@",[self.eatArray[indexPath.row]objectForKey:@"name"]);
+  158.       if (indexPath.row == 0) {
+
+Pods/Masonry/Masonry/MASViewConstraint.m:167: error: USE_AFTER_LIFETIME
+  Reference to stack variable _cmd is returned at line 167, column 1.
+  165.           return self;
+  166.       };
+  167. > }
+  168.   
+  169.   #pragma mark - NSLayoutRelation proxy
+
+Pods/MJExtension/MJExtension/NSObject+MJProperty.m:167: error: NULL_DEREFERENCE
+  pointer `properties` last assigned on line 163  at line 167, column 83.
+  165.                   // 2.遍历每一个成员变量
+  166.                   for (unsigned int i = 0; i<outCount; i++) {
+  167. >                     MJProperty *property = [MJProperty cachedPropertyWithProperty:properties[i]];
+  168.                       // 过滤掉Foundation框架类里面的属性
+  169.                       if ([MJFoundation isClassFromFoundation:property.srcClass]) continue;
+
+Pods/PGDatePicker/PGDatePicker/PGDatePicker+Logic.m:193: error: DEAD_STORE
+  The value written to &refresh (type _Bool) is never used.
+  191.       NSInteger length = 23;
+  192.       if (self.minimumComponents.year == dateComponents.year && self.minimumComponents.month == dateComponents.month && self.minimumComponents.day == dateComponents.day) {
+  193. >         refresh = true;
+  194.           NSInteger index = length - self.minimumComponents.hour;
+  195.           NSMutableArray *hours = [NSMutableArray arrayWithCapacity:index];
+
+Pods/PGDatePicker/PGDatePicker/PGDatePicker+Logic.m:201: error: DEAD_STORE
+  The value written to &refresh (type _Bool) is never used.
+  199.           self.hourList = hours;
+  200.       }else if (self.maximumComponents.year == dateComponents.year && self.maximumComponents.month == dateComponents.month && self.maximumComponents.day == dateComponents.day) {
+  201. >         refresh = true;
+  202.           NSInteger index = self.maximumComponents.hour;
+  203.           NSMutableArray *hours = [NSMutableArray arrayWithCapacity:index];
+
+Pods/Masonry/Masonry/MASViewConstraint.m:193: error: USE_AFTER_LIFETIME
+  Reference to stack variable _cmd is returned at line 193, column 1.
+  191.           }
+  192.       };
+  193. > }
+  194.   
+  195.   #pragma mark - Semantic properties
+
+iOSProject/Common/SBRuler/SBScrollRulerView.m:201: error: DEAD_STORE
+  The value written to &rulerView (type SBRulerView*) is never used.
+  199.       }
+  200.       if (!rulerView){
+  201. >         rulerView  = [[SBRulerView alloc] init];
+  202.           rulerView  = [[SBRulerView alloc]initWithFrame:frame];
+  203.           rulerView.tag               = 1002;
+
+Pods/PGDatePicker/PGDatePicker/PGDatePicker+Logic.m:243: error: DEAD_STORE
+  The value written to &refresh (type _Bool) is never used.
+  241.       NSInteger length = 23;
+  242.       if (self.minimumComponents.month == dateComponents.month && self.minimumComponents.day == dateComponents.day) {
+  243. >         refresh = true;
+  244.           NSInteger index = length - self.minimumComponents.hour;
+  245.           NSMutableArray *hours = [NSMutableArray arrayWithCapacity:index];
+
+Pods/PGDatePicker/PGDatePicker/PGDatePicker+Logic.m:251: error: DEAD_STORE
+  The value written to &refresh (type _Bool) is never used.
+  249.           self.hourList = hours;
+  250.       }else if (self.maximumComponents.month == dateComponents.month && self.maximumComponents.day == dateComponents.day) {
+  251. >         refresh = true;
+  252.           NSInteger index = self.maximumComponents.hour;
+  253.           NSMutableArray *hours = [NSMutableArray arrayWithCapacity:index];
+
+iOSProject/Classes/Main/Diet/Controller/LHJDietViewController.m:224: error: DEAD_STORE
+  The value written to &weakSelf (type LHJDietViewController*) is never used.
+  222.   -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+  223.       
+  224. >     xWEAKSELF;
+  225.       XYKEateHeardViewCell *cell = [[NSBundle mainBundle]loadNibNamed:@"XYKEateHeardViewCell" owner:self options:nil][0];
+  226.       cell.frame = CGRectMake(0, 0, xScreenWidth, 328 * KHeight);
+
+Pods/AFNetworking/AFNetworking/AFSecurityPolicy.m:243: error: MEMORY_LEAK
+  memory dynamically allocated by call to `SecPolicyCreateBasicX509()` at line 243, column 51 is not reachable after line 243, column 9.
+  241.           [policies addObject:(__bridge_transfer id)SecPolicyCreateSSL(true, (__bridge CFStringRef)domain)];
+  242.       } else {
+  243. >         [policies addObject:(__bridge_transfer id)SecPolicyCreateBasicX509()];
+  244.       }
+  245.   
+
+Pods/AFNetworking/AFNetworking/AFSecurityPolicy.m:241: error: MEMORY_LEAK
+  memory dynamically allocated by call to `SecPolicyCreateSSL()` at line 241, column 51 is not reachable after line 241, column 9.
+  239.       NSMutableArray *policies = [NSMutableArray array];
+  240.       if (self.validatesDomainName) {
+  241. >         [policies addObject:(__bridge_transfer id)SecPolicyCreateSSL(true, (__bridge CFStringRef)domain)];
+  242.       } else {
+  243.           [policies addObject:(__bridge_transfer id)SecPolicyCreateBasicX509()];
+
+Pods/SDWebImage/SDWebImage/SDImageCoderHelper.m:265: error: MEMORY_LEAK
+  memory dynamically allocated by call to `colorSpaceGetDeviceRGB` at line 265, column 83 is not reachable after line 265, column 5.
+  263.       CGBitmapInfo bitmapInfo = kCGBitmapByteOrder32Host;
+  264.       bitmapInfo |= hasAlpha ? kCGImageAlphaPremultipliedFirst : kCGImageAlphaNoneSkipFirst;
+  265. >     CGContextRef context = CGBitmapContextCreate(NULL, newWidth, newHeight, 8, 0, [self colorSpaceGetDeviceRGB], bitmapInfo);
+  266.       if (!context) {
+  267.           return NULL;
+
+iOSProject/Classes/Category/UIImage+Extension.m:261: error: DEAD_STORE
+  The value written to &newImage (type UIImage*) is never used.
+  259.   - (UIImage *)imageByScalingToSize:(CGSize)targetSize {
+  260.       UIImage *sourceImage = self;
+  261. >     UIImage *newImage = [UIImage new];
+  262.       CGSize imageSize = sourceImage.size;
+  263.       CGFloat width = imageSize.width;
+
+Pods/Masonry/Masonry/MASConstraintMaker.m:264: warning: PARAMETER_NOT_NULL_CHECKED
+  Parameter `group` is not checked for null, there could be a null pointer dereference: pointer `group` could be null and is dereferenced at line 264, column 9.
+  262.       return ^id(dispatch_block_t group) {
+  263.           NSInteger previousCount = self.constraints.count;
+  264. >         group();
+  265.   
+  266.           NSArray *children = [self.constraints subarrayWithRange:NSMakeRange(previousCount, self.constraints.count - previousCount)];
+
+Pods/PGDatePicker/PGDatePicker/PGDatePicker+Logic.m:291: error: DEAD_STORE
+  The value written to &refresh (type _Bool) is never used.
+  289.       BOOL tmp = refresh;
+  290.       if (self.minimumComponents.hour == dateComponents.hour) {
+  291. >         refresh = true;
+  292.           NSInteger index = length - self.minimumComponents.minute;
+  293.           NSMutableArray *minutes = [NSMutableArray arrayWithCapacity:index];
+
+Pods/PGDatePicker/PGDatePicker/PGDatePicker+Logic.m:303: error: DEAD_STORE
+  The value written to &refresh (type _Bool) is never used.
+  301.           self.minuteList = minutes;
+  302.       }else if (self.maximumComponents.hour == dateComponents.hour) {
+  303. >         refresh = true;
+  304.           NSInteger index = self.maximumComponents.minute;
+  305.           NSMutableArray *minutes = [NSMutableArray arrayWithCapacity:index];
+
+Pods/SDWebImage/SDWebImage/SDImageCoderHelper.m:350: error: MEMORY_LEAK
+  memory dynamically allocated by call to `colorSpaceGetDeviceRGB` at line 341, column 41 is not reachable after line 350, column 9.
+  348.           // Since the original image here has no alpha info, use kCGImageAlphaNoneSkipFirst
+  349.           // to create bitmap graphics contexts without alpha info.
+  350. >         destContext = CGBitmapContextCreate(NULL,
+  351.                                               destResolution.width,
+  352.                                               destResolution.height,
+
+Pods/PGPickerView/PGPickerView/PGPickerColumnView.m:337: error: DEAD_STORE
+  The value written to &row (type long) is never used.
+  335.           position = UITableViewScrollPositionMiddle;
+  336.       }
+  337. >     row = indexPath.row - self.offsetCount;
+  338.       [tableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:indexPath.row - self.offsetCount inSection: indexPath.section] animated:true scrollPosition:position];
+  339.       self.selectedRow = indexPath.row - self.offsetCount;
+
+Pods/PGDatePicker/PGDatePicker/PGDatePicker.m:389: error: DEAD_STORE
+  The value written to &year (type long) is never used.
+  387.           NSInteger year = components.year - 10;
+  388.           if (year <= self.minimumComponents.year) {
+  389. >             year = self.minimumComponents.year;
+  390.           }else {
+  391.               components.year = year;
+
+Pods/PGPickerView/PGPickerView/PGPickerColumnView.m:398: error: DEAD_STORE
+  The value written to &attriString (type NSAttributedString*) is never used.
+  396.       
+  397.       NSInteger index =  [self setupSelectedRow];
+  398. >     NSAttributedString *attriString = [[NSAttributedString alloc]initWithString:@""];
+  399.       if (self.datas.count > index) {
+  400.           attriString = self.datas[index];
+
+iOSProject/Common/FSCalendar/FSCalendarCollectionViewLayout.m:432: error: UNINITIALIZED_VALUE
+  The value read from x was never initialized.
+  430.               CGFloat width = self.widths[column];
+  431.               CGFloat height = self.heights[row];
+  432. >             CGRect frame = CGRectMake(x, y, width, height);
+  433.               frame;
+  434.           });
+
+iOSProject/Common/FSCalendar/FSCalendarCollectionViewLayout.m:432: error: UNINITIALIZED_VALUE
+  The value read from y was never initialized.
+  430.               CGFloat width = self.widths[column];
+  431.               CGFloat height = self.heights[row];
+  432. >             CGRect frame = CGRectMake(x, y, width, height);
+  433.               frame;
+  434.           });
+
+Pods/SDWebImage/SDWebImage/SDWebImageDownloaderOperation.m:448: error: DEAD_STORE
+  The value written to &disposition (type int) is never used.
+  446.   - (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task didReceiveChallenge:(NSURLAuthenticationChallenge *)challenge completionHandler:(void (^)(NSURLSessionAuthChallengeDisposition disposition, NSURLCredential *credential))completionHandler {
+  447.       
+  448. >     NSURLSessionAuthChallengeDisposition disposition = NSURLSessionAuthChallengePerformDefaultHandling;
+  449.       __block NSURLCredential *credential = nil;
+  450.       
+
+Pods/PGDatePicker/PGDatePicker/PGDatePicker+Logic.m:491: error: DEAD_STORE
+  The value written to &refresh (type _Bool) is never used.
+  489.       BOOL tmp = refresh;
+  490.       if (self.minimumComponents.month == dateComponents.month && self.minimumComponents.day == dateComponents.day && self.minimumComponents.hour == dateComponents.hour) {
+  491. >         refresh = true;
+  492.           NSInteger index = length - self.minimumComponents.minute;
+  493.           NSMutableArray *minutes = [NSMutableArray arrayWithCapacity:index];
+
+Pods/PGDatePicker/PGDatePicker/PGDatePicker+Logic.m:503: error: DEAD_STORE
+  The value written to &refresh (type _Bool) is never used.
+  501.           self.minuteList = minutes;
+  502.       }else if (self.maximumComponents.month == dateComponents.month && self.maximumComponents.day == dateComponents.day && self.maximumComponents.hour == dateComponents.hour) {
+  503. >         refresh = true;
+  504.           NSInteger index = self.maximumComponents.minute;
+  505.           NSMutableArray *minutes = [NSMutableArray arrayWithCapacity:index];
+
+iOSProject/Common/FSCalendar/FSCalendarCollectionViewLayout.m:489: error: UNINITIALIZED_VALUE
+  The value read from x was never initialized.
+  487.               CGFloat width = self.collectionView.fs_width;
+  488.               CGFloat height = FSCalendarStandardSeparatorThickness;
+  489. >             attributes.frame = CGRectMake(x, y, width, height);
+  490.               attributes.zIndex = NSIntegerMax;
+  491.               self.rowSeparatorAttributes[indexPath] = attributes;
+
+iOSProject/Common/FSCalendar/FSCalendarCollectionViewLayout.m:489: error: UNINITIALIZED_VALUE
+  The value read from y was never initialized.
+  487.               CGFloat width = self.collectionView.fs_width;
+  488.               CGFloat height = FSCalendarStandardSeparatorThickness;
+  489. >             attributes.frame = CGRectMake(x, y, width, height);
+  490.               attributes.zIndex = NSIntegerMax;
+  491.               self.rowSeparatorAttributes[indexPath] = attributes;
+
+Pods/PGDatePicker/PGDatePicker/PGDatePicker.m:492: error: DEAD_STORE
+  The value written to &row (type long) is never used.
+  490.   
+  491.   - (void)pickerView:(PGPickerView *)pickerView title:(NSString *)title didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
+  492. >     row = row + 1;
+  493.       switch (self.datePickerMode) {
+  494.           case PGDatePickerModeYearAndMonth:
+
+Pods/SDWebImage/SDWebImage/SDImageCoderHelper.m:525: error: DEAD_STORE
+  The value written to &shouldScaleDown (type _Bool) is never used.
+  523.   
+  524.   + (BOOL)shouldScaleDownImage:(nonnull UIImage *)image limitBytes:(NSUInteger)bytes {
+  525. >     BOOL shouldScaleDown = YES;
+  526.       
+  527.       CGImageRef sourceImageRef = image.CGImage;
+
+Pods/AFNetworking/AFNetworking/AFURLSessionManager.m:943: error: DEAD_STORE
+  The value written to &disposition (type int) is never used.
+  941.    completionHandler:(void (^)(NSURLSessionAuthChallengeDisposition disposition, NSURLCredential *credential))completionHandler
+  942.   {
+  943. >     NSURLSessionAuthChallengeDisposition disposition = NSURLSessionAuthChallengePerformDefaultHandling;
+  944.       __block NSURLCredential *credential = nil;
+  945.   
+
+Pods/AFNetworking/AFNetworking/AFURLSessionManager.m:994: error: DEAD_STORE
+  The value written to &disposition (type int) is never used.
+  992.    completionHandler:(void (^)(NSURLSessionAuthChallengeDisposition disposition, NSURLCredential *credential))completionHandler
+  993.   {
+  994. >     NSURLSessionAuthChallengeDisposition disposition = NSURLSessionAuthChallengePerformDefaultHandling;
+  995.       __block NSURLCredential *credential = nil;
+  996.   
+
+Pods/SDCycleScrollView/SDCycleScrollView/Lib/SDCycleScrollView/PageControl/TAPageControl.h:61: warning: ASSIGN_POINTER_WARNING
+  Property `delegate` is a pointer type marked with the `assign` attribute at line 61, column 1. Use a different attribute like `strong` or `weak`.
+  59.    * Delegate for TAPageControl
+  60.    */
+  61. > @property(nonatomic,assign) id<TAPageControlDelegate> delegate;
+  62.   
+  63.   
+
+Pods/SVProgressHUD/SVProgressHUD/SVProgressHUD.m:62: warning: REGISTERED_OBSERVER_BEING_DEALLOCATED
+  Object self is registered in a notification center but not being removed before deallocation at line 62, column 1. Consider removing the object from the notification center before its deallocation.
+  60.   @end
+  61.   
+  62. > @implementation SVProgressHUD {
+  63.       BOOL _isInitializing;
+  64.   }
+
+iOSProject/Common/FSCalendar/FSCalendar.m:85: warning: STRONG_DELEGATE_WARNING
+  Property or ivar `delegateProxy` declared strong at line 85, column 1. In general delegates should be declared weak or assign.
+  83.   
+  84.   @property (strong, nonatomic) FSCalendarDelegationProxy  *dataSourceProxy;
+  85. > @property (strong, nonatomic) FSCalendarDelegationProxy  *delegateProxy;
+  86.   
+  87.   @property (strong, nonatomic) NSIndexPath *lastPressedIndexPath;
+
+Pods/SDWebImage/SDWebImage/SDWebImageDownloaderConfig.h:72: warning: ASSIGN_POINTER_WARNING
+  Property `operationClass` is a pointer type marked with the `assign` attribute at line 72, column 1. Use a different attribute like `strong` or `weak`.
+  70.    * @note Passing `NSOperation<SDWebImageDownloaderOperation>` to set as default. Passing `nil` will revert to `SDWebImageDownloaderOperation`.
+  71.    */
+  72. > @property (nonatomic, assign, nullable) Class operationClass;
+  73.   
+  74.   /**
+
+Pods/MJExtension/MJExtension/MJProperty.h:26: warning: ASSIGN_POINTER_WARNING
+  Property `srcClass` is a pointer type marked with the `assign` attribute at line 26, column 1. Use a different attribute like `strong` or `weak`.
+  24.   @property (nonatomic, readonly) MJPropertyType *type;
+  25.   /** 成员属性来源于哪个类（可能是父类） */
+  26. > @property (nonatomic, assign) Class srcClass;
+  27.   
+  28.   /**** 同一个成员属性 - 父类和子类的行为可能不一致（originKey、propertyKeys、objectClassInArray） ****/
+
+iOSProject/Common/FSCalendar/FSCalendarTransitionCoordinator.h:55: warning: ASSIGN_POINTER_WARNING
+  Property `focusedDate` is a pointer type marked with the `assign` attribute at line 55, column 1. Use a different attribute like `strong` or `weak`.
+  53.   @property (strong, nonatomic) NSDate *targetPage;
+  54.   @property (assign, nonatomic) NSInteger focusedRowNumber;
+  55. > @property (assign, nonatomic) NSDate *focusedDate;
+  56.   @property (strong, nonatomic) NSDate *firstDayOfMonth;
+  57.   
+
+Pods/SDWebImage/SDWebImage/SDImageCacheConfig.h:120: warning: ASSIGN_POINTER_WARNING
+  Property `memoryCacheClass` is a pointer type marked with the `assign` attribute at line 120, column 1. Use a different attribute like `strong` or `weak`.
+  118.    * @note This value does not support dynamic changes. Which means further modification on this value after cache initlized has no effect.
+  119.    */
+  120. > @property (assign, nonatomic, nonnull) Class memoryCacheClass;
+  121.   
+  122.   /**
+
+Pods/SDWebImage/SDWebImage/SDImageCacheConfig.h:127: warning: ASSIGN_POINTER_WARNING
+  Property `diskCacheClass` is a pointer type marked with the `assign` attribute at line 127, column 1. Use a different attribute like `strong` or `weak`.
+  125.    * @note This value does not support dynamic changes. Which means further modification on this value after cache initlized has no effect.
+  126.    */
+  127. > @property (assign ,nonatomic, nonnull) Class diskCacheClass;
+  128.   
+  129.   @end
+
+iOSProject/Classes/Main/Activity/View/CustomView.m:81: warning: DIRECT_ATOMIC_PROPERTY_ACCESS
+  Direct access to ivar `_animTime` of an atomic property at line 81, column 24. Accessing an ivar of an atomic property makes the property nonatomic.
+  79.       
+  80.       // 定义时间间隔
+  81. >     CGFloat timeSlot = _animTime * 1.0/count;     // 每一度停止时间
+  82.       if (timeSlot < 0) timeSlot = 0;
+  83.       
+
+iOSProject/Classes/Main/Activity/View/CustomView.m:77: warning: DIRECT_ATOMIC_PROPERTY_ACCESS
+  Direct access to ivar `_animCountAngle` of an atomic property at line 77, column 18. Accessing an ivar of an atomic property makes the property nonatomic.
+  75.   - (void)doSomething {
+  76.       // 获取循环次数
+  77. >     int count = (_animCountAngle - _startAngle)/2 + 1;
+  78.       if (count <= 0) count = 1;
+  79.       
+
+iOSProject/Classes/Main/Activity/View/CustomView.m:77: warning: DIRECT_ATOMIC_PROPERTY_ACCESS
+  Direct access to ivar `_startAngle` of an atomic property at line 77, column 36. Accessing an ivar of an atomic property makes the property nonatomic.
+  75.   - (void)doSomething {
+  76.       // 获取循环次数
+  77. >     int count = (_animCountAngle - _startAngle)/2 + 1;
+  78.       if (count <= 0) count = 1;
+  79.       
+
+iOSProject/Classes/Main/Activity/View/CustomView.m:134: warning: DIRECT_ATOMIC_PROPERTY_ACCESS
+  Direct access to ivar `_endAngle` of an atomic property at line 134, column 9. Accessing an ivar of an atomic property makes the property nonatomic.
+  132.           bgeAngle = 360;
+  133.       }
+  134. >     if (_endAngle == 360 && _startAngle == 360) {
+  135.           bgsAngle = 0;
+  136.           bgeAngle = 360;
+
+iOSProject/Classes/Main/Activity/View/CustomView.m:151: warning: DIRECT_ATOMIC_PROPERTY_ACCESS
+  Direct access to ivar `_cusBackgroundColor` of an atomic property at line 151, column 23. Accessing an ivar of an atomic property makes the property nonatomic.
+  149.       
+  150.       //边框圆 -- 底色
+  151. >     UIColor *aColor = _cusBackgroundColor;
+  152.       if (!aColor) aColor = [UIColor colorWithRed:78/255.0 green:77/255.0 blue:77/255.0 alpha:1];
+  153.       CGContextSetStrokeColorWithColor(context, aColor.CGColor);  //画笔线的颜色
+
+iOSProject/Classes/Main/Activity/View/CustomView.m:168: warning: DIRECT_ATOMIC_PROPERTY_ACCESS
+  Direct access to ivar `_endAngle` of an atomic property at line 168, column 88. Accessing an ivar of an atomic property makes the property nonatomic.
+  166.       // x,y为圆点坐标，radius半径，startAngle为开始的弧度，endAngle为 结束的弧度，clockwise 0为顺时针，1为逆时针。
+  167.       
+  168. >     CGContextAddArc(context, centerX, centerY, radius, 2*PI*(_startAngle/360.0), 2*PI*(_endAngle/360), NO);      // 添加一个圆
+  169.       CGContextDrawPath(context, kCGPathStroke);              // 绘制路径
+  170.       if (_isHead) {
+
+iOSProject/Classes/Main/Activity/View/CustomView.m:168: warning: DIRECT_ATOMIC_PROPERTY_ACCESS
+  Direct access to ivar `_startAngle` of an atomic property at line 168, column 62. Accessing an ivar of an atomic property makes the property nonatomic.
+  166.       // x,y为圆点坐标，radius半径，startAngle为开始的弧度，endAngle为 结束的弧度，clockwise 0为顺时针，1为逆时针。
+  167.       
+  168. >     CGContextAddArc(context, centerX, centerY, radius, 2*PI*(_startAngle/360.0), 2*PI*(_endAngle/360), NO);      // 添加一个圆
+  169.       CGContextDrawPath(context, kCGPathStroke);              // 绘制路径
+  170.       if (_isHead) {
+
+iOSProject/Classes/Main/Activity/View/CustomView.m:143: warning: DIRECT_ATOMIC_PROPERTY_ACCESS
+  Direct access to ivar `_cusLineWidth` of an atomic property at line 143, column 25. Accessing an ivar of an atomic property makes the property nonatomic.
+  141.       if (radius <= 0) radius = 30;
+  142.       
+  143. >     CGFloat lineWidth = _cusLineWidth;
+  144.       if (lineWidth <= 0) lineWidth = 3.0;
+  145.       //An opaque type that represents a Quartz 2D drawing environment.
+
+iOSProject/Classes/Main/Activity/View/CustomView.m:140: warning: DIRECT_ATOMIC_PROPERTY_ACCESS
+  Direct access to ivar `_cusRadius` of an atomic property at line 140, column 22. Accessing an ivar of an atomic property makes the property nonatomic.
+  138.       CGFloat centerX = CGRectGetWidth(rect)/2.0;
+  139.       CGFloat centerY = CGRectGetHeight(rect)/2.0;
+  140. >     CGFloat radius = _cusRadius;
+  141.       if (radius <= 0) radius = 30;
+  142.       
+
+iOSProject/Classes/Main/Activity/View/CustomView.m:129: warning: DIRECT_ATOMIC_PROPERTY_ACCESS
+  Direct access to ivar `_startAngle` of an atomic property at line 129, column 24. Accessing an ivar of an atomic property makes the property nonatomic.
+  127.       // Drawing code
+  128.       CGFloat bgsAngle = _endAngle;
+  129. >     CGFloat bgeAngle = _startAngle;
+  130.       if (_endAngle == 0 && _startAngle == 0 ) {
+  131.           bgsAngle = 0;
+
+iOSProject/Classes/Main/Activity/View/CustomView.m:178: warning: DIRECT_ATOMIC_PROPERTY_ACCESS
+  Direct access to ivar `_endAngle` of an atomic property at line 178, column 30. Accessing an ivar of an atomic property makes the property nonatomic.
+  176.           CGFloat progressRadian;
+  177.           if (_endAngle == 0) {
+  178. >             progressRadian = DEGREES_TO_RADIANS(_endAngle);
+  179.           } else {
+  180.               progressRadian = DEGREES_TO_RADIANS(_endAngle + 90);
+
+iOSProject/Classes/Main/Activity/View/CustomView.m:130: warning: DIRECT_ATOMIC_PROPERTY_ACCESS
+  Direct access to ivar `_endAngle` of an atomic property at line 130, column 9. Accessing an ivar of an atomic property makes the property nonatomic.
+  128.       CGFloat bgsAngle = _endAngle;
+  129.       CGFloat bgeAngle = _startAngle;
+  130. >     if (_endAngle == 0 && _startAngle == 0 ) {
+  131.           bgsAngle = 0;
+  132.           bgeAngle = 360;
+
+iOSProject/Classes/Main/Activity/View/CustomView.m:180: warning: DIRECT_ATOMIC_PROPERTY_ACCESS
+  Direct access to ivar `_endAngle` of an atomic property at line 180, column 30. Accessing an ivar of an atomic property makes the property nonatomic.
+  178.               progressRadian = DEGREES_TO_RADIANS(_endAngle);
+  179.           } else {
+  180. >             progressRadian = DEGREES_TO_RADIANS(_endAngle + 90);
+  181.           }
+  182.           
+
+iOSProject/Classes/Main/Activity/View/CustomView.m:223: warning: DIRECT_ATOMIC_PROPERTY_ACCESS
+  Direct access to ivar `_endAngle` of an atomic property at line 223, column 112. Accessing an ivar of an atomic property makes the property nonatomic.
+  221.           // x,y为圆点坐标，radius半径，startAngle为开始的弧度，endAngle为 结束的弧度，clockwise 0为顺时针，1为逆时针。
+  222.           
+  223. >         CGContextAddArc(context, centerX, centerY, radius + lineWidth / 2 + 5, 2*PI*(_startAngle/360.0), 2*PI*(_endAngle/360), NO);      // 添加一个圆
+  224.           CGContextDrawPath(context, kCGPathStroke);              // 绘制路径
+  225.   
+
+iOSProject/Classes/Main/Activity/View/CustomView.m:128: warning: DIRECT_ATOMIC_PROPERTY_ACCESS
+  Direct access to ivar `_endAngle` of an atomic property at line 128, column 24. Accessing an ivar of an atomic property makes the property nonatomic.
+  126.   - (void)drawRect:(CGRect)rect {
+  127.       // Drawing code
+  128. >     CGFloat bgsAngle = _endAngle;
+  129.       CGFloat bgeAngle = _startAngle;
+  130.       if (_endAngle == 0 && _startAngle == 0 ) {
+
+iOSProject/Classes/Main/Activity/View/CustomView.m:203: warning: DIRECT_ATOMIC_PROPERTY_ACCESS
+  Direct access to ivar `_cusBackgroundColor` of an atomic property at line 203, column 27. Accessing an ivar of an atomic property makes the property nonatomic.
+  201.           
+  202.           //边框圆 -- 底色
+  203. >         UIColor *aColor = _cusBackgroundColor;
+  204.           if (!aColor) aColor = [UIColor colorWithRed:78/255.0 green:77/255.0 blue:77/255.0 alpha:1];
+  205.           CGContextSetStrokeColorWithColor(context, aColor.CGColor);  //画笔线的颜色
+
+iOSProject/Classes/Main/Activity/View/CustomView.m:134: warning: DIRECT_ATOMIC_PROPERTY_ACCESS
+  Direct access to ivar `_startAngle` of an atomic property at line 134, column 29. Accessing an ivar of an atomic property makes the property nonatomic.
+  132.           bgeAngle = 360;
+  133.       }
+  134. >     if (_endAngle == 360 && _startAngle == 360) {
+  135.           bgsAngle = 0;
+  136.           bgeAngle = 360;
+
+iOSProject/Classes/Main/Activity/View/CustomView.m:130: warning: DIRECT_ATOMIC_PROPERTY_ACCESS
+  Direct access to ivar `_startAngle` of an atomic property at line 130, column 27. Accessing an ivar of an atomic property makes the property nonatomic.
+  128.       CGFloat bgsAngle = _endAngle;
+  129.       CGFloat bgeAngle = _startAngle;
+  130. >     if (_endAngle == 0 && _startAngle == 0 ) {
+  131.           bgsAngle = 0;
+  132.           bgeAngle = 360;
+
+iOSProject/Classes/Main/Activity/View/CustomView.m:177: warning: DIRECT_ATOMIC_PROPERTY_ACCESS
+  Direct access to ivar `_endAngle` of an atomic property at line 177, column 13. Accessing an ivar of an atomic property makes the property nonatomic.
+  175.   //        CGFloat progressRadian = DEGREES_TO_RADIANS(_endAngle + 90);    // 完成比的弧度
+  176.           CGFloat progressRadian;
+  177. >         if (_endAngle == 0) {
+  178.               progressRadian = DEGREES_TO_RADIANS(_endAngle);
+  179.           } else {
+
+iOSProject/Classes/Main/Activity/View/CustomView.m:223: warning: DIRECT_ATOMIC_PROPERTY_ACCESS
+  Direct access to ivar `_startAngle` of an atomic property at line 223, column 86. Accessing an ivar of an atomic property makes the property nonatomic.
+  221.           // x,y为圆点坐标，radius半径，startAngle为开始的弧度，endAngle为 结束的弧度，clockwise 0为顺时针，1为逆时针。
+  222.           
+  223. >         CGContextAddArc(context, centerX, centerY, radius + lineWidth / 2 + 5, 2*PI*(_startAngle/360.0), 2*PI*(_endAngle/360), NO);      // 添加一个圆
+  224.           CGContextDrawPath(context, kCGPathStroke);              // 绘制路径
+  225.   
+
+iOSProject/Classes/Main/Activity/View/CustomView.m:215: warning: DIRECT_ATOMIC_PROPERTY_ACCESS
+  Direct access to ivar `_foregroundColor` of an atomic property at line 215, column 27. Accessing an ivar of an atomic property makes the property nonatomic.
+  213.           
+  214.           //边框圆 -- 前景色
+  215. >         UIColor *bColor = _foregroundColor;
+  216.           if (!bColor) bColor = [UIColor colorWithRed:27/255.0 green:158/255.0 blue:255/255.0 alpha:1];
+  217.           CGContextSetStrokeColorWithColor(context, bColor.CGColor);  //画笔线的颜色
+
+iOSProject/Classes/Main/Activity/View/CustomView.m:160: warning: DIRECT_ATOMIC_PROPERTY_ACCESS
+  Direct access to ivar `_foregroundColor` of an atomic property at line 160, column 23. Accessing an ivar of an atomic property makes the property nonatomic.
+  158.       
+  159.       //边框圆 -- 前景色
+  160. >     UIColor *bColor = _foregroundColor;
+  161.       if (!bColor) bColor = [UIColor colorWithRed:27/255.0 green:158/255.0 blue:255/255.0 alpha:1];
+  162.       CGContextSetStrokeColorWithColor(context, bColor.CGColor);  //画笔线的颜色
+
+Pods/UITableView+FDTemplateLayoutCell/Classes/UITableView+FDKeyedHeightCache.m:48: warning: BAD_POINTER_COMPARISON
+  Implicitly checking whether NSNumber pointer is nil or comparing to integral value at line 48, column 12. Did you mean to use/compare against the unboxed value instead? Please either explicitly compare the NSNumber instance to nil, or use one of the NSNumber accessors before the comparison.
+  46.   - (BOOL)existsHeightForKey:(id<NSCopying>)key {
+  47.       NSNumber *number = self.mutableHeightsByKeyForCurrentOrientation[key];
+  48. >     return number && ![number isEqualToNumber:@-1];
+  49.   }
+  50.   
+
+iOSProject/Common/FSCalendar/FSCalendarCalculator.m:228: warning: BAD_POINTER_COMPARISON
+  Implicitly checking whether NSNumber pointer is nil or comparing to integral value at line 228, column 10. Did you mean to use/compare against the unboxed value instead? Please either explicitly compare the NSNumber instance to nil, or use one of the NSNumber accessors before the comparison.
+  226.       
+  227.       NSNumber *rowCount = self.rowCounts[month];
+  228. >     if (!rowCount) {
+  229.           NSDate *firstDayOfMonth = [self.gregorian fs_firstDayOfMonth:month];
+  230.           NSInteger weekdayOfFirstDay = [self.gregorian component:NSCalendarUnitWeekday fromDate:firstDayOfMonth];
+
+Pods/SDWebImage/SDWebImage/Private/SDImageCachesManagerOperation.m:80: warning: DIRECT_ATOMIC_PROPERTY_ACCESS
+  Direct access to ivar `_cancelled` of an atomic property at line 80, column 5. Accessing an ivar of an atomic property makes the property nonatomic.
+  78.   - (void)setCancelled:(BOOL)cancelled {
+  79.       [self willChangeValueForKey:@"isCancelled"];
+  80. >     _cancelled = cancelled;
+  81.       [self didChangeValueForKey:@"isCancelled"];
+  82.   }
+
+Pods/SDWebImage/SDWebImage/Private/SDImageCachesManagerOperation.m:74: warning: DIRECT_ATOMIC_PROPERTY_ACCESS
+  Direct access to ivar `_executing` of an atomic property at line 74, column 5. Accessing an ivar of an atomic property makes the property nonatomic.
+  72.   - (void)setExecuting:(BOOL)executing {
+  73.       [self willChangeValueForKey:@"isExecuting"];
+  74. >     _executing = executing;
+  75.       [self didChangeValueForKey:@"isExecuting"];
+  76.   }
+
+Pods/SDWebImage/SDWebImage/Private/SDImageCachesManagerOperation.m:68: warning: DIRECT_ATOMIC_PROPERTY_ACCESS
+  Direct access to ivar `_finished` of an atomic property at line 68, column 5. Accessing an ivar of an atomic property makes the property nonatomic.
+  66.   - (void)setFinished:(BOOL)finished {
+  67.       [self willChangeValueForKey:@"isFinished"];
+  68. >     _finished = finished;
+  69.       [self didChangeValueForKey:@"isFinished"];
+  70.   }
+
+iOSProject/Classes/Main/Activity/View/CustomView.m:59: warning: DIRECT_ATOMIC_PROPERTY_ACCESS
+  Direct access to ivar `_animTime` of an atomic property at line 59, column 9. Accessing an ivar of an atomic property makes the property nonatomic.
+  57.           _endAngle = sAngle;
+  58.           _animCountAngle = eAngle;
+  59. >         _animTime = time;
+  60.           
+  61.           [NSThread detachNewThreadSelector:@selector(doSomething) toTarget:self withObject:nil];
+
+iOSProject/Classes/Main/Activity/View/CustomView.m:57: warning: DIRECT_ATOMIC_PROPERTY_ACCESS
+  Direct access to ivar `_endAngle` of an atomic property at line 57, column 9. Accessing an ivar of an atomic property makes the property nonatomic.
+  55.           
+  56.           _startAngle = sAngle;
+  57. >         _endAngle = sAngle;
+  58.           _animCountAngle = eAngle;
+  59.           _animTime = time;
+
+iOSProject/Classes/Main/Activity/View/CustomView.m:56: warning: DIRECT_ATOMIC_PROPERTY_ACCESS
+  Direct access to ivar `_startAngle` of an atomic property at line 56, column 9. Accessing an ivar of an atomic property makes the property nonatomic.
+  54.           }
+  55.           
+  56. >         _startAngle = sAngle;
+  57.           _endAngle = sAngle;
+  58.           _animCountAngle = eAngle;
+
+iOSProject/Classes/Main/Activity/View/CustomView.m:58: warning: DIRECT_ATOMIC_PROPERTY_ACCESS
+  Direct access to ivar `_animCountAngle` of an atomic property at line 58, column 9. Accessing an ivar of an atomic property makes the property nonatomic.
+  56.           _startAngle = sAngle;
+  57.           _endAngle = sAngle;
+  58. >         _animCountAngle = eAngle;
+  59.           _animTime = time;
+  60.           
+
+iOSProject/Classes/Main/Activity/View/CustomView.m:67: warning: DIRECT_ATOMIC_PROPERTY_ACCESS
+  Direct access to ivar `_startAngle` of an atomic property at line 67, column 9. Accessing an ivar of an atomic property makes the property nonatomic.
+  65.           }
+  66.           
+  67. >         _startAngle = sAngle;
+  68.           _endAngle = eAngle;
+  69.           _animTime = 0;
+
+iOSProject/Classes/Main/Activity/View/CustomView.m:69: warning: DIRECT_ATOMIC_PROPERTY_ACCESS
+  Direct access to ivar `_animTime` of an atomic property at line 69, column 9. Accessing an ivar of an atomic property makes the property nonatomic.
+  67.           _startAngle = sAngle;
+  68.           _endAngle = eAngle;
+  69. >         _animTime = 0;
+  70.           
+  71.           [self setNeedsDisplay];
+
+iOSProject/Classes/Main/Activity/View/CustomView.m:68: warning: DIRECT_ATOMIC_PROPERTY_ACCESS
+  Direct access to ivar `_endAngle` of an atomic property at line 68, column 9. Accessing an ivar of an atomic property makes the property nonatomic.
+  66.           
+  67.           _startAngle = sAngle;
+  68. >         _endAngle = eAngle;
+  69.           _animTime = 0;
+  70.           
+
+iOSProject/Classes/Main/Activity/View/CustomView.m:32: warning: DIRECT_ATOMIC_PROPERTY_ACCESS
+  Direct access to ivar `_cusBackgroundColor` of an atomic property at line 32, column 5. Accessing an ivar of an atomic property makes the property nonatomic.
+  30.   
+  31.   - (void)setViewBackgroundColor:(UIColor *)color {
+  32. >     _cusBackgroundColor = color;
+  33.       [self setNeedsDisplay];
+  34.   }
+
+iOSProject/Classes/Main/Activity/View/CustomView.m:27: warning: DIRECT_ATOMIC_PROPERTY_ACCESS
+  Direct access to ivar `_foregroundColor` of an atomic property at line 27, column 5. Accessing an ivar of an atomic property makes the property nonatomic.
+  25.   
+  26.   - (void)setViewForegroundColor:(UIColor *)color {
+  27. >     _foregroundColor = color;
+  28.       [self setNeedsDisplay];
+  29.   }
+
+Summary of the reports
+
+          DIRECT_ATOMIC_PROPERTY_ACCESS: 34
+                             DEAD_STORE: 30
+             PARAMETER_NOT_NULL_CHECKED: 9
+                 ASSIGN_POINTER_WARNING: 6
+                            MEMORY_LEAK: 5
+                     USE_AFTER_LIFETIME: 5
+                    UNINITIALIZED_VALUE: 4
+                       NULL_DEREFERENCE: 3
+                 BAD_POINTER_COMPARISON: 2
+                STRONG_DELEGATE_WARNING: 1
+  REGISTERED_OBSERVER_BEING_DEALLOCATED: 1

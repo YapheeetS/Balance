@@ -1,0 +1,54 @@
+[68397][environment] CWD = /Users/jame/Desktop/CSE/SE_Team3/iOSProject/iOSProject/Classes/AppDelegate
+[68397][environment] No .inferconfig file found
+[68397][environment] Project root = /Users/jame/Desktop/CSE/SE_Team3/iOSProject/iOSProject/Classes/AppDelegate
+[68397][environment] INFER_ARGS =   @/var/folders/0m/2vzjlv1x67n4t1jx5fwmjynr0000gn/T/args.tmp.bd295b
+[68397][environment]   ++Contents of '/var/folders/0m/2vzjlv1x67n4t1jx5fwmjynr0000gn/T/args.tmp.bd295b':
+[68397][environment]     run
+[68397][environment]   
+[68397][environment] command line arguments:   infer run -- clang -c AppDelegate.mAnalyzer: checkers
+[68397][environment] Active checkers: annotation reachability (Java), biabduction (C/C++/ObjC, Java), fragment retains view (Java), immutable cast (Java), liveness (C/C++/ObjC), printf args (Java), ownership (C/C++/ObjC), RacerD (C/C++/ObjC, Java), SIOF (C/C++/ObjC), uninitialized variables (C/C++/ObjC)
+[68397][environment] Infer log identifier is 
+Infer version v0.15.0
+[68397][environment] Copyright 2009 - present Facebook. All Rights Reserved.
+[68397][environment] 
+[68397][   progress] Capturing in make/cc mode...
+[68397][      debug] 
+[68397][      debug] *** Beginning capture of file /Users/jame/Desktop/CSE/SE_Team3/iOSProject/iOSProject/Classes/AppDelegate/AppDelegate.m ***
+[68397][      debug] Clang frontend action is translating and linting
+[68397][      debug] Loading the following linters files: /usr/local/Cellar/infer/0.15.0/lib/infer/infer/bin/../lib/linter_rules/linters.al
+[68397][      debug] Elapsed: 26.223ms.
+[68397][      debug] 
+[68397][ extern err] Error: the following clang command did not run successfully:
+[68397][ extern err]     /usr/local/Cellar/infer/0.15.0/lib/infer/facebook-clang-plugins/clang/install/bin/clang
+[68397][ extern err]     @/var/folders/0m/2vzjlv1x67n4t1jx5fwmjynr0000gn/T/clang_command_.tmp.64a522.txt
+[68397][ extern err]   ++Contents of '/var/folders/0m/2vzjlv1x67n4t1jx5fwmjynr0000gn/T/clang_command_.tmp.64a522.txt':
+[68397][ extern err]     "-cc1" "-load"
+[68397][ extern err]     "/usr/local/Cellar/infer/0.15.0/lib/infer/infer/bin/../../facebook-clang-plugins/libtooling/build/FacebookClangPlugin.dylib"
+[68397][ extern err]     "-add-plugin" "BiniouASTExporter" "-plugin-arg-BiniouASTExporter" "-"
+[68397][ extern err]     "-plugin-arg-BiniouASTExporter" "PREPEND_CURRENT_DIR=1"
+[68397][ extern err]     "-plugin-arg-BiniouASTExporter" "MAX_STRING_SIZE=65535" "-cc1" "-triple"
+[68397][ extern err]     "x86_64-apple-macosx10.14.0" "-Wdeprecated-objc-isa-usage"
+[68397][ extern err]     "-Werror=deprecated-objc-isa-usage" "-emit-obj" "-mrelax-all"
+[68397][ extern err]     "-disable-free" "-disable-llvm-verifier" "-discard-value-names"
+[68397][ extern err]     "-main-file-name" "AppDelegate.m" "-mrelocation-model" "pic" "-pic-level"
+[68397][ extern err]     "2" "-mthread-model" "posix" "-mdisable-fp-elim" "-masm-verbose"
+[68397][ extern err]     "-munwind-tables" "-target-cpu" "penryn" "-dwarf-column-info"
+[68397][ extern err]     "-debugger-tuning=lldb" "-target-linker-version" "351.8"
+[68397][ extern err]     "-coverage-notes-file"
+[68397][ extern err]     "/Users/jame/Desktop/CSE/SE_Team3/iOSProject/iOSProject/Classes/AppDelegate/AppDelegate.gcno"
+[68397][ extern err]     "-resource-dir"
+[68397][ extern err]     "/usr/local/Cellar/infer/0.15.0/lib/infer/facebook-clang-plugins/clang/install/lib/clang/7.0.0"
+[68397][ extern err]     "-include"
+[68397][ extern err]     "/usr/local/Cellar/infer/0.15.0/lib/infer/infer/bin/../lib/clang_wrappers/global_defines.h"
+[68397][ extern err]     "-Wno-ignored-optimization-argument" "-Wno-everything"
+[68397][ extern err]     "-fdebug-compilation-dir"
+[68397][ extern err]     "/Users/jame/Desktop/CSE/SE_Team3/iOSProject/iOSProject/Classes/AppDelegate"
+[68397][ extern err]     "-ferror-limit" "19" "-fmessage-length" "0" "-stack-protector" "1"
+[68397][ extern err]     "-fblocks" "-fencode-extended-block-signature"
+[68397][ extern err]     "-fobjc-runtime=macosx-10.14.0" "-fobjc-exceptions" "-fexceptions"
+[68397][ extern err]     "-fmax-type-align=16" "-fdiagnostics-show-option" "-o" "AppDelegate.o"
+[68397][ extern err]     "-x" "objective-c" "AppDelegate.m" "-O0" "-include"
+[68397][ extern err]     "/usr/local/Cellar/infer/0.15.0/lib/infer/infer/bin/../lib/clang_wrappers/global_defines.h"
+[68397][ extern err]     "-Wno-everything"
+[68397][ extern err]   
+[68397][ extern err] 
