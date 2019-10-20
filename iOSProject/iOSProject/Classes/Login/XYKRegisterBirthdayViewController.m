@@ -101,6 +101,8 @@
 - (void)nextButtonClick:(UIButton *)sender
 {
     XYKRegisterHeightViewController *rhVC = [[XYKRegisterHeightViewController alloc]init];
+    rhVC.account = self.account;
+    rhVC.password = self.password;
     rhVC.birthday = self.birthday;
     rhVC.sex = self.sex;
     [self.navigationController pushViewController:rhVC animated:true];

@@ -10,6 +10,7 @@
 #import "CustomView.h"
 #import "XYKDownBackImageView.h"
 #import "XYKGoSportButton.h"
+#import "LHJSportManageViewController.h"
 
 @interface LHJActivityViewController ()<UINavigationControllerDelegate>
 @property (nonatomic, strong) XYKDownBackImageView *downBackImageView;
@@ -45,8 +46,13 @@
     // Do any additional setup after loading the view.
     [self setMainView];
     [self reloadViews];
-    self.navigationController.delegate = self;
     
+    
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    self.navigationController.delegate = self;
 }
 
 
@@ -293,6 +299,7 @@
 
 - (void)goSport
 {
-    
+    LHJSportManageViewController *vc = [[LHJSportManageViewController alloc]init];
+    [self.navigationController pushViewController:vc animated:true];
 }
 @end

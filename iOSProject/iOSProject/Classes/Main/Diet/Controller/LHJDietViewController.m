@@ -153,7 +153,6 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    xWEAKSELF;
 //    NSLog(@"name - %@",[self.eatArray[indexPath.row]objectForKey:@"name"]);
     if (indexPath.row == 0) {
         

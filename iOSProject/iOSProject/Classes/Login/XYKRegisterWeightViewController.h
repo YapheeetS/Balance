@@ -9,6 +9,8 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface XYKRegisterWeightViewController : LHJBaseViewController
+@property (nonatomic,copy)NSString *account;
+@property (nonatomic,copy)NSString *password;
 @property (nonatomic,copy)NSString *sex;
 @property (nonatomic,copy)NSString *birthday;
 @property (nonatomic,copy)NSString *height;

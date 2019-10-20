@@ -110,6 +110,8 @@
     } else {
         rbVC.sex = @"female";
     }
+    rbVC.account = self.account;
+    rbVC.password = self.password;
     [self.navigationController pushViewController:rbVC animated:YES];
 }
 

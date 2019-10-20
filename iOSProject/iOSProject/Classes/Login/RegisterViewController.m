@@ -161,6 +161,8 @@
     
     if ([self.passwordtText1.text isEqualToString:self.passwordtText2.text]) {
         XYKRegisterSexViewController *genderVC = [[XYKRegisterSexViewController alloc] init];
+        genderVC.account = self.accountText.text;
+        genderVC.password = self.passwordtText1.text;
         [self.navigationController pushViewController:genderVC animated:true];
     } else {
         [self showTextHUDWithMessage:@"Please input the same password"];

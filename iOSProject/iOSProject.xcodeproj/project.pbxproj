@@ -64,6 +64,21 @@
 		3B8C57A72341903F0059BB21 /* XYKEateNullTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B8C57A02341903F0059BB21 /* XYKEateNullTableViewCell.xib */; };
 		3B8C57A82341903F0059BB21 /* XYKEateHeardViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8C57A22341903F0059BB21 /* XYKEateHeardViewCell.m */; };
 		3B8C57B02341B3E90059BB21 /* iOSProjectUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8C57AF2341B3E90059BB21 /* iOSProjectUITests.m */; };
+		3BEA20CC235B6AF5005311C3 /* LHJBalanceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BEA20CB235B6AF5005311C3 /* LHJBalanceCell.m */; };
+		3BEA20D2235B7D3E005311C3 /* XLCardSwitchFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BEA20D1235B7D3E005311C3 /* XLCardSwitchFlowLayout.m */; };
+		3BEA20D5235B7E01005311C3 /* LHJSportManageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BEA20D4235B7E01005311C3 /* LHJSportManageViewController.m */; };
+		3BEA20D8235B7F13005311C3 /* XYKSportManageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BEA20D7235B7F13005311C3 /* XYKSportManageCell.m */; };
+		3BEA20DB235BA38C005311C3 /* LHJSportsTimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BEA20DA235BA38C005311C3 /* LHJSportsTimeViewController.m */; };
+		3BEA20DE235BA3C1005311C3 /* XXLongTapBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BEA20DC235BA3C1005311C3 /* XXLongTapBtn.m */; };
+		3BEA20E1235BA3FF005311C3 /* YSTimeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BEA20E0235BA3FF005311C3 /* YSTimeManager.m */; };
+		3BEA20E4235BAFAF005311C3 /* LHJSportsTimeFinishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BEA20E3235BAFAF005311C3 /* LHJSportsTimeFinishViewController.m */; };
+		3BEA20E7235BC647005311C3 /* LHJSportSupplementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BEA20E6235BC647005311C3 /* LHJSportSupplementViewController.m */; };
+		3BEA20EA235BC6C1005311C3 /* XYKSportRecordCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BEA20E9235BC6C1005311C3 /* XYKSportRecordCell.m */; };
+		3BEA20ED235BC9DA005311C3 /* XYKChangeMotionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BEA20EC235BC9DA005311C3 /* XYKChangeMotionViewController.m */; };
+		3BEA20F0235BCAA7005311C3 /* XYKChangeMotionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BEA20EE235BCAA6005311C3 /* XYKChangeMotionCell.m */; };
+		3BEA20F4235C0D9A005311C3 /* NetWorkingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BEA20F3235C0D9A005311C3 /* NetWorkingManager.m */; };
+		3BEA20F7235C0DDA005311C3 /* UIImage+Compression.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BEA20F6235C0DDA005311C3 /* UIImage+Compression.m */; };
+		3BEA20FB235C1006005311C3 /* GVUserDefaults+Properties.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BEA20F9235C1006005311C3 /* GVUserDefaults+Properties.m */; };
 		416951351E377AF607A970D1 /* Pods_iOSProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70EBB1DB1F0073C27D10B008 /* Pods_iOSProject.framework */; };
 /* End PBXBuildFile section */
 
@@ -192,6 +207,37 @@
 		3B8C57AF2341B3E90059BB21 /* iOSProjectUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iOSProjectUITests.m; sourceTree = "<group>"; };
 		3B8C57B12341B3E90059BB21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3BEA20BF235AC2D3005311C3 /* iOSProject-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iOSProject-Bridging-Header.h"; sourceTree = "<group>"; };
+		3BEA20CA235B6AF5005311C3 /* LHJBalanceCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LHJBalanceCell.h; sourceTree = "<group>"; };
+		3BEA20CB235B6AF5005311C3 /* LHJBalanceCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LHJBalanceCell.m; sourceTree = "<group>"; };
+		3BEA20D0235B7D3E005311C3 /* XLCardSwitchFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLCardSwitchFlowLayout.h; sourceTree = "<group>"; };
+		3BEA20D1235B7D3E005311C3 /* XLCardSwitchFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLCardSwitchFlowLayout.m; sourceTree = "<group>"; };
+		3BEA20D3235B7E01005311C3 /* LHJSportManageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LHJSportManageViewController.h; sourceTree = "<group>"; };
+		3BEA20D4235B7E01005311C3 /* LHJSportManageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LHJSportManageViewController.m; sourceTree = "<group>"; };
+		3BEA20D6235B7F13005311C3 /* XYKSportManageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYKSportManageCell.h; sourceTree = "<group>"; };
+		3BEA20D7235B7F13005311C3 /* XYKSportManageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYKSportManageCell.m; sourceTree = "<group>"; };
+		3BEA20D9235BA38C005311C3 /* LHJSportsTimeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LHJSportsTimeViewController.h; sourceTree = "<group>"; };
+		3BEA20DA235BA38C005311C3 /* LHJSportsTimeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LHJSportsTimeViewController.m; sourceTree = "<group>"; };
+		3BEA20DC235BA3C1005311C3 /* XXLongTapBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XXLongTapBtn.m; sourceTree = "<group>"; };
+		3BEA20DD235BA3C1005311C3 /* XXLongTapBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XXLongTapBtn.h; sourceTree = "<group>"; };
+		3BEA20DF235BA3FF005311C3 /* YSTimeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSTimeManager.h; sourceTree = "<group>"; };
+		3BEA20E0235BA3FF005311C3 /* YSTimeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSTimeManager.m; sourceTree = "<group>"; };
+		3BEA20E2235BAFAF005311C3 /* LHJSportsTimeFinishViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LHJSportsTimeFinishViewController.h; sourceTree = "<group>"; };
+		3BEA20E3235BAFAF005311C3 /* LHJSportsTimeFinishViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LHJSportsTimeFinishViewController.m; sourceTree = "<group>"; };
+		3BEA20E5235BC647005311C3 /* LHJSportSupplementViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LHJSportSupplementViewController.h; sourceTree = "<group>"; };
+		3BEA20E6235BC647005311C3 /* LHJSportSupplementViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LHJSportSupplementViewController.m; sourceTree = "<group>"; };
+		3BEA20E8235BC6C1005311C3 /* XYKSportRecordCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYKSportRecordCell.h; sourceTree = "<group>"; };
+		3BEA20E9235BC6C1005311C3 /* XYKSportRecordCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYKSportRecordCell.m; sourceTree = "<group>"; };
+		3BEA20EB235BC9DA005311C3 /* XYKChangeMotionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYKChangeMotionViewController.h; sourceTree = "<group>"; };
+		3BEA20EC235BC9DA005311C3 /* XYKChangeMotionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYKChangeMotionViewController.m; sourceTree = "<group>"; };
+		3BEA20EE235BCAA6005311C3 /* XYKChangeMotionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYKChangeMotionCell.m; sourceTree = "<group>"; };
+		3BEA20EF235BCAA6005311C3 /* XYKChangeMotionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYKChangeMotionCell.h; sourceTree = "<group>"; };
+		3BEA20F2235C0D9A005311C3 /* NetWorkingManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetWorkingManager.h; sourceTree = "<group>"; };
+		3BEA20F3235C0D9A005311C3 /* NetWorkingManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetWorkingManager.m; sourceTree = "<group>"; };
+		3BEA20F5235C0DDA005311C3 /* UIImage+Compression.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Compression.h"; sourceTree = "<group>"; };
+		3BEA20F6235C0DDA005311C3 /* UIImage+Compression.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Compression.m"; sourceTree = "<group>"; };
+		3BEA20F9235C1006005311C3 /* GVUserDefaults+Properties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GVUserDefaults+Properties.m"; sourceTree = "<group>"; };
+		3BEA20FA235C1006005311C3 /* GVUserDefaults+Properties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GVUserDefaults+Properties.h"; sourceTree = "<group>"; };
+		3BEA20FC235C1804005311C3 /* NetWrok.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetWrok.h; sourceTree = "<group>"; };
 		70EBB1DB1F0073C27D10B008 /* Pods_iOSProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOSProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E28F70CA5188740E82F3774 /* Pods-iOSProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOSProject/Pods-iOSProject.debug.xcconfig"; sourceTree = "<group>"; };
 		C5B9A8F239A3CFCF9287A375 /* Pods-iOSProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOSProject/Pods-iOSProject.release.xcconfig"; sourceTree = "<group>"; };
@@ -292,6 +338,7 @@
 			isa = PBXGroup;
 			children = (
 				2F65A3A2233C99610029DC09 /* PrefixHeader.pch */,
+				3BEA20FC235C1804005311C3 /* NetWrok.h */,
 				2F65A39E233C99610029DC09 /* LHJMacros.h */,
 				2F65A3A1233C99610029DC09 /* LHJControllerHeader.h */,
 				3BEA20BF235AC2D3005311C3 /* iOSProject-Bridging-Header.h */,
@@ -315,6 +362,8 @@
 		2F65A3B2233C9B770029DC09 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				3BEA20F5235C0DDA005311C3 /* UIImage+Compression.h */,
+				3BEA20F6235C0DDA005311C3 /* UIImage+Compression.m */,
 				3B8C578F23418EFD0059BB21 /* NSDate+GFCalendar.h */,
 				3B8C579423418EFD0059BB21 /* NSDate+GFCalendar.m */,
 				3B8C575923418B510059BB21 /* UIViewController+Swizzled.h */,
@@ -387,6 +436,8 @@
 		2F65A3DA233C9DDC0029DC09 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				3BEA20CA235B6AF5005311C3 /* LHJBalanceCell.h */,
+				3BEA20CB235B6AF5005311C3 /* LHJBalanceCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -435,6 +486,16 @@
 			children = (
 				2F65A3D6233C9D9E0029DC09 /* LHJActivityViewController.h */,
 				2F65A3D7233C9D9E0029DC09 /* LHJActivityViewController.m */,
+				3BEA20D3235B7E01005311C3 /* LHJSportManageViewController.h */,
+				3BEA20D4235B7E01005311C3 /* LHJSportManageViewController.m */,
+				3BEA20D9235BA38C005311C3 /* LHJSportsTimeViewController.h */,
+				3BEA20DA235BA38C005311C3 /* LHJSportsTimeViewController.m */,
+				3BEA20E2235BAFAF005311C3 /* LHJSportsTimeFinishViewController.h */,
+				3BEA20E3235BAFAF005311C3 /* LHJSportsTimeFinishViewController.m */,
+				3BEA20E5235BC647005311C3 /* LHJSportSupplementViewController.h */,
+				3BEA20E6235BC647005311C3 /* LHJSportSupplementViewController.m */,
+				3BEA20EB235BC9DA005311C3 /* XYKChangeMotionViewController.h */,
+				3BEA20EC235BC9DA005311C3 /* XYKChangeMotionViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -442,6 +503,8 @@
 		2F65A3E1233C9DF70029DC09 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				3BEA20DF235BA3FF005311C3 /* YSTimeManager.h */,
+				3BEA20E0235BA3FF005311C3 /* YSTimeManager.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -449,12 +512,22 @@
 		2F65A3E2233C9DF70029DC09 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				3BEA20DD235BA3C1005311C3 /* XXLongTapBtn.h */,
+				3BEA20DC235BA3C1005311C3 /* XXLongTapBtn.m */,
+				3BEA20D6235B7F13005311C3 /* XYKSportManageCell.h */,
+				3BEA20D7235B7F13005311C3 /* XYKSportManageCell.m */,
+				3BEA20D0235B7D3E005311C3 /* XLCardSwitchFlowLayout.h */,
+				3BEA20D1235B7D3E005311C3 /* XLCardSwitchFlowLayout.m */,
 				3B8C5756234163920059BB21 /* XYKGoSportButton.h */,
 				3B8C5757234163920059BB21 /* XYKGoSportButton.m */,
 				3B8C5753234163580059BB21 /* CustomView.h */,
 				3B8C5751234163580059BB21 /* CustomView.m */,
 				3B8C5752234163580059BB21 /* XYKDownBackImageView.h */,
 				3B8C5750234163580059BB21 /* XYKDownBackImageView.m */,
+				3BEA20E8235BC6C1005311C3 /* XYKSportRecordCell.h */,
+				3BEA20E9235BC6C1005311C3 /* XYKSportRecordCell.m */,
+				3BEA20EF235BCAA6005311C3 /* XYKChangeMotionCell.h */,
+				3BEA20EE235BCAA6005311C3 /* XYKChangeMotionCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -495,6 +568,8 @@
 		2F65A3E6233C9ECF0029DC09 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				3BEA20F8235C1006005311C3 /* UserDefaults */,
+				3BEA20F1235C0D9A005311C3 /* Network */,
 				3B8C575C23418CA20059BB21 /* FSCalendar */,
 				3B8C573423400F7B0059BB21 /* SBRuler */,
 				2F65A3E7233C9ECF0029DC09 /* Controller */,
@@ -601,6 +676,24 @@
 				3B8C57B12341B3E90059BB21 /* Info.plist */,
 			);
 			path = iOSProjectUITests;
+			sourceTree = "<group>";
+		};
+		3BEA20F1235C0D9A005311C3 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				3BEA20F2235C0D9A005311C3 /* NetWorkingManager.h */,
+				3BEA20F3235C0D9A005311C3 /* NetWorkingManager.m */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		3BEA20F8235C1006005311C3 /* UserDefaults */ = {
+			isa = PBXGroup;
+			children = (
+				3BEA20FA235C1006005311C3 /* GVUserDefaults+Properties.h */,
+				3BEA20F9235C1006005311C3 /* GVUserDefaults+Properties.m */,
+			);
+			path = UserDefaults;
 			sourceTree = "<group>";
 		};
 		EABA73639D0C2F98D448F939 /* Frameworks */ = {
@@ -743,6 +836,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-iOSProject/Pods-iOSProject-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
 				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
+				"${BUILT_PRODUCTS_DIR}/GVUserDefaults/GVUserDefaults.framework",
 				"${BUILT_PRODUCTS_DIR}/LYEmptyView/LYEmptyView.framework",
 				"${BUILT_PRODUCTS_DIR}/MJExtension/MJExtension.framework",
 				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
@@ -760,6 +854,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GVUserDefaults.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LYEmptyView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJExtension.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
@@ -789,15 +884,19 @@
 				3B8C578223418CA20059BB21 /* FSCalendar.m in Sources */,
 				2F65A3D4233C9D750029DC09 /* LHJProfileViewController.m in Sources */,
 				3B8C578623418CA20059BB21 /* FSCalendarExtensions.m in Sources */,
+				3BEA20EA235BC6C1005311C3 /* XYKSportRecordCell.m in Sources */,
 				2F65A3D8233C9D9E0029DC09 /* LHJActivityViewController.m in Sources */,
+				3BEA20DB235BA38C005311C3 /* LHJSportsTimeViewController.m in Sources */,
 				2F65A3C6233C9B770029DC09 /* UIView+Extension.m in Sources */,
 				3B8C574A2340144E0059BB21 /* XYKRegisterBirthdayViewController.m in Sources */,
 				2F65A3B0233C99670029DC09 /* VCTTabBar.m in Sources */,
 				3B8C577E23418CA20059BB21 /* FSCalendarDelegationProxy.m in Sources */,
 				3B8C578923418CA20059BB21 /* FSCalendarCalculator.m in Sources */,
 				3B8C57492340144E0059BB21 /* XYKRegisterWeightViewController.m in Sources */,
+				3BEA20D2235B7D3E005311C3 /* XLCardSwitchFlowLayout.m in Sources */,
 				2F65A3FB233C9ED00029DC09 /* LHJNavigationController.m in Sources */,
 				3B8C577D23418CA20059BB21 /* FSCalendarCollectionView.m in Sources */,
+				3BEA20ED235BC9DA005311C3 /* XYKChangeMotionViewController.m in Sources */,
 				3B8C57A32341903F0059BB21 /* XYKEateNullTableViewCell.m in Sources */,
 				2F65A3AE233C99670029DC09 /* VCTTabBarController.m in Sources */,
 				3B8C578423418CA20059BB21 /* FSCalendarScopeHandle.m in Sources */,
@@ -805,6 +904,7 @@
 				3B8C577F23418CA20059BB21 /* FSCalendarDelegationFactory.m in Sources */,
 				2F65A3C1233C9B770029DC09 /* UIColor+stringToColor.m in Sources */,
 				3B8C5758234163920059BB21 /* XYKGoSportButton.m in Sources */,
+				3BEA20D5235B7E01005311C3 /* LHJSportManageViewController.m in Sources */,
 				2F65A396233C98610029DC09 /* main.m in Sources */,
 				3B8C578523418CA20059BB21 /* FSCalendarWeekdayView.m in Sources */,
 				3B8C578323418CA20059BB21 /* FSCalendarCollectionViewLayout.m in Sources */,
@@ -814,24 +914,34 @@
 				2F65A3D1233C9D570029DC09 /* LHJDietViewController.m in Sources */,
 				3B8C578123418CA20059BB21 /* FSCalendarStickyHeader.m in Sources */,
 				3B8C5722233FF5050059BB21 /* RegisterViewController.m in Sources */,
+				3BEA20E1235BA3FF005311C3 /* YSTimeManager.m in Sources */,
 				3B8C578823418CA20059BB21 /* FSCalendarConstants.m in Sources */,
+				3BEA20F0235BCAA7005311C3 /* XYKChangeMotionCell.m in Sources */,
+				3BEA20CC235B6AF5005311C3 /* LHJBalanceCell.m in Sources */,
 				3B8C5719233FE2020059BB21 /* LoginViewController.m in Sources */,
+				3BEA20FB235C1006005311C3 /* GVUserDefaults+Properties.m in Sources */,
 				3B8C578B23418CA20059BB21 /* FSCalendarTransitionCoordinator.m in Sources */,
 				3B8C578C23418CA20059BB21 /* FSCalendarAppearance.m in Sources */,
 				3B8C574023400F7B0059BB21 /* SBTriangleView.m in Sources */,
 				3B8C57A82341903F0059BB21 /* XYKEateHeardViewCell.m in Sources */,
 				3B8C574B2340144E0059BB21 /* XYKRegisterSexViewController.m in Sources */,
+				3BEA20F7235C0DDA005311C3 /* UIImage+Compression.m in Sources */,
 				3B8C57A42341903F0059BB21 /* XYKEateTableViewCell.m in Sources */,
 				3B8C574C2340144E0059BB21 /* XYKRegisterHeightViewController.m in Sources */,
 				2F65A3C2233C9B770029DC09 /* UIImage+Extension.m in Sources */,
 				3B8C575B23418B510059BB21 /* UIViewController+Swizzled.m in Sources */,
 				3B8C578723418CA20059BB21 /* FSCalendar+Deprecated.m in Sources */,
+				3BEA20F4235C0D9A005311C3 /* NetWorkingManager.m in Sources */,
 				3B8C5754234163580059BB21 /* XYKDownBackImageView.m in Sources */,
 				2F65A399233C98610029DC09 /* AppDelegate.m in Sources */,
 				2F65A3AF233C99670029DC09 /* VCTTabbarButton.m in Sources */,
+				3BEA20DE235BA3C1005311C3 /* XXLongTapBtn.m in Sources */,
+				3BEA20E4235BAFAF005311C3 /* LHJSportsTimeFinishViewController.m in Sources */,
+				3BEA20E7235BC647005311C3 /* LHJSportSupplementViewController.m in Sources */,
 				3B8C578A23418CA20059BB21 /* FSCalendarHeaderView.m in Sources */,
 				3B8C5755234163580059BB21 /* CustomView.m in Sources */,
 				3B8C578023418CA20059BB21 /* FSCalendarCell.m in Sources */,
+				3BEA20D8235B7F13005311C3 /* XYKSportManageCell.m in Sources */,
 				3B8C573E23400F7B0059BB21 /* SBRulerViewConfiguration.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

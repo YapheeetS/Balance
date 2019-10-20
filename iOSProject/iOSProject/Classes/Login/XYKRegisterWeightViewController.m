@@ -122,8 +122,37 @@
 
 - (void)finish:(UIButton *)sender
 {
-    VCTTabBarController *mainVC = [[VCTTabBarController alloc] init];
-    [UIApplication sharedApplication].keyWindow.rootViewController = mainVC;
+    xWEAKSELF;
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    [params setObject:self.account forKey:@"account"];
+    [params setObject:self.password forKey:@"password"];
+    [params setObject:self.sex forKey:@"gender"];
+    [params setObject:self.birthday forKey:@"birthday"];
+    [params setObject:self.height forKey:@"height"];
+    [params setObject:[NSString stringWithFormat:@"%d", self.value] forKey:@"weight"];
+    
+    NSLog(@"%@", params);
+    
+    [NetWorkingManager sendPOSTDataWithPath:Register withParamters:params withProgress:^(float progress) {
+        
+    } success:^(BOOL isSuccess, id responseObject) {
+        
+        NSString *code = [NSString stringWithFormat:@"%@",responseObject[@"code"]];
+        if (![code isEqualToString:@"200"]) {
+            NSDictionary *dataDict =  responseObject[@"user_info"];
+            NSLog(@"%@", dataDict);
+//            [GVUserDefaults standardUserDefaults].account = self.account;
+            
+            VCTTabBarController *mainVC = [[VCTTabBarController alloc] init];
+            [UIApplication sharedApplication].keyWindow.rootViewController = mainVC;
+        }
+        
+        
+    } failure:^(NSError *error) {
+        
+    }];
+    
+    
 }
 
 

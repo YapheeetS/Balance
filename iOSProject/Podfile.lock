@@ -17,6 +17,7 @@ PODS:
   - Charts (3.1.1):
     - Charts/Core (= 3.1.1)
   - Charts/Core (3.1.1)
+  - GVUserDefaults (1.0.2)
   - LYEmptyView (1.2.3)
   - Masonry (1.1.0)
   - MJExtension (3.0.15.1)
@@ -35,6 +36,7 @@ PODS:
 DEPENDENCIES:
   - AFNetworking (~> 3.2.1)
   - Charts (~> 3.1.1)
+  - GVUserDefaults (~> 1.0.2)
   - LYEmptyView (~> 1.2.3)
   - Masonry (~> 1.1.0)
   - MJExtension (~> 3.0.15.1)
@@ -49,6 +51,7 @@ SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - AFNetworking
     - Charts
+    - GVUserDefaults
     - LYEmptyView
     - Masonry
     - MJExtension
@@ -63,6 +66,7 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   Charts: 90a4d61da0f6e06684c591e3bcab11940fe61736
+  GVUserDefaults: 52d48cf8ba578b40a1a76312b196dfc9134ba36a
   LYEmptyView: ea5827f3f81fcbec427f990005501991477bdae8
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MJExtension: 19bc33ce2eee2d319760f5622562cf581a6ff756
@@ -74,6 +78,6 @@ SPEC CHECKSUMS:
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   "UITableView+FDTemplateLayoutCell": 5c949b4a5059c404b442926c0e80f81d10a2d66f
 
-PODFILE CHECKSUM: 9c6d22568e4f2c253b494431122c96a01fa3c304
+PODFILE CHECKSUM: f6759710056b50382b6ddca881134af3b4d212e3
 
 COCOAPODS: 1.5.3

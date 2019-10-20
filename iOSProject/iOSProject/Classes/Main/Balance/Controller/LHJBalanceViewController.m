@@ -7,163 +7,139 @@
 //
 
 #import "LHJBalanceViewController.h"
+#import "LHJBalanceCell.h"
 
-@interface LHJBalanceViewController () <ChartViewDelegate>
+
+@interface LHJBalanceViewController () <ChartViewDelegate, UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, strong) PieChartView *chartView;
+@property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, strong) NSMutableArray *dataArray;
 @end
 
 @implementation LHJBalanceViewController
+
+-(NSMutableArray *)dataArray{
+    if (_dataArray == nil) {
+        _dataArray = [[NSMutableArray alloc] init];
+        [_dataArray addObject: @[@[@"Walking", @"40 Cal"], @[@"Running", @"200 Cal"], @[@"Basketball", @"200 Cal"], @[@"Cycling", @"100 Cal"]]];
+        [_dataArray addObject: @[@[@"Breakfast", @"300 Cal"], @[@"Lunch", @"500 Cal"], @[@"Dinner", @"400 Cal"], @[@"Snacks", @"300 Cal"]]];
+    }
+    return _dataArray;
+}
+
+// tableView懒加载
+-(UITableView *)tableView{
+    if(_tableView == nil){
+        _tableView = [[UITableView alloc]initWithFrame:self.view.bounds style:UITableViewStyleGrouped];
+        _tableView.delegate = self;
+        _tableView.dataSource = self;
+        _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+        _tableView.estimatedRowHeight = 0;
+        _tableView.estimatedSectionFooterHeight = 0;
+        _tableView.estimatedSectionHeaderHeight = 0;
+        _tableView.showsVerticalScrollIndicator = false;
+        _tableView.backgroundColor = RGB(247, 247, 247);
+        
+    }
+    return _tableView;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
-    
+    NSLog(@"%@", self.dataArray);
     [self setMainView];
+    
 }
 
 - (void)setMainView {
     
-    self.chartView = [[PieChartView alloc] init];
-    [self.view addSubview:self.chartView];
-    [self.chartView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.mas_equalTo(self.view.mas_centerX);
-        make.top.mas_equalTo(self.view.mas_top);
-        make.width.mas_equalTo(self.view.mas_width).offset(-50);
-        make.height.mas_equalTo(self.view.mas_width).offset(-50);
-    }];
-    
-    [self setupPieChartView:self.chartView];
-    self.chartView.delegate = self;
-    self.chartView.entryLabelColor = UIColor.whiteColor;
-    self.chartView.entryLabelFont = [UIFont fontWithName:@"HelveticaNeue-Light" size:12.f];
-    self.chartView.data = [self setChartData];
-    [self.chartView animateWithXAxisDuration:1.4 easingOption:ChartEasingOptionEaseOutBack];
-    
-}
-
-- (void)setupPieChartView:(PieChartView *)chartView
-{
-    chartView.usePercentValuesEnabled = YES;
-    chartView.drawSlicesUnderHoleEnabled = NO;
-    chartView.holeRadiusPercent = 0.58;
-    chartView.transparentCircleRadiusPercent = 0.61;
-    chartView.chartDescription.enabled = NO;
-    [chartView setExtraOffsetsWithLeft:5.f top:5.f right:5.f bottom:5.f];
-    chartView.drawCenterTextEnabled = YES;
-    
-
-    [chartView setExtraOffsetsWithLeft:30 top:0 right:30 bottom:0];//饼状图距离边缘的间隙
-    chartView.dragDecelerationEnabled = YES;//拖拽饼状图后是否有惯性效果
-    
-    
-    chartView.holeRadiusPercent = 0.5;//空心半径占比
-    chartView.holeColor = [UIColor clearColor];//空心颜色
-    chartView.transparentCircleRadiusPercent = 0.52;//半透明空心半径占比
-    chartView.transparentCircleColor = [UIColor colorWithRed:210/255.0 green:145/255.0 blue:165/255.0 alpha:0.3];//半透明空心的颜色
-    
-    
-    NSMutableParagraphStyle *paragraphStyle = [[NSParagraphStyle defaultParagraphStyle] mutableCopy];
-    paragraphStyle.lineBreakMode = NSLineBreakByTruncatingTail;
-    paragraphStyle.alignment = NSTextAlignmentCenter;
-    
-    NSMutableAttributedString *centerText = [[NSMutableAttributedString alloc] initWithString:@"Health365\nby Team3"];
-    [centerText setAttributes:@{
-                                NSFontAttributeName: [UIFont fontWithName:@"HelveticaNeue-Light" size:13.f],
-                                NSParagraphStyleAttributeName: paragraphStyle
-                                } range:NSMakeRange(0, centerText.length)];
-    [centerText addAttributes:@{
-                                NSFontAttributeName: [UIFont fontWithName:@"HelveticaNeue-Light" size:11.f],
-                                NSForegroundColorAttributeName: UIColor.grayColor
-                                } range:NSMakeRange(13, centerText.length - 13)];
-    [centerText addAttributes:@{
-                                NSFontAttributeName: [UIFont fontWithName:@"HelveticaNeue-LightItalic" size:11.f],
-                                NSForegroundColorAttributeName: [UIColor colorWithRed:51/255.f green:181/255.f blue:229/255.f alpha:1.f]
-                                } range:NSMakeRange(centerText.length - 6, 6)];
-    chartView.centerAttributedText = centerText;
-    
-    chartView.drawHoleEnabled = YES;
-    chartView.rotationAngle = 0.0;
-    chartView.rotationEnabled = YES;
-    chartView.highlightPerTapEnabled = YES;
-    chartView.legend.enabled = false;
-    
-    ChartLegend *l = chartView.legend;
-    l.horizontalAlignment = ChartLegendHorizontalAlignmentRight;
-    l.verticalAlignment = ChartLegendVerticalAlignmentTop;
-    l.orientation = ChartLegendOrientationVertical;
-    l.drawInside = NO;
-    l.xEntrySpace = 7.0;
-    l.yEntrySpace = 0.0;
-    l.yOffset = 0.0;
+    [self.view addSubview:self.tableView];
+    [_tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+           make.edges.equalTo(self.view).with.insets(UIEdgeInsetsMake(0, 0, 0, 0));
+       }];
 }
 
 
 
-- (PieChartData *)setChartData{
-    
-    double mult = 100;
-    int count =2;//饼状图总共有几块组成
-    
+
+
+#pragma mark - Table view data source
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 3;
+}
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
     
-    //每个区块的数据
-    NSMutableArray *yVals = [[NSMutableArray alloc] init];
-    for (int i = 0; i < count; i++) {
-        
-//        BarChartDataEntry *entry = [[BarChartDataEntry alloc] initWithX:i y:randomVal];
-        PieChartDataEntry *entry = [[PieChartDataEntry alloc] initWithValue:(arc4random_uniform(mult) + mult / 5) label:i == 0 ? @"consume" : @"intake"];
-        [yVals addObject:entry];
+    if (section == 0) {
+        return 1;
     }
-    
-    //每个区块的名称或描述
-    NSMutableArray *xVals = [[NSMutableArray alloc] init];
-    for (int i = 0; i < count; i++) {
-        NSString *title = [NSString stringWithFormat:@"part%d", i+1];
-        [xVals addObject:title];
-    }
-    
-    //dataSet
-    PieChartDataSet *dataSet = [[PieChartDataSet alloc] initWithValues:yVals label:@""];;
-
-    dataSet.drawValuesEnabled = YES;//是否绘制显示数据
-    NSMutableArray *colors = [[NSMutableArray alloc] init];
-//    [colors addObjectsFromArray:ChartColorTemplates.vordiplom];
-//    [colors addObjectsFromArray:ChartColorTemplates.joyful];
-//    [colors addObjectsFromArray:ChartColorTemplates.colorful];
-//    [colors addObjectsFromArray:ChartColorTemplates.liberty];
-//    [colors addObjectsFromArray:ChartColorTemplates.pastel];
-//    [colors addObject:[UIColor colorWithRed:51/255.f green:181/255.f blue:229/255.f alpha:1.f]];
-    [colors addObject:x_theme];
-    [colors addObject:x_theme2];
-    dataSet.colors = colors;//区块颜色
-    dataSet.sliceSpace = 3;//相邻区块之间的间距
-    dataSet.selectionShift = 8;//选中区块时, 放大的半径
-    dataSet.xValuePosition = PieChartValuePositionInsideSlice;//名称位置
-    dataSet.yValuePosition = PieChartValuePositionOutsideSlice;//数据位置
-    //数据与区块之间的用于指示的折线样式
-    dataSet.valueLinePart1OffsetPercentage = 0.85;//折线中第一段起始位置相对于区块的偏移量, 数值越大, 折线距离区块越远
-    dataSet.valueLinePart1Length = 0.5;//折线中第一段长度占比
-    dataSet.valueLinePart2Length = 0.4;//折线中第二段长度最大占比
-    dataSet.valueLineWidth = 1;//折线的粗细
-    dataSet.valueLineColor = [UIColor brownColor];//折线颜色
-
-    //data
-    PieChartData *data = [[PieChartData alloc] initWithDataSets:@[dataSet]];
-
-    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
-//    formatter.numberStyle = NSNumberFormatterPercentStyle;
-    formatter.maximumFractionDigits = 0;//小数位数
-    formatter.multiplier = @1.f;
-    [data setValueFormatter:[[ChartDefaultValueFormatter alloc] initWithFormatter:formatter]];//设置显示数据格式
-    [data setValueTextColor:[UIColor brownColor]];
-    [data setValueFont:[UIFont systemFontOfSize:10]];
-    
-    
-    return data;
+    return 4;
 }
 
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+//    NSLog(@"name - %@",[self.eatArray[indexPath.row]objectForKey:@"name"]);
+    if (indexPath.section == 0) {
+        LHJBalanceCell *cell1 = [tableView dequeueReusableCellWithIdentifier:@"cell1"];
+        if (cell1 == nil) {
+            cell1 = [[LHJBalanceCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell1"];
+        }
+        return cell1;
+    } else {
+        UITableViewCell *cell2 = [tableView dequeueReusableCellWithIdentifier:@"cell2"];
+        if (cell2 == nil) {
+            cell2 = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"cell2"];
+            cell2.selectionStyle = UITableViewCellSelectionStyleNone;
+            cell2.backgroundColor = [UIColor whiteColor];
+            cell2.textLabel.text = self.dataArray[indexPath.section-1][indexPath.row][0];
+            cell2.detailTextLabel.text = self.dataArray[indexPath.section-1][indexPath.row][1];
+            
+        }
+        return cell2;
+    }
+}
 
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if (indexPath.section == 0) {
+        return xScreenWidth-50;
+    } else {
+        return 64;
+    }
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+    if (section == 1) {
+        return @"Consume: 2100Cal";
+    } else if (section == 2) {
+        return @"Intake: 1500Cal";
+    }
+    return @"";
+}
+
+//- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+//
+//}
+
+
+-(UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
+    return [UIView new];
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    if (section == 0) {
+        return 0.001;
+    }
+    return 40;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
+    return 0.001;
+}
 
 
 #pragma mark - ChartViewDelegate

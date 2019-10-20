@@ -135,6 +135,8 @@
 - (void)nextButtonClick:(UIButton *)sender
 {
     XYKRegisterWeightViewController *rwVC = [[XYKRegisterWeightViewController alloc]init];
+    rwVC.account = self.account;
+    rwVC.password = self.password;
     rwVC.height = [NSString stringWithFormat:@"%d",self.value];
     rwVC.sex = self.sex;
     rwVC.birthday = self.birthday;
