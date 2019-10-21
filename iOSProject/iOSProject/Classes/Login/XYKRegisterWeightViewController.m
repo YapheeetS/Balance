@@ -136,9 +136,9 @@
     [NetWorkingManager sendPOSTDataWithPath:Register withParamters:params withProgress:^(float progress) {
         
     } success:^(BOOL isSuccess, id responseObject) {
-        
+        NSLog(@"%@", responseObject);
         NSString *code = [NSString stringWithFormat:@"%@",responseObject[@"code"]];
-        if (![code isEqualToString:@"200"]) {
+        if ([code isEqualToString:@"200"]) {
             NSDictionary *dataDict =  responseObject[@"user_info"];
             NSLog(@"%@", dataDict);
 //            [GVUserDefaults standardUserDefaults].account = self.account;
@@ -149,7 +149,7 @@
         
         
     } failure:^(NSError *error) {
-        
+        NSLog(@"%@", error);
     }];
     
     

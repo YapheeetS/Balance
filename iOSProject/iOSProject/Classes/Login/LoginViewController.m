@@ -170,6 +170,38 @@
 // !!!: 登录
 - (IBAction)toLoginButtonAction:(id)sender {
     
+    if ([self.PhoneNumberTextField.text isEqualToString:@""] || [self.PassWordTextField.text isEqualToString:@""]) {
+        [self showTextHUDWithMessage:@"Please input account and password"];
+        return;
+    }
+    
+    xWEAKSELF;
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    [params setObject:self.PhoneNumberTextField.text forKey:@"account"];
+    [params setObject:self.PassWordTextField.text forKey:@"password"];
+
+    NSLog(@"%@", params);
+    
+    [NetWorkingManager sendPOSTDataWithPath:Login withParamters:params withProgress:^(float progress) {
+        
+    } success:^(BOOL isSuccess, id responseObject) {
+        NSLog(@"%@", responseObject);
+        NSString *code = [NSString stringWithFormat:@"%@",responseObject[@"code"]];
+        if ([code isEqualToString:@"200"]) {
+            NSDictionary *dataDict =  responseObject[@"user_info"];
+            NSLog(@"%@", dataDict);
+            //            [GVUserDefaults standardUserDefaults].account = self.account;
+            
+            VCTTabBarController *mainVC = [[VCTTabBarController alloc] init];
+            [UIApplication sharedApplication].keyWindow.rootViewController = mainVC;
+        }
+        
+        
+    } failure:^(NSError *error) {
+        NSLog(@"%@", error);
+    }];
+    
+    
     VCTTabBarController *mainVC = [[VCTTabBarController alloc] init];
     [UIApplication sharedApplication].keyWindow.rootViewController = mainVC;
 
