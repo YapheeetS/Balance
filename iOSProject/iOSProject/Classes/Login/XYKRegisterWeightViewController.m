@@ -145,9 +145,10 @@
             
             VCTTabBarController *mainVC = [[VCTTabBarController alloc] init];
             [UIApplication sharedApplication].keyWindow.rootViewController = mainVC;
+        } else {
+            [self showTextHUDWithMessage:responseObject[@"message"]];
         }
-        
-        
+                
     } failure:^(NSError *error) {
         NSLog(@"%@", error);
     }];
