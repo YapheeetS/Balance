@@ -8,6 +8,9 @@
 
 #define Register @"create_user"
 #define Login @"login"
-
+#define getCommonFood @"get_common_food"
+#define searchFoodWithName @"search_food_with_name"
+#define getDiet @"get_diet"
+#define addFood @"add_food"
 
 #endif /* NetWrok_h */

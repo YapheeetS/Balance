@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WebSocket Test Page</title>
+    <script type="text/javascript" charset="UTF-8" src="http://runjs.cn//js/sandbox/jquery/jquery-1.8.2.min.js"></script>
+</head>
+<body>
+    <div id="contents" style="width: 500px;height: 500px;overflow: auto"></div>
+    <div>
+        <input type="text" id="message" />
+        <button onclick="sendMessage()">发送</button>
+    </div>
+
+    <script>
+        var mac = '123'
+        var ws = new WebSocket('ws://10.3.242.253:50112/ws?mac=' + mac);
+        // //接收服务器消息
+        ws.onmessage = function (e) {
+            $('#contents').append("<p>"+e.data+"</p>")
+        };
+
+        //向服务器发送消息
+        function sendMessage() {
+            // console.log('*************')
+            var message = $('#message').val();
+            ws.send(message);
+            $('#message').val("")
+        }
+    </script>
+
+</body>
+</html>

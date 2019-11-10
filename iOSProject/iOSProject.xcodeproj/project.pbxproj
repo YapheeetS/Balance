@@ -25,6 +25,20 @@
 		2F65A3D8233C9D9E0029DC09 /* LHJActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F65A3D7233C9D9E0029DC09 /* LHJActivityViewController.m */; };
 		2F65A3FB233C9ED00029DC09 /* LHJNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F65A3E8233C9ECF0029DC09 /* LHJNavigationController.m */; };
 		2F65A3FD233C9ED00029DC09 /* LHJBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F65A3EE233C9ECF0029DC09 /* LHJBaseViewController.m */; };
+		3B1D2B842376657E003CD342 /* HKSeachBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B1D2B7E2376657D003CD342 /* HKSeachBar.m */; };
+		3B1D2B852376657E003CD342 /* UISearchBar+FMAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B1D2B7F2376657D003CD342 /* UISearchBar+FMAdd.m */; };
+		3B1D2B862376657E003CD342 /* HKSearchRecordTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B1D2B802376657D003CD342 /* HKSearchRecordTableViewCell.m */; };
+		3B1D2B872376657E003CD342 /* HKSearchManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B1D2B812376657E003CD342 /* HKSearchManager.m */; };
+		3B1D2B8A237665E5003CD342 /* LHJAddFoodViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B1D2B89237665E5003CD342 /* LHJAddFoodViewController.m */; };
+		3B1D2B8E23767080003CD342 /* XYKAddTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B1D2B8B2376707F003CD342 /* XYKAddTableViewCell.xib */; };
+		3B1D2B8F23767080003CD342 /* XYKAddTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B1D2B8D23767080003CD342 /* XYKAddTableViewCell.m */; };
+		3B1D2B92237671AC003CD342 /* XYKChooseHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B1D2B91237671AC003CD342 /* XYKChooseHomeViewController.m */; };
+		3B1D2B9623767214003CD342 /* KEScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B1D2B9523767214003CD342 /* KEScrollView.m */; };
+		3B1D2B9923767261003CD342 /* UIView+SDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B1D2B9723767261003CD342 /* UIView+SDViewController.m */; };
+		3B1D2B9C237674B0003CD342 /* XYKAddCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B1D2B9A237674B0003CD342 /* XYKAddCellView.m */; };
+		3B1D2BA02376754A003CD342 /* XYAddSearchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B1D2B9D2376754A003CD342 /* XYAddSearchCell.m */; };
+		3B1D2BA12376754A003CD342 /* XYAddSearchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B1D2B9E2376754A003CD342 /* XYAddSearchCell.xib */; };
+		3B1D2BA4237678D8003CD342 /* NSDate+GFCalendar.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B1D2BA2237678D8003CD342 /* NSDate+GFCalendar.m */; };
 		3B8C5719233FE2020059BB21 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8C5717233FE2020059BB21 /* LoginViewController.m */; };
 		3B8C571A233FE2020059BB21 /* LoginViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B8C5718233FE2020059BB21 /* LoginViewController.storyboard */; };
 		3B8C5722233FF5050059BB21 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8C5721233FF5050059BB21 /* RegisterViewController.m */; };
@@ -131,6 +145,32 @@
 		2F65A3EA233C9ECF0029DC09 /* LHJBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHJBaseViewController.h; sourceTree = "<group>"; };
 		2F65A3ED233C9ECF0029DC09 /* LHJNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHJNavigationController.h; sourceTree = "<group>"; };
 		2F65A3EE233C9ECF0029DC09 /* LHJBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHJBaseViewController.m; sourceTree = "<group>"; };
+		3B1D2B7C2376657D003CD342 /* HKSearchManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HKSearchManager.h; sourceTree = "<group>"; };
+		3B1D2B7D2376657D003CD342 /* HKSearchRecordTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HKSearchRecordTableViewCell.h; sourceTree = "<group>"; };
+		3B1D2B7E2376657D003CD342 /* HKSeachBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HKSeachBar.m; sourceTree = "<group>"; };
+		3B1D2B7F2376657D003CD342 /* UISearchBar+FMAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UISearchBar+FMAdd.m"; sourceTree = "<group>"; };
+		3B1D2B802376657D003CD342 /* HKSearchRecordTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HKSearchRecordTableViewCell.m; sourceTree = "<group>"; };
+		3B1D2B812376657E003CD342 /* HKSearchManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HKSearchManager.m; sourceTree = "<group>"; };
+		3B1D2B822376657E003CD342 /* UISearchBar+FMAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UISearchBar+FMAdd.h"; sourceTree = "<group>"; };
+		3B1D2B832376657E003CD342 /* HKSeachBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HKSeachBar.h; sourceTree = "<group>"; };
+		3B1D2B88237665E5003CD342 /* LHJAddFoodViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LHJAddFoodViewController.h; sourceTree = "<group>"; };
+		3B1D2B89237665E5003CD342 /* LHJAddFoodViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LHJAddFoodViewController.m; sourceTree = "<group>"; };
+		3B1D2B8B2376707F003CD342 /* XYKAddTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XYKAddTableViewCell.xib; sourceTree = "<group>"; };
+		3B1D2B8C2376707F003CD342 /* XYKAddTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYKAddTableViewCell.h; sourceTree = "<group>"; };
+		3B1D2B8D23767080003CD342 /* XYKAddTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYKAddTableViewCell.m; sourceTree = "<group>"; };
+		3B1D2B90237671AB003CD342 /* XYKChooseHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYKChooseHomeViewController.h; sourceTree = "<group>"; };
+		3B1D2B91237671AC003CD342 /* XYKChooseHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYKChooseHomeViewController.m; sourceTree = "<group>"; };
+		3B1D2B9423767214003CD342 /* KEScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KEScrollView.h; sourceTree = "<group>"; };
+		3B1D2B9523767214003CD342 /* KEScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KEScrollView.m; sourceTree = "<group>"; };
+		3B1D2B9723767261003CD342 /* UIView+SDViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SDViewController.m"; sourceTree = "<group>"; };
+		3B1D2B9823767261003CD342 /* UIView+SDViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SDViewController.h"; sourceTree = "<group>"; };
+		3B1D2B9A237674B0003CD342 /* XYKAddCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYKAddCellView.m; sourceTree = "<group>"; };
+		3B1D2B9B237674B0003CD342 /* XYKAddCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYKAddCellView.h; sourceTree = "<group>"; };
+		3B1D2B9D2376754A003CD342 /* XYAddSearchCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYAddSearchCell.m; sourceTree = "<group>"; };
+		3B1D2B9E2376754A003CD342 /* XYAddSearchCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XYAddSearchCell.xib; sourceTree = "<group>"; };
+		3B1D2B9F2376754A003CD342 /* XYAddSearchCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYAddSearchCell.h; sourceTree = "<group>"; };
+		3B1D2BA2237678D8003CD342 /* NSDate+GFCalendar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+GFCalendar.m"; sourceTree = "<group>"; };
+		3B1D2BA3237678D8003CD342 /* NSDate+GFCalendar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+GFCalendar.h"; sourceTree = "<group>"; };
 		3B8C5716233FE2020059BB21 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		3B8C5717233FE2020059BB21 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		3B8C5718233FE2020059BB21 /* LoginViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LoginViewController.storyboard; sourceTree = "<group>"; };
@@ -362,6 +402,8 @@
 		2F65A3B2233C9B770029DC09 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				3B1D2B9823767261003CD342 /* UIView+SDViewController.h */,
+				3B1D2B9723767261003CD342 /* UIView+SDViewController.m */,
 				3BEA20F5235C0DDA005311C3 /* UIImage+Compression.h */,
 				3BEA20F6235C0DDA005311C3 /* UIImage+Compression.m */,
 				3B8C578F23418EFD0059BB21 /* NSDate+GFCalendar.h */,
@@ -537,6 +579,10 @@
 			children = (
 				2F65A3CF233C9D570029DC09 /* LHJDietViewController.h */,
 				2F65A3D0233C9D570029DC09 /* LHJDietViewController.m */,
+				3B1D2B88237665E5003CD342 /* LHJAddFoodViewController.h */,
+				3B1D2B89237665E5003CD342 /* LHJAddFoodViewController.m */,
+				3B1D2B90237671AB003CD342 /* XYKChooseHomeViewController.h */,
+				3B1D2B91237671AC003CD342 /* XYKChooseHomeViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -544,6 +590,13 @@
 		2F65A3E4233C9DFD0029DC09 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				3B1D2B9F2376754A003CD342 /* XYAddSearchCell.h */,
+				3B1D2B9D2376754A003CD342 /* XYAddSearchCell.m */,
+				3B1D2B9E2376754A003CD342 /* XYAddSearchCell.xib */,
+				3B1D2B9B237674B0003CD342 /* XYKAddCellView.h */,
+				3B1D2B9A237674B0003CD342 /* XYKAddCellView.m */,
+				3B1D2B7B2376657D003CD342 /* HKSearchBar */,
+				3B8C578D23418EFD0059BB21 /* Calendar */,
 				3B8C579F2341903F0059BB21 /* XYKEateHeardViewCell.h */,
 				3B8C57A22341903F0059BB21 /* XYKEateHeardViewCell.m */,
 				3B8C579D2341903F0059BB21 /* XYKEateHeardViewCell.xib */,
@@ -553,7 +606,9 @@
 				3B8C57A12341903F0059BB21 /* XYKEateTableViewCell.h */,
 				3B8C579B2341903F0059BB21 /* XYKEateTableViewCell.m */,
 				3B8C579C2341903F0059BB21 /* XYKEateTableViewCell.xib */,
-				3B8C578D23418EFD0059BB21 /* Calendar */,
+				3B1D2B8C2376707F003CD342 /* XYKAddTableViewCell.h */,
+				3B1D2B8D23767080003CD342 /* XYKAddTableViewCell.m */,
+				3B1D2B8B2376707F003CD342 /* XYKAddTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -568,6 +623,7 @@
 		2F65A3E6233C9ECF0029DC09 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				3B1D2B9323767214003CD342 /* KEScrollView */,
 				3BEA20F8235C1006005311C3 /* UserDefaults */,
 				3BEA20F1235C0D9A005311C3 /* Network */,
 				3B8C575C23418CA20059BB21 /* FSCalendar */,
@@ -586,6 +642,30 @@
 				2F65A3E8233C9ECF0029DC09 /* LHJNavigationController.m */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		3B1D2B7B2376657D003CD342 /* HKSearchBar */ = {
+			isa = PBXGroup;
+			children = (
+				3B1D2B7C2376657D003CD342 /* HKSearchManager.h */,
+				3B1D2B812376657E003CD342 /* HKSearchManager.m */,
+				3B1D2B7D2376657D003CD342 /* HKSearchRecordTableViewCell.h */,
+				3B1D2B802376657D003CD342 /* HKSearchRecordTableViewCell.m */,
+				3B1D2B832376657E003CD342 /* HKSeachBar.h */,
+				3B1D2B7E2376657D003CD342 /* HKSeachBar.m */,
+				3B1D2B822376657E003CD342 /* UISearchBar+FMAdd.h */,
+				3B1D2B7F2376657D003CD342 /* UISearchBar+FMAdd.m */,
+			);
+			path = HKSearchBar;
+			sourceTree = "<group>";
+		};
+		3B1D2B9323767214003CD342 /* KEScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				3B1D2B9423767214003CD342 /* KEScrollView.h */,
+				3B1D2B9523767214003CD342 /* KEScrollView.m */,
+			);
+			path = KEScrollView;
 			sourceTree = "<group>";
 		};
 		3B8C5712233FC4570059BB21 /* Login */ = {
@@ -665,6 +745,8 @@
 		3B8C578D23418EFD0059BB21 /* Calendar */ = {
 			isa = PBXGroup;
 			children = (
+				3B1D2BA3237678D8003CD342 /* NSDate+GFCalendar.h */,
+				3B1D2BA2237678D8003CD342 /* NSDate+GFCalendar.m */,
 			);
 			path = Calendar;
 			sourceTree = "<group>";
@@ -789,8 +871,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				3B8C571A233FE2020059BB21 /* LoginViewController.storyboard in Resources */,
+				3B1D2B8E23767080003CD342 /* XYKAddTableViewCell.xib in Resources */,
 				3B8C57A62341903F0059BB21 /* XYKEateHeardViewCell.xib in Resources */,
 				2F65A383233C97F10029DC09 /* LaunchScreen.storyboard in Resources */,
+				3B1D2BA12376754A003CD342 /* XYAddSearchCell.xib in Resources */,
 				2F65A380233C97F10029DC09 /* Assets.xcassets in Resources */,
 				3B8C57A72341903F0059BB21 /* XYKEateNullTableViewCell.xib in Resources */,
 				3B8C57A52341903F0059BB21 /* XYKEateTableViewCell.xib in Resources */,
@@ -884,6 +968,7 @@
 				3B8C578223418CA20059BB21 /* FSCalendar.m in Sources */,
 				2F65A3D4233C9D750029DC09 /* LHJProfileViewController.m in Sources */,
 				3B8C578623418CA20059BB21 /* FSCalendarExtensions.m in Sources */,
+				3B1D2B9C237674B0003CD342 /* XYKAddCellView.m in Sources */,
 				3BEA20EA235BC6C1005311C3 /* XYKSportRecordCell.m in Sources */,
 				2F65A3D8233C9D9E0029DC09 /* LHJActivityViewController.m in Sources */,
 				3BEA20DB235BA38C005311C3 /* LHJSportsTimeViewController.m in Sources */,
@@ -892,8 +977,11 @@
 				2F65A3B0233C99670029DC09 /* VCTTabBar.m in Sources */,
 				3B8C577E23418CA20059BB21 /* FSCalendarDelegationProxy.m in Sources */,
 				3B8C578923418CA20059BB21 /* FSCalendarCalculator.m in Sources */,
+				3B1D2B9623767214003CD342 /* KEScrollView.m in Sources */,
 				3B8C57492340144E0059BB21 /* XYKRegisterWeightViewController.m in Sources */,
+				3B1D2B852376657E003CD342 /* UISearchBar+FMAdd.m in Sources */,
 				3BEA20D2235B7D3E005311C3 /* XLCardSwitchFlowLayout.m in Sources */,
+				3B1D2B8A237665E5003CD342 /* LHJAddFoodViewController.m in Sources */,
 				2F65A3FB233C9ED00029DC09 /* LHJNavigationController.m in Sources */,
 				3B8C577D23418CA20059BB21 /* FSCalendarCollectionView.m in Sources */,
 				3BEA20ED235BC9DA005311C3 /* XYKChangeMotionViewController.m in Sources */,
@@ -903,11 +991,13 @@
 				2F65A3CE233C9D460029DC09 /* LHJBalanceViewController.m in Sources */,
 				3B8C577F23418CA20059BB21 /* FSCalendarDelegationFactory.m in Sources */,
 				2F65A3C1233C9B770029DC09 /* UIColor+stringToColor.m in Sources */,
+				3B1D2B9923767261003CD342 /* UIView+SDViewController.m in Sources */,
 				3B8C5758234163920059BB21 /* XYKGoSportButton.m in Sources */,
 				3BEA20D5235B7E01005311C3 /* LHJSportManageViewController.m in Sources */,
 				2F65A396233C98610029DC09 /* main.m in Sources */,
 				3B8C578523418CA20059BB21 /* FSCalendarWeekdayView.m in Sources */,
 				3B8C578323418CA20059BB21 /* FSCalendarCollectionViewLayout.m in Sources */,
+				3B1D2B862376657E003CD342 /* HKSearchRecordTableViewCell.m in Sources */,
 				2F65A3FD233C9ED00029DC09 /* LHJBaseViewController.m in Sources */,
 				2F65A3C3233C9B770029DC09 /* NSString+Extension.m in Sources */,
 				3B8C573D23400F7B0059BB21 /* SBRulerView.m in Sources */,
@@ -917,17 +1007,22 @@
 				3BEA20E1235BA3FF005311C3 /* YSTimeManager.m in Sources */,
 				3B8C578823418CA20059BB21 /* FSCalendarConstants.m in Sources */,
 				3BEA20F0235BCAA7005311C3 /* XYKChangeMotionCell.m in Sources */,
+				3B1D2B842376657E003CD342 /* HKSeachBar.m in Sources */,
 				3BEA20CC235B6AF5005311C3 /* LHJBalanceCell.m in Sources */,
 				3B8C5719233FE2020059BB21 /* LoginViewController.m in Sources */,
 				3BEA20FB235C1006005311C3 /* GVUserDefaults+Properties.m in Sources */,
 				3B8C578B23418CA20059BB21 /* FSCalendarTransitionCoordinator.m in Sources */,
+				3B1D2B872376657E003CD342 /* HKSearchManager.m in Sources */,
 				3B8C578C23418CA20059BB21 /* FSCalendarAppearance.m in Sources */,
 				3B8C574023400F7B0059BB21 /* SBTriangleView.m in Sources */,
 				3B8C57A82341903F0059BB21 /* XYKEateHeardViewCell.m in Sources */,
+				3B1D2B8F23767080003CD342 /* XYKAddTableViewCell.m in Sources */,
 				3B8C574B2340144E0059BB21 /* XYKRegisterSexViewController.m in Sources */,
+				3B1D2B92237671AC003CD342 /* XYKChooseHomeViewController.m in Sources */,
 				3BEA20F7235C0DDA005311C3 /* UIImage+Compression.m in Sources */,
 				3B8C57A42341903F0059BB21 /* XYKEateTableViewCell.m in Sources */,
 				3B8C574C2340144E0059BB21 /* XYKRegisterHeightViewController.m in Sources */,
+				3B1D2BA02376754A003CD342 /* XYAddSearchCell.m in Sources */,
 				2F65A3C2233C9B770029DC09 /* UIImage+Extension.m in Sources */,
 				3B8C575B23418B510059BB21 /* UIViewController+Swizzled.m in Sources */,
 				3B8C578723418CA20059BB21 /* FSCalendar+Deprecated.m in Sources */,
@@ -940,6 +1035,7 @@
 				3BEA20E7235BC647005311C3 /* LHJSportSupplementViewController.m in Sources */,
 				3B8C578A23418CA20059BB21 /* FSCalendarHeaderView.m in Sources */,
 				3B8C5755234163580059BB21 /* CustomView.m in Sources */,
+				3B1D2BA4237678D8003CD342 /* NSDate+GFCalendar.m in Sources */,
 				3B8C578023418CA20059BB21 /* FSCalendarCell.m in Sources */,
 				3BEA20D8235B7F13005311C3 /* XYKSportManageCell.m in Sources */,
 				3B8C573E23400F7B0059BB21 /* SBRulerViewConfiguration.m in Sources */,

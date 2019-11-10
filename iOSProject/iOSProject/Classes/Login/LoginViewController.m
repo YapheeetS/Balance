@@ -190,7 +190,8 @@
         if ([code isEqualToString:@"200"]) {
             NSDictionary *dataDict =  responseObject[@"user_info"];
             NSLog(@"%@", dataDict);
-            //            [GVUserDefaults standardUserDefaults].account = self.account;
+            [GVUserDefaults standardUserDefaults].user_id = dataDict[@"user_id"];
+            [GVUserDefaults standardUserDefaults].account = dataDict[@"account"];
             
             VCTTabBarController *mainVC = [[VCTTabBarController alloc] init];
             [UIApplication sharedApplication].keyWindow.rootViewController = mainVC;

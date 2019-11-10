@@ -157,6 +157,7 @@ static NetWorkingManager * defualt_shareMananger = nil;
     
     // 设置请求头
     AFHTTPRequestSerializer *requestSerializer =  [AFJSONRequestSerializer serializer];
+    
     NSMutableDictionary *headerFieldValueDictionary = [NSMutableDictionary dictionary];
     if (xCache.token) {
         [headerFieldValueDictionary setObject:xCache.token forKey:@"token"];

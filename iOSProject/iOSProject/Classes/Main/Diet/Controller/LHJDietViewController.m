@@ -12,6 +12,7 @@
 #import "XYKEateHeardViewCell.h"
 #import "XYKEateNullTableViewCell.h"
 #import "XYKEateTableViewCell.h"
+#import "LHJAddFoodViewController.h"
 
 #define XYKEateTableViewCellID @"XYKEateTableViewCellID"
 #define XYKEateNullTableViewCellID @"XYKEateNullTableViewCellID"
@@ -36,6 +37,8 @@
 
 @property (strong, nonatomic) NSMutableArray *datesWithEvent;
 @property (strong, nonatomic) NSArray *titleArray;
+
+@property(nonatomic, copy)NSString *diet_id;
 @end
 
 @implementation LHJDietViewController
@@ -77,6 +80,13 @@
     // Do any additional setup after loading the view.
     self.navigationController.delegate = self;
     [self setMainView];
+    
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    self.navigationController.delegate = self;
+    [self loadData];
 }
 
 - (void)setMainView{
@@ -119,6 +129,56 @@
     
 }
 
+- (void)loadData{
+    
+    NSDate *date = [NSDate date];
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"YYYYMMdd"];
+    NSString *dateString = [formatter stringFromDate:date];
+    
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    [params setObject:xCache.user_id forKey:@"user_id"];
+    [params setObject:dateString forKey:@"date"];
+    
+    NSLog(@"%@", params);
+    xWEAKSELF;
+    [NetWorkingManager sendPOSTDataWithPath:getDiet withParamters:params withProgress:^(float progress) {
+        
+    } success:^(BOOL isSuccess, id responseObject) {
+        NSLog(@"%@", responseObject);
+        NSString *code = [NSString stringWithFormat:@"%@",responseObject[@"code"]];
+        if ([code isEqualToString:@"200"]) {
+            weakSelf.eatArray=[responseObject objectForKey:@"meals"];
+//            weakSelf.datesWithEvent=[state.data objectForKey:@"have_record_time"];
+//            weakSelf.ifOrNoEate=[NSString stringWithFormat:@"%@",[state.data objectForKey:@"have_food"]];
+            
+            
+            weakSelf.eatStr=[NSString stringWithFormat:@"%d",[[responseObject objectForKey:@"total_calories"] intValue]];
+            weakSelf.toStr=[NSString stringWithFormat:@"%d",[[responseObject objectForKey:@"recommend"] intValue]];
+            weakSelf.diet_id=[NSString stringWithFormat:@"%@",[responseObject objectForKey:@"diet_id"]];
+            
+            [weakSelf.tableView reloadData];
+            
+            if ([weakSelf.eatStr intValue]>[weakSelf.toStr intValue]) {
+                weakSelf.hotTitle=@"Cal over";
+                weakSelf.hotStr=[NSString stringWithFormat:@"%d",[weakSelf.eatStr intValue]-[weakSelf.toStr intValue]];
+                
+            }else{
+                weakSelf.hotTitle=@"Cal left";
+                weakSelf.hotStr=[NSString stringWithFormat:@"%d",[weakSelf.toStr intValue]-[weakSelf.eatStr intValue]];
+            }
+            
+            
+        } else {
+            [self showTextHUDWithMessage:responseObject[@"message"]];
+        }
+        
+        
+    } failure:^(NSError *error) {
+        NSLog(@"%@", error);
+    }];
+}
+
 
 -(void)getYear:(NSInteger)year andMonth:(NSInteger)month andDay:(NSInteger)day {
     
@@ -142,31 +202,46 @@
     self.dayStr = [NSString stringWithFormat:@"%ld%@%@", year, nowMonth,nowDay];
 }
 
-
+- (void)toaddFood:(NSString *)title{
+    LHJAddFoodViewController *addVC=[[LHJAddFoodViewController alloc]init];
+    if ([title isEqualToString:@"Breakfast"]) {
+        addVC.type = @"breakfast";
+    }else if ([title isEqualToString:@"Lunch"]){
+        addVC.type = @"lunch";
+    }else if ([title isEqualToString:@"Dinner"]){
+        addVC.type = @"dinner";
+    }else{
+        addVC.type = @"snack";
+    }
+    addVC.time = self.dayStr;
+    addVC.diet_id = self.diet_id;
+    [self.navigationController pushViewController:addVC animated:YES];
+}
 
 
 #pragma mark - Table view data source
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
-    return 4;
+    return self.eatArray.count;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
 //    NSLog(@"name - %@",[self.eatArray[indexPath.row]objectForKey:@"name"]);
-    if (indexPath.row == 0) {
+    xWEAKSELF;
+    if (![[self.eatArray[indexPath.row]objectForKey:@"name"] isEqual:@""])  {
         
         XYKEateTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:XYKEateTableViewCellID];
         if (!cell) {
             cell = [[NSBundle mainBundle]loadNibNamed:@"XYKEateTableViewCell" owner:self options:nil][0];
         }
         cell.titleLabel.text = self.titleArray[indexPath.row];
-        cell.eateLabel.text = @"Milk, White bread, Cheese";
-        cell.qkLabel.text = @"Intake 400 cal";
-        cell.jykLabel.text = @"Recommend 478 cal";
+        cell.eateLabel.text = [NSString stringWithFormat:@"%@",[self.eatArray[indexPath.row]objectForKey:@"name"]];;
+        cell.qkLabel.text = [NSString stringWithFormat:@"intake %@ cal",[self.eatArray[indexPath.row]objectForKey:@"intake"]];;
+        cell.jykLabel.text = [NSString stringWithFormat:@"Recommend %@ cal",[self.eatArray[indexPath.row]objectForKey:@"recommend"]];
         cell.clickadd = ^(NSString *title) {
             //点击添加按钮
-//            [weakSelf toaddEate:title];
+            [weakSelf toaddFood:title];
             
         };
         if ([cell.titleLabel.text isEqualToString:@"Breakfast"]) {
@@ -189,11 +264,11 @@
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.titleLabel.text = self.titleArray[indexPath.row];
 //    cell.qkLabel.text = [NSString stringWithFormat:@"建议摄入%@千卡",[self.eatArray[indexPath.row]objectForKey:@"recommend"]];
-    cell.qkLabel.text = [NSString stringWithFormat:@"Recommend %@cal",@"533"];
+    cell.qkLabel.text = [NSString stringWithFormat:@"Recommend %@ cal",[self.eatArray[indexPath.row]objectForKey:@"recommend"]];
     
     cell.nofontclickAdd = ^(NSString *title) {
         //点击添加按钮
-//        [weakSelf toaddEate:title];
+        [weakSelf toaddFood:title];
         
     };
     if ([cell.titleLabel.text isEqualToString:@"Breakfast"]) {
@@ -211,7 +286,7 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    if (indexPath.row == 0) {
+    if (![self.eatArray[indexPath.row][@"name"] isEqual:@""]) {
         return 180;
     } else {
         return 120;
@@ -220,13 +295,13 @@
 
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
     
-    xWEAKSELF;
+//    xWEAKSELF;
     XYKEateHeardViewCell *cell = [[NSBundle mainBundle]loadNibNamed:@"XYKEateHeardViewCell" owner:self options:nil][0];
     cell.frame = CGRectMake(0, 0, xScreenWidth, 328 * KHeight);
-    cell.eatLabel.text = @"1450";
-    cell.xhLabel.text = @"1750";
-    cell.hotLabel.text = @"300";
-//    cell.titleLabel.text = @"Cal left";
+    cell.eatLabel.text = self.eatStr;;
+    cell.xhLabel.text = self.toStr;
+    cell.hotLabel.text = self.hotStr;
+    cell.titleLabel.text = self.hotTitle;
     cell.contentView.backgroundColor = [UIColor whiteColor];
     if ([self.eatStr intValue]>[self.toStr intValue]) {
         cell.hotLabel.textColor = RGB(253, 160, 11);
