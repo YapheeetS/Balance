@@ -41,6 +41,13 @@
 }
 
 
+- (void)reloadChart{
+    
+    self.chartView.data = [self setChartData];
+    [self.chartView animateWithXAxisDuration:1.4 easingOption:ChartEasingOptionEaseOutBack];
+}
+
+
 - (void)setupPieChartView:(PieChartView *)chartView
 {
     chartView.usePercentValuesEnabled = YES;
@@ -104,7 +111,7 @@
     for (int i = 0; i < count; i++) {
         
 //        BarChartDataEntry *entry = [[BarChartDataEntry alloc] initWithX:i y:randomVal];
-        PieChartDataEntry *entry = [[PieChartDataEntry alloc] initWithValue:i == 0 ? 2100 : 1500 label:i == 0 ? @"consume" : @"intake"];
+        PieChartDataEntry *entry = [[PieChartDataEntry alloc] initWithValue:i == 0 ? [self.consume intValue] :[self.intake intValue] label:i == 0 ? @"consume" : @"intake"];
         [yVals addObject:entry];
     }
     

@@ -12,5 +12,9 @@
 #define searchFoodWithName @"search_food_with_name"
 #define getDiet @"get_diet"
 #define addFood @"add_food"
+#define getActivities @"get_activities"
+#define getSport @"get_sport"
+#define addActivity @"add_activity"
+#define getBalanceData @"get_balance_data"
 
 #endif /* NetWrok_h */

@@ -34,46 +34,6 @@
 {
     if (_dataArray == nil) {
         _dataArray = [NSMutableArray array];
-        [_dataArray addObject:
-            @{@"id": @"1",
-            @"motion_name": @"Walking",
-            @"motion_type": @"distance",
-            @"motion_content": @"Walking 30min\\nConsum 121Cal",
-            @"consume_calorie": @"4",
-            @"motion_picture": @"http://www.xinyuekang.com.cn/data/upload/motion/motion_img/buxing.png"
-        }];
-        [_dataArray addObject:@{
-            @"id": @"2",
-            @"motion_name": @"Running",
-            @"motion_type": @"distance",
-            @"motion_content": @"Running 30min\\nConsume 279Cal",
-            @"consume_calorie": @"9.3",
-            @"motion_picture": @"http://www.xinyuekang.com.cn/data/upload/motion/motion_img/paobu.png"
-        }];
-        [_dataArray addObject:@{
-            @"id": @"3",
-            @"motion_name": @"Cycling",
-            @"motion_type": @"distance",
-            @"motion_content": @"Cycling 30min\\nConsum 140Cal",
-            @"consume_calorie": @"4.7",
-            @"motion_picture": @"http://www.xinyuekang.com.cn/data/upload/motion/motion_img/zixingche.png"
-        }];
-        [_dataArray addObject:@{
-            @"id": @"4",
-            @"motion_name": @"Swimming",
-            @"motion_type": @"time",
-            @"motion_content": @"Swimming 30min\\nConsume 279Cal",
-            @"consume_calorie": @"9.3",
-            @"motion_picture": @"http://www.xinyuekang.com.cn/data/upload/motion/motion_img/youyong.png"
-        }];
-        [_dataArray addObject:@{
-            @"id": @"5",
-            @"motion_name": @"Basketball",
-            @"motion_type": @"time",
-            @"motion_content": @"Basketball 30min\\nConsume 210Cal",
-            @"consume_calorie": @"7",
-            @"motion_picture": @"http://www.xinyuekang.com.cn/data/upload/motion/motion_img/lanqiu.png"
-        }];
         
     }
     return _dataArray;
@@ -86,6 +46,32 @@
     self.view.backgroundColor = RGB(247, 247, 247);
     [self setCollectionView];
     [self setOtherView];
+    [self loadData];
+}
+
+- (void)loadData{
+    
+    
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+
+    xWEAKSELF;
+    [NetWorkingManager sendPOSTDataWithPath:getActivities withParamters:params withProgress:^(float progress) {
+        
+    } success:^(BOOL isSuccess, id responseObject) {
+        NSLog(@"%@", responseObject);
+        NSString *code = [NSString stringWithFormat:@"%@",responseObject[@"code"]];
+        if ([code isEqualToString:@"200"]) {
+            weakSelf.dataArray = responseObject[@"motion_list"];
+            [weakSelf.collectionView reloadData];
+            
+        } else {
+            [self showTextHUDWithMessage:responseObject[@"message"]];
+        }
+        
+        
+    } failure:^(NSError *error) {
+        NSLog(@"%@", error);
+    }];
 }
 
 - (void)setCollectionView {
@@ -225,7 +211,7 @@
     NSDictionary *dataDict = (NSDictionary *)self.dataArray[self.selectedIndex];
     
     LHJSportsTimeViewController *vc = [[LHJSportsTimeViewController alloc] init];
-    vc.motionId = dataDict[@"id"];
+    vc.motionId = dataDict[@"motion_id"];
     vc.calorie = dataDict[@"consume_calorie"];
     vc.motionName = dataDict[@"motion_name"];
     [self.navigationController pushViewController:vc animated:true];

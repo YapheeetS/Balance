@@ -64,9 +64,9 @@
     self.PhoneNumberTextField.delegate = self;
     self.PassWordTextField.delegate = self;
     
-//    [self changeImageWithAnimation];
-//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didEnterBackground) name:UIApplicationDidEnterBackgroundNotification object:nil];
-//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didBecomeActive) name:UIApplicationDidBecomeActiveNotification object:nil];
+    [self changeImageWithAnimation];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didEnterBackground) name:UIApplicationDidEnterBackgroundNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didBecomeActive) name:UIApplicationDidBecomeActiveNotification object:nil];
 }
 
 -(void)changeImageWithAnimation {
@@ -175,7 +175,7 @@
         return;
     }
     
-    xWEAKSELF;
+    
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     [params setObject:self.PhoneNumberTextField.text forKey:@"account"];
     [params setObject:self.PassWordTextField.text forKey:@"password"];

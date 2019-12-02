@@ -11,7 +11,9 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface LHJBalanceCell : UITableViewCell
-
+@property (nonatomic, copy) NSString *consume;
+@property (nonatomic, copy) NSString *intake;
+- (void)reloadChart;
 @end
 
 NS_ASSUME_NONNULL_END

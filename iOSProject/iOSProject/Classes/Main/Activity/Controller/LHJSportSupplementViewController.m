@@ -12,6 +12,7 @@
 #import "PGDatePickManager.h"
 #import "LHJActivityViewController.h"
 
+
 @interface LHJSportSupplementViewController ()<PGDatePickerDelegate>
 
 @property (nonatomic, strong) UILabel *titleLabel;
@@ -140,7 +141,7 @@
     [finishButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(self.view).offset(40);
         make.right.mas_equalTo(self.view).offset(-40);
-        make.bottom.mas_equalTo(self.view).offset(-85*KHeight);
+        make.bottom.mas_equalTo(self.view).offset(-75*KHeight);
         make.height.mas_equalTo(45);
     }];
     [finishButton addTarget:self action:@selector(save) forControlEvents:UIControlEventTouchUpInside];
@@ -153,25 +154,45 @@
         return;
     }
     
-    for (UIViewController *vc in self.navigationController.viewControllers) {
-        if ([vc isKindOfClass:[LHJActivityViewController class]]) {
-            [self.navigationController popToViewController:vc animated:YES];
-        }
-    }
     
-//    __weak XYKSportRecordViewController *weakSelf = self;
-//    NSMutableDictionary *params = [NSMutableDictionary dictionary];
-//    if ([CFLManger instance].loginName) {
-//        [params setObject:[CFLManger instance].loginName forKey:@"key"];
-//    }
-//    [params setObject:self.dataDict[@"id"] forKey:@"id"];
-//    int time = self.hour*3600 + self.minute*60;//单位：秒
-//    [params setObject:[NSString stringWithFormat:@"%d",time] forKey:@"length_time"];
-//    float calorie = [self.dataDict[@"consume_calorie"] floatValue];
-//    float totalConsume = calorie * (float)(self.hour*60 + self.minute);
-//    [params setObject:[NSString stringWithFormat:@"%.2f",totalConsume] forKey:@"calorie"];
-//    [params setObject:self.dateCell.detail.text forKey:@"motion_time"];
-//
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    [params setObject:xCache.user_id forKey:@"user_id"];
+    [params setObject:self.dataDict[@"motion_id"] forKey:@"motion_id"];
+    int time = self.hour*3600 + self.minute*60;//单位：秒
+    [params setObject:[NSString stringWithFormat:@"%d",time] forKey:@"length_time"];
+    float calorie = [self.dataDict[@"consume_calorie"] floatValue];
+    float totalConsume = calorie * (float)(self.hour*60 + self.minute);
+    [params setObject:[NSString stringWithFormat:@"%.2f",totalConsume] forKey:@"burn_calorie"];
+    
+    NSString *str1 = self.dateCell.detail.text;
+    NSString *dataStr = [str1 stringByReplacingOccurrencesOfString:@"-" withString:@""];
+    [params setObject:dataStr forKey:@"date"];
+    NSLog(@"%@", params);
+    
+    xWEAKSELF;
+    [NetWorkingManager sendPOSTDataWithPath:addActivity withParamters:params withProgress:^(float progress) {
+        
+    } success:^(BOOL isSuccess, id responseObject) {
+        NSLog(@"%@", responseObject);
+        NSString *code = [NSString stringWithFormat:@"%@",responseObject[@"code"]];
+        if ([code isEqualToString:@"200"]) {
+            
+            for (UIViewController *vc in self.navigationController.viewControllers) {
+                if ([vc isKindOfClass:[LHJActivityViewController class]]) {
+                    [weakSelf.navigationController popToViewController:vc animated:true];
+                }
+            }
+            
+        } else {
+            [self showTextHUDWithMessage:responseObject[@"message"]];
+        }
+        
+        
+    } failure:^(NSError *error) {
+        NSLog(@"%@", error);
+    }];
+    
+
 //    [SharedApiClient apiPostPath:XYKMotionDataUpload param:params complection:^(KSResponseState *state, id responseObject) {
 //        int code = [[responseObject objectForKey:@"code"] intValue];
 //        if (code == 200) {

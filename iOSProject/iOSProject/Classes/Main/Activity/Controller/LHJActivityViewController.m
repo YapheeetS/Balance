@@ -11,6 +11,7 @@
 #import "XYKDownBackImageView.h"
 #import "XYKGoSportButton.h"
 #import "LHJSportManageViewController.h"
+#import "skoal.h"
 
 @interface LHJActivityViewController ()<UINavigationControllerDelegate>
 @property (nonatomic, strong) XYKDownBackImageView *downBackImageView;
@@ -32,11 +33,11 @@
 {
     if(!_dataDict){
         _dataDict = [NSMutableDictionary dictionary];
-        [_dataDict setValue:@"300" forKey:@"calorie"];
-        [_dataDict setValue:@"3600" forKey:@"length_time"];
-        [_dataDict setValue:@"7800" forKey:@"step_number"];
-        [_dataDict setValue:@"5800" forKey:@"distance"];
-        [_dataDict setValue:@"500" forKey:@"burn_calorie"];
+        [_dataDict setValue:@"0" forKey:@"target_calorie"];
+        [_dataDict setValue:@"0" forKey:@"length_time"];
+        [_dataDict setValue:@"0" forKey:@"step_number"];
+        [_dataDict setValue:@"0" forKey:@"distance"];
+        [_dataDict setValue:@"0" forKey:@"burn_calorie"];
     }
     return _dataDict;
 }
@@ -47,18 +48,85 @@
     [self setMainView];
     [self reloadViews];
     
-    
 }
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     self.navigationController.delegate = self;
+    [self loadData];
+    xWEAKSELF;
+    [[skoal sharedInstance]requestHealthPermissionWithBlock:^(HealthStorePermissionResponse permissionResponse) {
+        if (permissionResponse == HealthStorePermissionResponseError) {
+            NSLog(@"请求权限失败");
+        }else{
+            NSLog(@"请求权限成功");
+            [[skoal sharedInstance] readStepCountFromHealthStoreWithCompletion:^(double value, NSError *error) {
+                NSLog(@"steps: %.0f", value);
+                [weakSelf.dataDict setValue:[NSString stringWithFormat:@"%.0f", value] forKey:@"step_number"];
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    // 需要在主线程执行的代码
+                    [weakSelf reloadViews];
+                });
+                
+            }];
+            
+            [[skoal sharedInstance] readDistanceWalkingRunningFromHealthStoreWithCompletion:^(double value, NSError *error) {
+                NSLog(@"distance: %.1f", value);
+                [weakSelf.dataDict setValue:[NSString stringWithFormat:@"%.1f", value] forKey:@"distance"];
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    // 需要在主线程执行的代码
+                    [weakSelf reloadViews];
+                });
+                
+            }];
+        }
+    }];
 }
+
+
+- (void)loadData{
+    
+    NSDate *date = [NSDate date];
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"YYYYMMdd"];
+    NSString *dateString = [formatter stringFromDate:date];
+    
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    [params setObject:xCache.user_id forKey:@"user_id"];
+    [params setObject:dateString forKey:@"date"];
+    
+    NSLog(@"%@", params);
+    xWEAKSELF;
+    [NetWorkingManager sendPOSTDataWithPath:getSport withParamters:params withProgress:^(float progress) {
+        
+    } success:^(BOOL isSuccess, id responseObject) {
+        NSLog(@"%@", responseObject);
+        NSString *code = [NSString stringWithFormat:@"%@",responseObject[@"code"]];
+        if ([code isEqualToString:@"200"]) {
+            self.dataDict[@"burn_calorie"] = responseObject[@"burn_calorie"];
+            self.dataDict[@"length_time"] = responseObject[@"length_time"];
+//            self.dataDict[@"step_number"] = responseObject[@"steps"];
+//            self.dataDict[@"distance"] = responseObject[@"distance"];
+            self.dataDict[@"target_calorie"] = responseObject[@"target_calories"];
+            [weakSelf reloadViews];
+            
+        } else {
+            [self showTextHUDWithMessage:responseObject[@"message"]];
+        }
+        
+        
+    } failure:^(NSError *error) {
+        NSLog(@"%@", error);
+    }];
+}
+
+
+
 
 
 - (void)reloadViews{
     
-    self.consumeLabel2.text = [NSString stringWithFormat:@"%d",[self.dataDict[@"calorie"] intValue]];
+    self.consumeLabel2.text = [NSString stringWithFormat:@"%d",[self.dataDict[@"burn_calorie"] intValue]];
     self.runLabel2 = [self setLabelAttributeWithText1:self.dataDict[@"step_number"] text2:@" setps" label:self.runLabel2];
     float minute = [self.dataDict[@"length_time"] floatValue] / 60.0;
     self.timeLabel2 = [self setLabelAttributeWithText1:[NSString stringWithFormat:@"%.1f",minute] text2:@" min" label:self.timeLabel2];
@@ -67,7 +135,7 @@
     NSString *distanceStr = [NSString stringWithFormat:@"%.1f",distance];
     self.distanceLabel2 = [self setLabelAttributeWithText1:distanceStr text2:@" km" label:self.distanceLabel2];
     
-    self.targetLabel2 = [self setLabelAttributeWithText1:self.dataDict[@"burn_calorie"] text2:@" cal" label:self.targetLabel2];
+    self.targetLabel2 = [self setLabelAttributeWithText1:self.dataDict[@"target_calorie"] text2:@" cal" label:self.targetLabel2];
     float consume = [self.consumeLabel2.text floatValue];
     float target = [self.targetLabel2.text floatValue];
     

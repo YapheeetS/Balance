@@ -35,7 +35,7 @@
     timeLabel2.textAlignment = NSTextAlignmentCenter;
     [self.view addSubview:timeLabel2];
     [timeLabel2 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(self.view.mas_top).offset(104*KHeight);
+        make.top.mas_equalTo(self.view.mas_top).offset(94*KHeight);
         make.centerX.mas_equalTo(self.view.mas_centerX);
         make.width.mas_equalTo(200);
         make.height.mas_equalTo(20);
@@ -97,7 +97,7 @@
     [self.view addSubview:feedBackLabel];
     [feedBackLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.size.mas_equalTo(CGSizeMake(150, 20));
-        make.top.mas_equalTo(consumeLabel1.mas_bottom).offset(90*KHeight);
+        make.top.mas_equalTo(consumeLabel1.mas_bottom).offset(60*KHeight);
         make.left.mas_equalTo(self.view.mas_left).offset(40*Kwidth);
     }];
     
@@ -199,10 +199,43 @@
         [self showTextHUDWithMessage:@"Please select the situation after your exercise"];
         return;
     }
-    for (UIViewController *vc in self.navigationController.viewControllers) {
-        if ([vc isKindOfClass:[LHJActivityViewController class]]) {
-            [self.navigationController popToViewController:vc animated:YES];
+    
+    NSDate *date = [NSDate date];
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"YYYYMMdd"];
+    NSString *dateString = [formatter stringFromDate:date];
+    
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    
+    [params setObject:dateString forKey:@"date"];
+    [params setObject:xCache.user_id forKey:@"user_id"];
+    [params setObject:self.motionId forKey:@"motion_id"];
+    [params setObject:[NSString stringWithFormat:@"%zd", self.totalSeconds] forKey:@"length_time"];
+    [params setObject:self.totalCalorie forKey:@"burn_calorie"];
+    NSLog(@"%@", params);
+    
+    xWEAKSELF;
+    [NetWorkingManager sendPOSTDataWithPath:addActivity withParamters:params withProgress:^(float progress) {
+        
+    } success:^(BOOL isSuccess, id responseObject) {
+        NSLog(@"%@", responseObject);
+        NSString *code = [NSString stringWithFormat:@"%@",responseObject[@"code"]];
+        if ([code isEqualToString:@"200"]) {
+            
+            for (UIViewController *vc in self.navigationController.viewControllers) {
+                if ([vc isKindOfClass:[LHJActivityViewController class]]) {
+                    [weakSelf.navigationController popToViewController:vc animated:true];
+                }
+            }
+            
+        } else {
+            [self showTextHUDWithMessage:responseObject[@"message"]];
         }
-    }
+        
+        
+    } failure:^(NSError *error) {
+        NSLog(@"%@", error);
+    }];
+    
 }
 @end
