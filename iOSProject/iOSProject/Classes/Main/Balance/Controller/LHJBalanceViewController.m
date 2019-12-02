@@ -88,6 +88,7 @@
             NSLog(@"%@", responseObject);
             NSString *code = [NSString stringWithFormat:@"%@",responseObject[@"code"]];
             if ([code isEqualToString:@"200"]) {
+                
                 [self.dataDict setObject:responseObject[@"consume"] forKey:@"consume"];
                 [self.dataDict setObject:responseObject[@"intake"] forKey:@"intake"];
                 self.dataArray = responseObject[@"data_list"];
@@ -150,7 +151,7 @@
             
         }
         cell2.textLabel.text = self.dataArray[indexPath.section-1][indexPath.row][0];
-        cell2.detailTextLabel.text = self.dataArray[indexPath.section-1][indexPath.row][1];
+        cell2.detailTextLabel.text = [NSString stringWithFormat:@"%@Cal", self.dataArray[indexPath.section-1][indexPath.row][1]];
         return cell2;
     }
 }
@@ -166,9 +167,9 @@
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
     if (section == 1) {
-        return [NSString stringWithFormat:@"Consume: %@Cal", self.dataDict[@"consume"]];
+        return [NSString stringWithFormat:@"Consume: %.1fCal", [self.dataDict[@"consume"] floatValue]];
     } else if (section == 2) {
-        return [NSString stringWithFormat:@"Intake: %@Cal", self.dataDict[@"intake"]];
+        return [NSString stringWithFormat:@"Intake: %.1fCal", [self.dataDict[@"intake"] floatValue]];
     }
     return @"";
 }
