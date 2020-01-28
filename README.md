@@ -1,1 +1,1 @@
-# Banlance iOS Project
+# Balance iOS Project
